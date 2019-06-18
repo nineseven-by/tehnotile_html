@@ -25,7 +25,7 @@ gulp.task('sass', function(){
 //SCRIPTS concat+uglify
 gulp.task('scripts', function(){
     return gulp.src([
-        'app/libs/jquery/docs/jquery.min.js',
+        'app/libs/jquery/dist/jquery.min.js',
         'app/libs/modernizr/modernizr.min.js',
         'app/libs/flexibility/flexibility.js',
         'app/libs/fancybox/jquery.fancybox.js',
