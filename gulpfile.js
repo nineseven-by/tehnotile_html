@@ -25,7 +25,7 @@ gulp.task('sass', function(){
 //SCRIPTS concat+uglify
 gulp.task('scripts', function(){
     return gulp.src([
-        'app/libs/jquery/dist/jquery.min.js',
+        'app/libs/jquery/docs/jquery.min.js',
         'app/libs/modernizr/modernizr.min.js',
         'app/libs/flexibility/flexibility.js',
         'app/libs/fancybox/jquery.fancybox.js',
@@ -48,7 +48,7 @@ gulp.task('css-libs', ['sass'], function() {
         .pipe(cssnano())
         .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest('app/css'))
-        .pipe(gulp.dest('dist/css'))
+        .pipe(gulp.dest('docs/css'))
 });
 
 gulp.task('browser-sync', function() {
@@ -68,7 +68,7 @@ gulp.task('browser-sync', function() {
 //           basepath: '@file'
 //         }))
 //         .pipe(gulp.dest('app/*.html'));
-//         // dist?
+//         // docs?
 // });
 
 
@@ -82,7 +82,7 @@ gulp.task('watch', ['browser-sync','css-libs', 'scripts',], function() {
 
 //CLEAN
 gulp.task('clean', function() {
-    return del.sync('dist');
+    return del.sync('docs');
 });
 
 
@@ -95,7 +95,7 @@ gulp.task('img', function(){
         svgoPlugins: [{removeViewBox: false}],
         use: [pngquant()]
     })))
-    .pipe(gulp.dest('dist/img'))
+    .pipe(gulp.dest('docs/img'))
 });
 
 //BUILD version
@@ -105,16 +105,16 @@ gulp.task('build', ['clean', 'img', 'sass', 'css-libs', 'scripts'], function() {
         'app/css/style.css',
         'app/css/libs.min.css'
         ])
-    .pipe(gulp.dest('dist/css'))
+    .pipe(gulp.dest('docs/css'))
 
     var buildFonts = gulp.src('app/fonts/**/*')
-    .pipe(gulp.dest('dist/fonts'))
+    .pipe(gulp.dest('docs/fonts'))
 
     var buildJs = gulp.src('app/js/**/*')
-    .pipe(gulp.dest('dist/js'))
+    .pipe(gulp.dest('docs/js'))
 
     var buildHtml = gulp.src('app/*.html')
-    .pipe(gulp.dest('dist'));
+    .pipe(gulp.dest('docs'));
 
 });
 
