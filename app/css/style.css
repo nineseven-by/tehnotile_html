@@ -5434,6 +5434,39 @@ table.restables-clone {
   font-size: 14px;
   color: #808080; }
 
+.profile-view {
+  padding: 50px 32px 38px;
+  border: 1px solid #dddddd; }
+
+ul.profile-tabs__list {
+  margin-bottom: -1px; }
+  ul.profile-tabs__list li {
+    display: inline-block;
+    margin: 0;
+    list-style: none;
+    padding-left: 0;
+    margin-right: -2px; }
+    ul.profile-tabs__list li:before {
+      display: none; }
+    ul.profile-tabs__list li.active a {
+      font-weight: 700;
+      background: #fff;
+      border: 1px solid #dddddd;
+      border-bottom: 0; }
+    ul.profile-tabs__list li a {
+      font-size: 17px;
+      color: #000000;
+      display: block;
+      padding: 10px 28px;
+      background: #eeeeee;
+      border: 1px solid #eeeeee;
+      border-bottom: 0;
+      -webkit-transition: all 0.3s ease;
+      transition: all 0.3s ease; }
+      ul.profile-tabs__list li a:hover {
+        background: #e0e0e0;
+        color: #000; }
+
 .profile-orders__item {
   padding: 20px 0;
   border-bottom: 1px solid #ddd;
@@ -9189,7 +9222,46 @@ table.restables-clone {
   .top-search {
     margin: 3px 20px 0 20px; }
   .top-search__input {
-    padding: 5px 58px 5px 36px; } }
+    padding: 5px 58px 5px 36px; }
+  ul.profile-tabs__list {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column; }
+  ul.profile-tabs__list li {
+    display: block;
+    margin: 0;
+    margin-right: 0;
+    margin-bottom: 2px; }
+    ul.profile-tabs__list li a:after {
+      content: "";
+      width: 16px;
+      height: 10px;
+      background: url(../img/svg/toggle.svg) no-repeat;
+      position: absolute;
+      right: 18px;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+      -webkit-transition: -webkit-transform 0.3s ease;
+      transition: -webkit-transform 0.3s ease;
+      transition: transform 0.3s ease;
+      transition: transform 0.3s ease, -webkit-transform 0.3s ease; }
+    ul.profile-tabs__list li.active {
+      -webkit-box-ordinal-group: 6;
+      -webkit-order: 5;
+          -ms-flex-order: 5;
+              order: 5; }
+      ul.profile-tabs__list li.active a:after {
+        -webkit-transform: translateY(-50%) rotate(-180deg);
+        -ms-transform: translateY(-50%) rotate(-180deg);
+        transform: translateY(-50%) rotate(-180deg); } }
 
 @media screen and (max-width: 600px) {
   .top {

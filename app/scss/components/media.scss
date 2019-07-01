@@ -606,6 +606,45 @@
     .top-search__input {
         padding: 5px 58px 5px 36px;
     }
+    ul.profile-tabs__list{
+        display: flex;
+        flex-direction: column;
+    }
+    ul.profile-tabs__list li {
+        display: block;
+        margin: 0;
+        margin-right: 0;
+        margin-bottom: 2px;
+        a{
+            &:after {
+                content: "";
+                width: 16px;
+                height: 10px;
+                background: url(../img/svg/toggle.svg) no-repeat;
+                position: absolute;
+                right: 18px;
+                top: 50%;
+                -webkit-transform: translateY(-50%);
+                -ms-transform: translateY(-50%);
+                transform: translateY(-50%);
+                -webkit-transition: -webkit-transform 0.3s ease;
+                transition: -webkit-transform 0.3s ease;
+                transition: transform 0.3s ease;
+                transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+            }
+        }
+        &.active{
+            order: 5;
+            a{
+
+                &:after{
+                    -webkit-transform: translateY(-50%) rotate(-180deg);
+                    -ms-transform: translateY(-50%) rotate(-180deg);
+                    transform: translateY(-50%) rotate(-180deg);
+                }
+            }
+        }
+    }
 }
 
 @media screen and (max-width: 600px){

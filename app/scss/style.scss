@@ -1165,6 +1165,49 @@ table.restables-clone {
 	font-size: 14px;
 	color: #808080;
 }
+.profile-view{
+	    padding: 50px 32px 38px;
+    border: 1px solid #dddddd;
+}
+
+ul.profile-tabs__list{
+	margin-bottom: -1px;
+	li{
+		display: inline-block;
+		margin: 0;
+		list-style: none;
+		padding-left: 0;
+		margin-right: -2px;
+		&:before{
+			display: none;
+		}
+		&.active{
+			a{
+				font-weight: 700;
+				background: #fff;
+				border: 1px solid #dddddd;
+				border-bottom: 0;
+			}
+		}
+		a{
+			font-size: 17px;
+			color: #000000;
+			display: block;
+			padding: 10px 28px;
+			background: #eeeeee;
+			border: 1px solid #eeeeee;
+			border-bottom: 0;
+			-webkit-transition: all 0.3s ease;
+			transition: all 0.3s ease;
+			&:hover{
+				background: #e0e0e0;
+				color: #000;
+			}
+	
+		}
+	}
+}
+
 
 .profile-orders__item{
 	padding: 20px 0;

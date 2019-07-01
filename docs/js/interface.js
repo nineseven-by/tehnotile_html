@@ -648,7 +648,10 @@ $('body').append(
 		<li><a href="news.html">News</a></li> \
 		<li><a href="search.html">Search</a></li> \
 		<li><a href="reg.html">Registration</a></li> \
-		<li><a href="profile.html">Profile</a></li> \
+		<li><a href="profile1.html">Profile1</a></li> \
+		<li><a href="profile2.html">Profile2</a></li> \
+		<li><a href="profile3.html">Profile3</a></li> \
+		<li><a href="profile4.html">Profile4</a></li> \
 		<li><a href="oformit.html">Oformit</a></li> \
 		<li><a href="page404.html">Page404</a></li> \
 		<li><a href="catalog.html">Catalog</a></li> \
