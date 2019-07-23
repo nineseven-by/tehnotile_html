@@ -553,6 +553,18 @@ $(document).ready(function() {
         $(this).parents('.interior-popup').fadeOut();
     });
 
+
+
+    //РАСШИРЕННЫЙ ФИЛЬТР
+    $("body").on("click", ".js-extended-search-link", function(e){
+		e.preventDefault();
+		$('.extended').slideDown();
+	});
+	$("body").on("click", ".js-extended__close", function(e){
+		e.preventDefault();
+		$('.extended').slideUp();
+	})
+
 });
 
 
