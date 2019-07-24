@@ -3438,7 +3438,11 @@ textarea, input {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
-  display: flex; }
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
   .top-select-links .top-select__arrow {
     top: -webkit-calc(100% - 1px);
     top: calc(100% - 1px); }
@@ -3533,7 +3537,7 @@ textarea, input {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  padding-top: 3px; }
+  margin-top: -1px; }
 
 .top-select-toggle {
   margin-right: 21px;
@@ -6094,7 +6098,8 @@ ul.profile-tabs__list {
   height: 100%;
   position: relative;
   overflow: hidden;
-  z-index: 3; }
+  z-index: 3;
+  background: #fff; }
   .catalog-inner:after {
     content: "";
     display: block;
@@ -7266,6 +7271,8 @@ ul.profile-tabs__list {
   .tile-item a {
     color: #4055c3;
     font-weight: bold; }
+    .tile-item a:hover {
+      color: #056493; }
 
 .tile-add__txt {
   font-weight: bold; }
@@ -7372,7 +7379,11 @@ ul.profile-tabs__list {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
-  display: flex; }
+  display: flex;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease; }
+  .tile-photo__item:hover {
+    opacity: .7; }
 
 .tile-next {
   position: absolute;
@@ -7386,6 +7397,8 @@ ul.profile-tabs__list {
   height: 36px;
   background: url(../img/svg/t-next.svg) no-repeat;
   z-index: 2; }
+  .tile-next:hover {
+    opacity: .6; }
 
 .tile-prev {
   position: absolute;
@@ -8606,7 +8619,11 @@ ul.profile-tabs__list {
   font-size: 14px;
   color: rgba(255, 255, 255, 0.8);
   -webkit-transition: color 0.3s ease;
-  transition: color 0.3s ease; }
+  transition: color 0.3s ease;
+  margin-top: -3px;
+  text-decoration: none !important; }
+  .page-header__cabinet:hover {
+    color: #fff; }
   .page-header__cabinet .top-select-toggle__link {
     padding-top: 3px;
     color: white; }
@@ -8644,6 +8661,9 @@ ul.profile-tabs__list {
   left: 30px;
   z-index: 3;
   font-size: 14px; }
+
+.fancybox-container {
+  z-index: 6; }
 
 .page-footer-top {
   background: #fcfcfc;

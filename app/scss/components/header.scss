@@ -94,6 +94,7 @@
 
 .top-select-links{
 	display: flex;
+	align-items:center;
 	.top-select__arrow {
 	    top: calc(100% - 1px);
 	}
@@ -169,7 +170,7 @@
 .top-select-links__toggle{
 	font-size: 14px;
 	display: flex;
-	padding-top: 3px;
+	    margin-top: -1px;
 }
 
 .top-select-toggle{
