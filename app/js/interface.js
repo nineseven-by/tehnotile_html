@@ -565,6 +565,39 @@ $(document).ready(function() {
 		$('.extended').slideUp();
 	})
 
+
+
+
+	//SELECT
+	 $(".js-select__input").on("keypress keyup blur",function (event) {
+        var selectVal = parseFloat($('.select__val').text());
+
+ 		$(this).val($(this).val().replace(/[^0-9\.]/g,''));
+        if ((event.which != 46 || $(this).val().indexOf('.') != -1) && (event.which < 48 || event.which > 57)) {
+            event.preventDefault();
+        }
+
+        $(this).parents('.select__wrapper').find('.select__val').text($(this).val());
+    });
+	$('.js-select__input').blur(function(){
+	    if( !$(this).val() ) {
+	        $(this).parents('.select__wrapper').find('.select__val').text('1.08');
+	    }
+	});
+
+	$("body").on("click", ".js-select__link", function(e){
+		e.preventDefault();
+		$(this).parents('.select__wrapper').find('.select__list').slideToggle(200);
+	});
+	$("body").on("click", ".js-select__item", function(e){
+		e.preventDefault();
+		var tTxt = $(this).text();
+
+		$(this).parents('.select__wrapper').find('.select__item').removeClass('select__item--active');
+		$(this).addClass('select__item--active');
+		$(this).parents('.select__wrapper').find('.select__list').slideUp(100);
+		$(this).parents('.select__wrapper').find('.select__link span').text(tTxt);
+	});
 });
 
 

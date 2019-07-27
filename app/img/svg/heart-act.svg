@@ -30,9 +30,9 @@
 <defs>
     <style>
       .cls-1 {
-        fill: red;
-        stroke: #fff;
-        stroke-width: 2px;
+        fill: #ff8c00;
+        stroke: #ff8c00;
+        stroke-width: 1px;
         fill-rule: evenodd;
       }
     </style>
