@@ -3817,12 +3817,14 @@ textarea, input {
   opacity: 1; }
 
 .top-select-toggle__collection .checkbox-item {
-  display: inline-block;
+  display: none;
   margin-bottom: 0;
   vertical-align: middle;
   width: 18px;
   height: 18px;
   margin-top: -5px; }
+  .top-select-toggle__collection .checkbox-item.active {
+    display: inline-block; }
 
 .top-select__arrow {
   display: inline-block;

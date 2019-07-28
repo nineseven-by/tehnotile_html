@@ -598,6 +598,22 @@ $(document).ready(function() {
 		$(this).parents('.select__wrapper').find('.select__list').slideUp(100);
 		$(this).parents('.select__wrapper').find('.select__link span').text(tTxt);
 	});
+
+
+
+	//TOP CHECKBOX TOGGLE
+	$("body").on("click", ".js-filter-toggle", function(e){
+		e.preventDefault();
+		$(this).parents('.top-select-toggle').find('.checkbox-item').addClass('active');
+		$(this).parents('.top-select-toggle').find(':checkbox').prop('checked', true);
+	});
+	$(".top-select-toggle__collection .checkbox-item :checkbox").on('change', function () {
+        if ($(this).prop('checked')) {
+            //console.log('true');
+        }else{
+        	$(this).parents('.top-select-toggle').find('.checkbox-item').removeClass('active');
+        }
+    });
 });
 
 

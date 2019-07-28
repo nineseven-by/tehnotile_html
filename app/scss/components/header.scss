@@ -480,12 +480,16 @@
 	    opacity: 1;
 	}
 	.checkbox-item{
-		display: inline-block;
+		// display: inline-block;
+		display: none;
 		margin-bottom: 0;
 		vertical-align: middle;
 		width: 18px;
 		height: 18px;
 		margin-top: -5px;
+		&.active{
+			display: inline-block;
+		}
 	}
 }
 
