@@ -4825,6 +4825,10 @@ ul.profile-tabs__list{
     }
 }
 
+.tile-favorite.active {
+   background: url(../img/svg/t-favorite-act.svg) no-repeat;
+}
+
 @import "components/footer";
 
 

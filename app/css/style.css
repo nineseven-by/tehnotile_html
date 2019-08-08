@@ -8982,6 +8982,9 @@ ul.profile-tabs__list {
   .catalog-sort__select__item:hover {
     background: #fff; }
 
+.tile-favorite.active {
+  background: url(../img/svg/t-favorite-act.svg) no-repeat; }
+
 .page-footer-top {
   background: #fcfcfc;
   display: -webkit-box;
