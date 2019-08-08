@@ -1,8 +1,9 @@
 $(document).ready(function() {
 	flexibility(document.documentElement);
-	// $("body").on("click", ".test", function(e){
-	// 	e.preventDefault();
-	// })
+	$("body").on("click", ".js-catalog-sort__select__link", function(e){
+		e.preventDefault();
+		$('.catalog-sort__select__list').slideToggle(50);
+	})
 
 	if($('.top-slider').length>0){
 		var $topSlider = $('.top-slider');
@@ -602,11 +603,11 @@ $(document).ready(function() {
 
 
 	//TOP CHECKBOX TOGGLE
-	$("body").on("click", ".js-filter-toggle", function(e){
-		e.preventDefault();
-		$(this).parents('.top-select-toggle').find('.checkbox-item').addClass('active');
-		$(this).parents('.top-select-toggle').find(':checkbox').prop('checked', true);
-	});
+	// $("body").on("click", ".js-filter-toggle", function(e){
+	// 	e.preventDefault();
+	// 	$(this).parents('.top-select-toggle').find('.checkbox-item').addClass('active');
+	// 	$(this).parents('.top-select-toggle').find(':checkbox').prop('checked', true);
+	// });
 	$(".top-select-toggle__collection .checkbox-item :checkbox").on('change', function () {
         if ($(this).prop('checked')) {
             //console.log('true');
