@@ -615,6 +615,62 @@ $(document).ready(function() {
         	$(this).parents('.top-select-toggle').find('.checkbox-item').removeClass('active');
         }
     });
+	
+	
+	//add product to basket
+	$('.add-prod-basket').on({
+		click: function (e) {
+			e.preventDefault();
+			var valProdId = $(this).attr('data-prodid');
+			var valProdCnt = $('#cnt_'+valProdId).val();
+			if(valProdId.length > 0){
+				$.ajax({
+					type: "POST",
+					url: "/local/php_interface/include/ajax.php",
+					dataType: "json",
+					data: "idprod="+valProdId+"&cnt="+valProdCnt,
+					success: function(data){
+						if(data.TYPE.length > 0 && data.TYPE == 'ERROR'){
+							alert('Ошибка добавления товара');
+						}
+						else if(data.TYPE.length > 0 && data.TYPE == 'OK'){
+							alert('Товар добавлен в корзину!');
+						}
+					}
+				});
+				return false;
+			}
+		}
+	});
+	
+	$('.add-several-prod-basket').on({
+		click: function (e) {
+			e.preventDefault();
+			var form = this.form;
+			let arCheckId = [];
+			$('input:checkbox:checked[name="fav-checkbox[]"]',form).each(function(){
+				arCheckId.push($(this).val());
+			});
+			if(arCheckId.length > 0){
+				idAddProd = JSON.stringify(arCheckId);
+				console.log(idAddProd);
+				$.ajax({
+					type: "POST",
+					url: "/local/php_interface/include/ajax_several.php",
+					dataType: "json",
+					data: "idprod="+idAddProd,
+					success: function(data){
+						if(data.TYPE.length > 0 && data.TYPE == 'ERROR'){
+							alert('Ошибка добавления товаров');
+						}
+						else if(data.TYPE.length > 0 && data.TYPE == 'OK'){
+							alert('Товары добавлены в корзину!');
+						}
+					}
+				});
+			}
+		}
+	});
 });
 
 
