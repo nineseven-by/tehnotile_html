@@ -571,13 +571,15 @@ $(document).ready(function() {
 
 	//SELECT
 	 $(".js-select__input").on("keypress keyup blur",function (event) {
-        var selectVal = parseFloat($('.select__val').text());
-
+        var selectVal = parseFloat($(this).next(".select__val").text());
+        console.log(selectVal);
+    	///*/
  		$(this).val($(this).val().replace(/[^0-9\.]/g,''));
         if ((event.which != 46 || $(this).val().indexOf('.') != -1) && (event.which < 48 || event.which > 57)) {
             event.preventDefault();
         }
 
+    	 //*/
         $(this).parents('.select__wrapper').find('.select__val').text($(this).val());
     });
 	$('.js-select__input').blur(function(){

@@ -4610,7 +4610,7 @@ textarea, input {
   height: 100%; }
 
 .container-fluid {
-  max-width: 1440px;
+  max-width: 1660px;
   position: relative;
   width: 100%; }
 
@@ -8194,7 +8194,7 @@ ul.profile-tabs__list {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 35px 40px;
+  padding: 10px 10px;
   height: 250px; }
   .product-img img {
     max-width: 100%;
