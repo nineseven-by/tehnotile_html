@@ -787,3 +787,335 @@ $('body').append(
 		<li><a href="interior.html">Interior</a></li> \
 	</ol> \
 </div>');
+
+
+$(document).ready(function () {
+    $.ajax({
+        type: "POST",
+        url: "/local/php_interface/include/ajaxCompare.php",
+        data: {
+            get: 'Y',
+            iblockId: 7
+        },
+        success: function (resp) {
+            var jsonResp;
+            try {
+                jsonResp = JSON.parse(resp);
+            } catch (e) {
+            }
+            if (jsonResp) {
+                for (var val in jsonResp) {
+                    $('.add-to-compare[data-id=' + val + ']').addClass('active').attr('title', 'Убрать из сравнения');
+                }
+            }
+        }
+    });
+
+    $(document).on('click', '.remove-basket-item', function (e) {
+        var $this = $(this),
+            id = $this.data('id');
+
+        $.ajax({
+            type: "POST",
+            url: "/local/php_interface/include/ajaxRemoveBasketItem.php",
+            data: {
+                id: id
+            },
+            success: function (resp) {
+                updateHeaderBasket();
+                updateMainBasket();
+            }
+        });
+
+        e.preventDefault();
+    });
+})
+
+function updateHeaderBasket() {
+    $.ajax({
+        type: "POST",
+        url: "/local/php_interface/include/ajaxHeaderBasket.php",
+        success: function (resp) {
+            $('.header-basket-content__init').html($(resp).html());
+        }
+    });
+}
+
+function updateMainBasket() {
+    if ($('.main-basket__init').length > 0) {
+        $.ajaxSetup({async: false});
+        $.ajax({
+            type: "POST",
+            url: location.href,
+            success: function (resp) {
+                $('.main-basket__init').html($(resp).find('.main-basket__init').html());
+                if ($('.tooltip-content').length > 0) {
+                    $('.tooltip-content').tooltipster({
+                        functionInit: function (instance, helper) {
+                            var content = $(helper.origin).find('.tooltip_content').detach();
+                            instance.content(content);
+                        },
+                        distance: 0,
+                        contentAsHTML: true,
+                        interactive: true,
+                    });
+
+                }
+                if ($('.tooltip').length > 0) {
+                    $('.tooltip').tooltipster({
+                        animation: 'fade',
+                        delay: 100,
+                    });
+                }
+            }
+        });
+
+    }
+}
+
+$(document).on('click', '.person-type__action', function () {
+    var id = $(this).data('id');
+    $('input[name=PERSON_TYPE]').val(id);
+    $('#description_' + id).removeAttr('disabled');
+    if (id == 1) {
+        $('#description_2').attr('disabled', 'disabled');
+    } else {
+        $('#description_1').attr('disabled', 'disabled');
+    }
+    updateOrder();
+});
+
+function updateOrder() {
+    $('input[name=DELIVERY_ID]').val($('.r-tabs-state-active .delivery-id__init:checked').val());
+    var form = $('form[name=ORDER_FORM]'),
+        form_data = new FormData(),
+        sessid = '';
+
+    form.find('input').each(function () {
+        if ($(this).attr('name') == 'sessid' && $(this).attr('name')) {
+            sessid = $(this).val();
+        }
+        if ($(this).attr('name')) {
+            form_data.append('order[' + $(this).attr('name') + ']', $(this).val());
+        }
+    });
+
+    form_data.append('sessid', sessid);
+    form_data.append('soa-action', 'refreshOrderAjax');
+
+    $.ajax({
+        type: "POST",
+        url: form.attr('action'),
+        data: form_data,
+        processData: false,
+        contentType: false,
+        success: function (resp) {
+            if (resp.order.PAY_SYSTEM) {
+                var html = '', is_checked = 0;
+                for (k in resp.order.PAY_SYSTEM) {
+                    if (resp.order.PAY_SYSTEM[k].CHECKED == 'Y') {
+                        is_checked++;
+                    }
+                }
+                for (k in resp.order.PAY_SYSTEM) {
+                    if (is_checked == 0) {
+                        resp.order.PAY_SYSTEM[k].CHECKED = 'Y';
+                        is_checked++;
+                    }
+                    var logo = '';
+                    if (resp.order.PAY_SYSTEM[k].PSA_LOGOTIP_SRC) {
+                        logo = '<img src="' + resp.order.PAY_SYSTEM[k].PSA_LOGOTIP_SRC + '" alt="' + resp.order.PAY_SYSTEM[k].NAME + '" class="card-img">';
+                    }
+                    html += '<div class="radio-item">' +
+                        '         <input' +
+                        '                type="radio"' +
+                        '                id="radio_1_' + resp.order.PAY_SYSTEM[k].ID + '"' +
+                        '                name="c"' +
+                        '                value="' + resp.order.PAY_SYSTEM[k].ID + '"' +
+                        '                class="payment__init"' +
+                        (resp.order.PAY_SYSTEM[k].CHECKED == 'Y' ? ' checked="checked"' : '') +
+                        '        >' +
+                        '        <label for="radio_1_' + resp.order.PAY_SYSTEM[k].ID + '"' + (resp.order.PAY_SYSTEM[k].CHECKED == 'Y' ? ' class="active"' : '') + '>' +
+                        resp.order.PAY_SYSTEM[k].NAME + logo +
+                        '        </label>' +
+                        '    </div>';
+                }
+                $('.pay-system-block__init').html(html);
+            }
+        }
+    });
+
+}
+
+$(document).on('change', '.delivery-id__init', function (e) {
+    $('input[name=DELIVERY_ID]').val($(this).val());
+    updateOrder();
+});
+
+$(document).on('change', '.pay-system-block__init input', function (e) {
+    $('.pay-system-block__init label').removeClass('active');
+});
+
+function isValidEmailAddress(emailAddress) {
+    var pattern = /^([a-z\d!#$%&'*+\-\/=?^_`{|}~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+(\.[a-z\d!#$%&'*+\-\/=?^_`{|}~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+)*|"((([ \t]*\r\n)?[ \t]+)?([\x01-\x08\x0b\x0c\x0e-\x1f\x7f\x21\x23-\x5b\x5d-\x7e\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|\\[\x01-\x09\x0b\x0c\x0d-\x7f\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))*(([ \t]*\r\n)?[ \t]+)?")@(([a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|[a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF][a-z\d\-._~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]*[a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])\.)+([a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|[a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF][a-z\d\-._~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]*[a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])\.?$/i;
+    return pattern.test(emailAddress);
+};
+
+$(document).on('submit', 'form[name=ORDER_FORM]', function (e) {
+    var form = $(this),
+        id = $('input[name=PERSON_TYPE]').val(),
+        error = 0,
+        city = $('#city_' + id).val(),
+        street = $('#street_' + id).val(),
+        house = $('#house_' + id).val(),
+        housing = $('#housing_' + id).val(),
+        flat = $('#flat_' + id).val();
+
+    $('input[name=DELIVERY_ID]').val($('#tab-' + id).find('.delivery-id__init:checked').val());
+    $('input[name=PAY_SYSTEM_ID]').val($('#tab-' + id).find('.payment__init:checked').val());
+
+    $('#address_for_' + id).val('г.' + city + ', улица ' + street + (house.length > 0 ? ', дом ' + house : '') + (housing.length > 0 ? ', корпус ' + housing : '') + (flat.length > 0 ? ', помещение ' + flat : ''));
+
+    $('#tab-' + id).find('.is-req').each(function () {
+        if ($.trim($(this).val()).length <= 0) {
+            $(this).addClass('err');
+            error++;
+        } else {
+            $(this).removeClass('err');
+        }
+        if ($(this).hasClass('email')) {
+            if (!isValidEmailAddress($.trim($(this).val()))) {
+                $(this).addClass('err');
+                error++;
+            } else {
+                $(this).removeClass('err');
+            }
+        }
+    });
+
+    if (error <= 0) {
+        $.ajax({
+            type: "POST",
+            url: form.attr('action'),
+            data: form.serialize(),
+            success: function (resp) {
+                if (resp && resp.order.REDIRECT_URL.length > 0) {
+                    window.location.href = resp.order.REDIRECT_URL;
+                }
+            }
+        });
+    } else {
+        e.preventDefault();
+    }
+});
+
+$(document).on('change', '.quantity-input__init', function (e) {
+    var $this = $(this),
+        quantity = $this.val(),
+        id = $this.data('id');
+
+    if (quantity <= 0 || isNaN(quantity)) {
+        quantity = 1;
+        $this.val(quantity);
+    } else {
+        $.ajax({
+            type: "POST",
+            url: "/local/php_interface/include/ajaxChangeBasketQuantity.php",
+            data: {
+                id: id,
+                quantity: quantity
+            },
+            success: function (resp) {
+                updateHeaderBasket();
+                updateMainBasket();
+            }
+        });
+    }
+});
+
+$(document).on('click', '.add-additional-product', function (e) {
+    var $this = $(this),
+        id = $this.data('id'),
+        quantity = $(this).parents('tr').find('.additional-quantity__init').val();
+
+    if (quantity <= 0 || isNaN(quantity)) {
+        quantity = 1;
+    }
+
+    $.ajax({
+        type: "POST",
+        url: "/local/php_interface/include/ajax.php",
+        data: {
+            idprod: id,
+            cnt: quantity
+        },
+        success: function (resp) {
+            updateHeaderBasket();
+            updateMainBasket();
+        }
+    });
+
+    e.preventDefault();
+})
+
+/* compare */
+$(document).on('click', '.add-to-compare', function (e) {
+    var $this = $(this),
+        id = $this.data('id'),
+        iblockId = $(this).data('iblock');
+
+    if ($this.hasClass('active')) {
+        $this.removeClass('active').attr('title', 'Добавить в сравнение');
+    } else {
+        $this.addClass('active').attr('title', 'Убрать из сравнения');
+    }
+
+    $.ajax({
+        type: "POST",
+        url: "/local/php_interface/include/ajaxCompare.php",
+        data: {
+            id: id,
+            iblockId: iblockId
+        },
+        success: function (resp) {
+            $('.top-select-links__item--compare .top-select-links__count').text(resp);
+        }
+    });
+
+    e.preventDefault();
+});
+
+$(document).on('click', '.remove-compare-item', function (e) {
+    var $this = $(this),
+        id = $this.data('id'),
+        iblockId = $this.data('iblock');
+
+    $.ajax({
+        type: "POST",
+        url: "/local/php_interface/include/ajaxCompare.php",
+        data: {
+            id: id,
+            iblockId: iblockId
+        },
+        success: function (resp) {
+            window.location.reload();
+        }
+    });
+
+    e.preventDefault();
+});
+
+$(document).on('click', '.compare-links__clear', function (e) {
+    $.ajax({
+        type: "POST",
+        url: "/local/php_interface/include/ajaxCompare.php",
+        data: {
+            all: 'Y'
+        },
+        success: function (resp) {
+            window.location.reload();
+        }
+    });
+
+    e.preventDefault();
+});

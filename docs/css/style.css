@@ -10030,3 +10030,19 @@ ul.profile-tabs__list {
 @media screen and (max-width: 400px) {
   .product-item {
     width: 100%; } }
+
+
+.add-to-compare {
+    display: inline-block;
+    margin: 0 1px;
+    width: 25px;
+    height: 18px;
+    background: url(/local/templates/technotile/html/docs/img/svg/t-compare.svg) no-repeat;
+}
+.add-to-compare.active {
+    display: inline-block;
+    margin: 0 1px;
+    width: 25px;
+    height: 18px;
+    background: url(/local/templates/technotile/html/docs/img/svg/t-compare-h.svg) no-repeat;
+}
