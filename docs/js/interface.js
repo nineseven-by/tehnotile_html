@@ -625,6 +625,27 @@ $(document).ready(function() {
 			e.preventDefault();
 			var valProdId = $(this).attr('data-prodid');
 			var valProdCnt = $('#cnt_'+valProdId).val();
+
+			if ($(this).parent().find('.select__item--active').text() == 'образец') {
+                $.ajax({
+                    type: "POST",
+                    url: "/local/php_interface/include/ajaxSample.php",
+                    data: {
+                        id: valProdId
+                    },
+                    success: function (resp) {
+                        $('#modalsampleorder .popup-content').html(resp);
+                        $.fancybox.open({
+                            src  : '#modalsampleorder'
+                        });
+                        if ($('.js-phone-mask').length>0) {
+                            $('.js-phone-mask').inputmask('+999 (99) 999-99-99');
+                        }
+                    }
+                });
+               return false;
+			}
+
 			if(valProdId.length > 0){
 				$.ajax({
 					type: "POST",
@@ -633,10 +654,11 @@ $(document).ready(function() {
 					data: "idprod="+valProdId+"&cnt="+valProdCnt,
 					success: function(data){
 						if(data.TYPE.length > 0 && data.TYPE == 'ERROR'){
-							alert('Ошибка добавления товара');
+							
 						}
 						else if(data.TYPE.length > 0 && data.TYPE == 'OK'){
-							alert('Товар добавлен в корзину!');
+                            updateHeaderBasket();
+                            updateMainBasket();
 						}
 					}
 				});
@@ -1012,7 +1034,8 @@ $(document).on('submit', 'form[name=ORDER_FORM]', function (e) {
 $(document).on('change', '.quantity-input__init', function (e) {
     var $this = $(this),
         quantity = $this.val(),
-        id = $this.data('id');
+        id = $this.data('id'),
+		product_id = $this.data('pid');
 
     if (quantity <= 0 || isNaN(quantity)) {
         quantity = 1;
@@ -1023,7 +1046,8 @@ $(document).on('change', '.quantity-input__init', function (e) {
             url: "/local/php_interface/include/ajaxChangeBasketQuantity.php",
             data: {
                 id: id,
-                quantity: quantity
+                quantity: quantity,
+                product_id: product_id
             },
             success: function (resp) {
                 updateHeaderBasket();
@@ -1118,4 +1142,29 @@ $(document).on('click', '.compare-links__clear', function (e) {
     });
 
     e.preventDefault();
+});
+
+$(document).on('click', '.select__item.js-select__item', function (e) {
+	if ($(this).text() == 'образец') {
+		var id = $(this).parents('form').find('.add-prod-basket').attr('data-prodid');
+
+        $.ajax({
+            type: "POST",
+            url: "/local/php_interface/include/ajaxSample.php",
+            data: {
+                id: id
+            },
+            success: function (resp) {
+				$('#modalsampleorder .popup-content').html(resp);
+                $.fancybox.open({
+                    src  : '#modalsampleorder'
+                });
+                if ($('.js-phone-mask').length>0) {
+                    $('.js-phone-mask').inputmask('+999 (99) 999-99-99');
+                }
+            }
+        });
+        e.preventDefault();
+        e.stopPropagation();
+	}
 });
