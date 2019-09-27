@@ -77,12 +77,14 @@ $(document).ready(function() {
 	}
 
 	if ($('.js-phone-mask').length>0) {
-		$('.js-phone-mask').inputmask('+999 (99) 999-99-99');
+		$('.js-phone-mask').inputmask('+7(999)999-99-99');
 	}
 
 	if ($('.r-tabs').length>0) {
+		var activeTab = $('.r-tabs').attr('data-active');
 		$('.r-tabs').responsiveTabs({
 			startCollapsed: 'accordion',
+			active: activeTab,
 			activate: function(event, tab){
 				if ($('.favorite-slider').length>0) {
 					setTimeout(function(){
@@ -1060,7 +1062,7 @@ $(document).on('change', '.quantity-input__init', function (e) {
 $(document).on('click', '.add-additional-product', function (e) {
     var $this = $(this),
         id = $this.data('id'),
-        quantity = $(this).parents('tr').find('.additional-quantity__init').val();
+        quantity = $(this).parent().parent().find('.additional-quantity__init').val();
 
     if (quantity <= 0 || isNaN(quantity)) {
         quantity = 1;
