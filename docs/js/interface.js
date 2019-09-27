@@ -986,6 +986,8 @@ function isValidEmailAddress(emailAddress) {
 };
 
 $(document).on('submit', 'form[name=ORDER_FORM]', function (e) {
+    e.preventDefault();
+
     var form = $(this),
         id = $('input[name=PERSON_TYPE]').val(),
         error = 0,
@@ -1021,15 +1023,22 @@ $(document).on('submit', 'form[name=ORDER_FORM]', function (e) {
         $.ajax({
             type: "POST",
             url: form.attr('action'),
+            dataType: "html",
             data: form.serialize(),
             success: function (resp) {
-                if (resp && resp.order.REDIRECT_URL.length > 0) {
-                    window.location.href = resp.order.REDIRECT_URL;
+            	var json;
+                if (resp) {
+                	try {
+						json = JSON.parse(resp);
+                    } catch (e) {
+						console.log('error');
+                    }
+                    if (json.order.REDIRECT_URL.length > 0) {
+                    	window.location.href = json.order.REDIRECT_URL;
+                    }
                 }
             }
         });
-    } else {
-        e.preventDefault();
     }
 });
 
