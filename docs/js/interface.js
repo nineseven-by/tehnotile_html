@@ -316,6 +316,51 @@ $(document).ready(function() {
 		});
 	
 	}
+	if($('.popular-slider').length>0){
+		var $noveltySlider = $('.popular-slider');
+
+
+
+		$noveltySlider.slick({
+			//speed: 250,
+			swipe: true,
+			swipeToSlide: true,
+			touchThreshold: 10,
+			//arrows:false,
+			dots:false,
+			useTransform:true,
+			accessibility: false,
+			infinite: false,
+			slidesToShow: 4,
+			slidesToScroll: 1,
+			prevArrow: $('.novelty-slider__left.popular'),
+			nextArrow: $('.novelty-slider__right.popular'),
+			responsive: [
+			    {
+			      breakpoint: 1024,
+			      settings: {
+			        slidesToShow: 3,
+			        slidesToScroll: 1,
+			      }
+			    },
+			    {
+			      breakpoint: 800,
+			      settings: {
+			        slidesToShow: 2,
+			        slidesToScroll: 1,
+			      }
+			    },
+			    {
+			      breakpoint: 600,
+			      settings: {
+			        slidesToShow: 1,
+			        slidesToScroll: 1,
+			      }
+			    },
+			]
+		});
+
+	}
 
 	if($('.index-news-slider').length>0){
 		var $indexNewsSlider = $('.index-news-slider');
