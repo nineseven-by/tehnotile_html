@@ -1225,3 +1225,16 @@ $(document).on('click', '.select__item.js-select__item', function (e) {
         e.stopPropagation();
 	}
 });
+
+$(document).on('click', '.cookie-popup span.close', function (e) {
+	var popup = $(this).parents('.cookie-popup');
+
+    $.ajax({
+        type: "POST",
+        url: "/include/cookie_popup.php",
+        data: {set: 'Y'},
+        success: function (resp) {
+            popup.hide();
+        }
+    });
+});

@@ -10131,3 +10131,28 @@ ul.profile-tabs__list {
     -webkit-transform: skewX(-25deg);
     transform: skewX(-25deg);
 }
+
+.cookie-popup {
+    position: fixed;
+    bottom: 0;
+    background: #0b0b0b;
+    color: #fff;
+    z-index: 50;
+    padding: 20px 40px;
+    border-radius: 10px 10px 0 0;
+    text-align: center;
+    width: 60%;
+    margin: 0 20%;
+}
+span.close {
+    right: 11px;
+    top: 4px;
+    position: absolute;
+    cursor: pointer;
+}
+span.close:before {
+    content: 'x';
+    color: #fff;
+    font-weight: 300;
+    font-size: 20px;
+}
