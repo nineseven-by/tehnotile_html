@@ -10156,3 +10156,58 @@ span.close:before {
     font-weight: 300;
     font-size: 20px;
 }
+
+.header-mobile-search.active .top-search {
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    top: 50px;
+    z-index: 99;
+    background: #000;
+    margin: 0;
+    padding: 3px 20px 0 20px;
+}
+.header-mobile-search.active input.top-search__submit {
+    width: 75px;
+}
+
+.header-mobile-search.active .top-search:before {
+    left: 28px;
+    top: 11px;
+}
+.header-mobile-search.active .top-search__submit {
+    right: 18px;
+    top: 3px;
+}
+
+.slideDown{
+    animation-name: slideDown;
+    -webkit-animation-name: slideDown;
+
+    animation-duration: 0.5s;
+    -webkit-animation-duration: 0.5s;
+
+    animation-timing-function: ease;
+    -webkit-animation-timing-function: ease;
+
+    visibility: visible !important;
+}
+
+@keyframes slideDown {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+@-webkit-keyframes slideDown {
+    0% {
+        -webkit-transform: translateY(-100%);
+    }
+    100% {
+        -webkit-transform: translateY(0%);
+    }
+}

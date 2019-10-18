@@ -1238,3 +1238,9 @@ $(document).on('click', '.cookie-popup span.close', function (e) {
         }
     });
 });
+
+
+$(document).on('click', '.top-search-mobile__link', function (e) {
+	$('.header-mobile-search').toggleClass('active');
+	e.preventDefault();
+})
