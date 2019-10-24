@@ -10211,3 +10211,8 @@ span.close:before {
         -webkit-transform: translateY(0%);
     }
 }
+
+.top-select-list a:hover, .top-select-list a:focus {
+    text-decoration: none;
+    color: #2c2c2c;
+}
