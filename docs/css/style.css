@@ -9154,14 +9154,15 @@ ul.profile-tabs__list {
     padding-top: 10px;
     line-height: 1; }
   .page-footer__phone:before {
-    content: "";
-    display: inline-block;
-    width: 104px;
-    height: 32px;
-    background: url(../img/svg/phones.svg) no-repeat;
-    position: absolute;
-    left: 0;
-    top: 0; }
+      content: "";
+      display: inline-block;
+      width: 30px;
+      height: 32px;
+      background: url(../img/svg/phones.svg) no-repeat;
+      position: absolute;
+      left: 82px;
+      top: 0;
+      background-position: right; }
 
 .page-footer-contacts__top {
   display: -webkit-box;
@@ -9325,11 +9326,13 @@ ul.profile-tabs__list {
   .page-footer__phone {
     padding-left: 72px; }
   .page-footer__phone:before {
-    content: "";
-    width: 65px;
-    height: 21px;
-    background: url(../img/svg/phones.svg) no-repeat;
-    background-size: contain; }
+      content: "";
+      width: 20px;
+      height: 21px;
+      background: url(../img/svg/phones.svg) no-repeat;
+      background-size: cover;
+      background-position: right;
+      left: 47px;}
   .page-footer__phone {
     font-size: 18px;
     margin-right: 15px; }
