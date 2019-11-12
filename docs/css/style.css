@@ -4722,7 +4722,7 @@ a.breadcrumbs__item:hover {
     margin-bottom: 0; }
 
 .sidebar {
-  padding-top: 20px; }
+  /*padding-top: 20px;*/ }
 
 .sidebar__list {
   margin-bottom: 0; }
