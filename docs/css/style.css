@@ -9202,6 +9202,12 @@ ul.profile-tabs__list {
       background: url(../img/content/tw.png) 0 -35px no-repeat; }
     .socials__item.tw:active {
       background: url(../img/content/tw.png) 0 0px no-repeat; }
+  .socials__item.insta {
+    background: url(../img/content/insta.png) 0 -72px no-repeat; }
+    .socials__item.insta:hover {
+      background: url(../img/content/insta.png) 0 -35px no-repeat; }
+    .socials__item.insta:active {
+      background: url(../img/content/insta.png) 0 0px no-repeat; }	  
 
 .socials__wrap {
   display: -webkit-box;
