@@ -10235,3 +10235,8 @@ span.close:before {
 .search-product-img {
 	align-items: flex-start;
 }
+
+/* тикет 7853 */
+.slider__item {
+	z-index: 3;
+}
