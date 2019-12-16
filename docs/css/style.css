@@ -10240,3 +10240,28 @@ span.close:before {
 .slider__item {
 	z-index: 3;
 }
+
+/* тикет 7949 */
+.main-filter-container::before {
+  display: block;
+}
+
+.sidebar-profile__price, .sidebar-profile__sum {
+  padding-right: 0;
+}
+
+.sidebar-profile__price {
+  width: auto;
+}
+
+.sidebar-profile__sum {
+  flex-shrink: 0;
+}
+
+.total span {
+  display: inline-block;
+}
+
+.sidebar-profile__item {
+  flex-flow: wrap;
+}
