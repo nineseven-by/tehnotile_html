@@ -750,7 +750,7 @@ $(document).ready(function() {
                             src  : '#modalsampleorder'
                         });
                         if ($('.js-phone-mask').length>0) {
-                            $('.js-phone-mask').inputmask('+999 (99) 999-99-99');
+                            $('.js-phone-mask').inputmask('+7 (999) 999-99-99');
                         }
                     }
                 });
@@ -1281,7 +1281,7 @@ $(document).on('click', '.select__item.js-select__item', function (e) {
                     src  : '#modalsampleorder'
                 });
                 if ($('.js-phone-mask').length>0) {
-                    $('.js-phone-mask').inputmask('+999 (99) 999-99-99');
+                    $('.js-phone-mask').inputmask('+7 (999) 999-99-99');
                 }
             }
         });
