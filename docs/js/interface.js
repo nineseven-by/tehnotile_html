@@ -1117,7 +1117,7 @@ $(document).on('change', '.quantity-input__init', function (e) {
 $(document).on('click', '.add-additional-product', function (e) {
     var $this = $(this),
         id = $this.data('id'),
-        quantity = $(this).parent().parent().find('.additional-quantity__init').val();
+        quantity = $(this).parent().parent().find('.select__val').val();
 
     if (quantity <= 0 || isNaN(quantity)) {
         quantity = 1;
@@ -1243,4 +1243,24 @@ $(document).on('click', '.cookie-popup span.close', function (e) {
 $(document).on('click', '.top-search-mobile__link', function (e) {
 	$('.header-mobile-search').toggleClass('active');
 	e.preventDefault();
+});
+
+$(document).on('change', '.js-select__input', function () {
+	let value = $(this).val();
+	var b = $(this).attr('id').split('_')[1];
+	var input = $(this);
+	var select =$(this).siblings('.select__val');
+	if(value>=0) {
+		$.ajax({
+			type: "POST",
+			url: "/local/php_interface/include/quantity.php",
+			dataType: "json",
+			data: "idprod=" + b + "&cnt=" + value,
+			success: function (data) {
+				input.val(data);
+				select.html(data);
+
+			}
+		});
+	}
 });

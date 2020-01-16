@@ -3591,7 +3591,7 @@ textarea, input {
   transition: -webkit-transform 0.26s ease;
   transition: transform 0.26s ease;
   transition: transform 0.26s ease, -webkit-transform 0.26s ease;
-  max-height: 400px;
+  max-height: 591px;
   overflow-y: auto; }
   .top-select-list:before {
     content: "";
