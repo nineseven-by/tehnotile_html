@@ -323,6 +323,24 @@ $(document).ready(function() {
 			swipe: false,
 			asNavFor: '.js-main-slider__paginator',
 			adaptiveHeight: true,
+			responsive: [
+				{
+					breakpoint: 1439,
+					settings: {
+						arrows: true,
+					}
+				},
+				{
+					breakpoint: 768,
+					settings: {
+						autoplay: true,
+						autoplaySpeed: 3000,
+						swipe: true,
+						infinite: true,
+						arrows: false,
+					}
+				},
+			]
 		});
 
 		$('.js-main-slider__paginator').slick({
@@ -331,18 +349,20 @@ $(document).ready(function() {
 			asNavFor: '.js-main-slider__list',
 			focusOnSelect: true,
 			// swipe: false,
-			variableWidth: true,
+			// variableWidth: true,
 			infinite: false,
 			responsive: [
+				{
+					breakpoint: 1439,
+					settings: {
+						variableWidth: true,
+					}
+				},
 				{
 					breakpoint: 768,
 					settings: {
 						slidesToShow: 5,
-						slidesToScroll: 1,
-						variableWidth: false,
-						autoplay: true,
-						autoplaySpeed: 3000,
-						infinite: true,
+						swipe: true,
 					}
 				},
 			]
@@ -752,6 +772,8 @@ $(document).ready(function() {
 			e.preventDefault();
 			var valProdId = $(this).attr('data-prodid');
 			var valProdCnt = $('#cnt_'+valProdId).val();
+
+			$(this).addClass('js-add-prod-basket_active');
 
 			if ($(this).parent().find('.select__item--active').text() == 'образец') {
 				$.ajax({
@@ -1353,3 +1375,36 @@ $(document).on('change', '.js-select__input', function () {
 		});
 	}
 });
+
+
+//скролл до элемента
+$(function () {
+    $('.anchor[href^="#"]').click(function () {
+        var target = $(this).attr('href');
+        $('html, body').animate({scrollTop: $(target).offset().top - 80}, 800);
+        return false;
+    });
+});
+
+//липкий блок на странице о нас
+ $(window).on('load ready resize', function () {
+    var windowWidth = $(window).width();
+    
+    if (windowWidth > 991) {
+      stick();
+    }
+    else {
+      unstick();
+    }
+  });
+
+  function stick() {
+    $("#sticker").sticky({
+      topSpacing: 80,
+      responsiveWidth: true
+    });
+  }
+
+  function unstick() {
+    $('#sticker').unstick();
+  }

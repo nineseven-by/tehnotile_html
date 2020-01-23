@@ -10259,6 +10259,10 @@ span.close:before {
     width: 100%;
 }
 
+ul.profile-tabs__list {
+	display: flex;
+}
+
 /* тикет 7853 */
 .slider__item {
     z-index: 3;
@@ -10441,6 +10445,10 @@ html {
 
 .favorite .res-table .favorite-check > div {
     position: relative;
+}
+
+.interior {
+    overflow: visible;
 }
 
 @media screen and (max-width: 992px) {
@@ -10738,7 +10746,7 @@ html {
     margin-left: 3px;
     margin-right: 3px;
     cursor: pointer;
-    min-width: 240px;
+    /*min-width: 240px;*/
 }
 
 .main-slider__paginator-item span {
@@ -10866,6 +10874,36 @@ html {
     display: flex;
 }
 
+@media screen and (max-width: 1439px) {
+    .main-slider__list .slick-arrow {
+        position: absolute;
+        bottom: 0;
+        z-index: 5;
+    }
+
+    .main-slider__list .slick-prev {
+        left: 0
+    }    
+
+    .main-slider__list .slick-next {
+        right: 0
+    }
+
+    .main-slider__paginator {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .main-slider__item {
+        padding: 30px 30px 145px 30px;
+    }
+
+    .main-slider__paginator-item {
+        min-width: 240px;
+    }
+
+}
+
 @media screen and (max-width: 767px) {
     .main-slider__paginator .slick-list {
         padding-top: 0;
@@ -10873,7 +10911,7 @@ html {
 
     .main-slider__paginator-item {
         min-width: auto;
-
+        
         background-size: 100% 100%;
         background-image:linear-gradient(to right, rgba(255,255,255,0.5) 100%,transparent 100%);
         background-repeat:no-repeat;
@@ -10969,4 +11007,23 @@ html {
         font-size: 16px;
         line-height: 1.2;
     }
+}
+
+
+/* тикет 8140 */
+.catalog .slider__item, .popular-slider .slider__item {
+	overflow: visible;
+}
+
+.catalog .slider__item .catalog-descr {
+    transition: all 0.3s ease;
+}
+
+.catalog .slider__item .catalog-descr::before {
+    transition: all 0.1s ease;
+}
+
+/* тикет 8166 */
+.js-add-prod-basket_active {
+    background: #dddddd url(/local/templates/technotile/html/docs/css/../img/svg/cart.svg) center no-repeat;
 }
