@@ -320,7 +320,7 @@ $(document).ready(function() {
 			slidesToScroll: 1,
 			arrows: false,
 			fade: true,
-			swipe: false,
+			swipe: true,
 			asNavFor: '.js-main-slider__paginator',
 			adaptiveHeight: true,
 			responsive: [
@@ -328,16 +328,17 @@ $(document).ready(function() {
 					breakpoint: 1439,
 					settings: {
 						arrows: true,
+						infinite: false,
 					}
 				},
 				{
 					breakpoint: 768,
 					settings: {
+						infinite: false,
+						swipe: true,
+						arrows: false,
 						autoplay: true,
 						autoplaySpeed: 3000,
-						swipe: true,
-						infinite: true,
-						arrows: false,
 					}
 				},
 			]
@@ -348,25 +349,28 @@ $(document).ready(function() {
 			slidesToScroll: 1,
 			asNavFor: '.js-main-slider__list',
 			focusOnSelect: true,
-			// swipe: false,
-			// variableWidth: true,
 			infinite: false,
 			responsive: [
 				{
 					breakpoint: 1439,
 					settings: {
 						variableWidth: true,
+						infinite: false,
 					}
 				},
 				{
 					breakpoint: 768,
 					settings: {
+						variableWidth: false,
 						slidesToShow: 5,
-						swipe: true,
+						infinite: false,
 					}
 				},
 			]
 		});
+
+		var video = $('.js-main-slider__list .slick-active').find('video').get(0).play();
+
 	}
 
 
@@ -802,6 +806,10 @@ $(document).ready(function() {
 					dataType: "json",
 					data: "idprod="+valProdId+"&cnt="+valProdCnt,
 					success: function(data){
+						$(".modal-order_centered-ctn").show();
+						setTimeout(function(){
+							$('.js-close-modal-order').parent().fadeOut();
+						}, 10000);
 						if(data.TYPE.length > 0 && data.TYPE == 'ERROR'){
 
 						}
@@ -1389,7 +1397,7 @@ $(function () {
 //липкий блок на странице о нас
  $(window).on('load ready resize', function () {
     var windowWidth = $(window).width();
-    
+
     if (windowWidth > 991) {
       stick();
     }
@@ -1403,8 +1411,28 @@ $(function () {
       topSpacing: 80,
       responsiveWidth: true
     });
+
+    $("#sticker-order").sticky({
+        topSpacing: 80,
+        responsiveWidth: true,
+        zIndex: 200,
+        className: 'asd'
+      });
   }
 
   function unstick() {
     $('#sticker').unstick();
+    $('#sticker-order').unstick();
   }
+
+$(function () {
+	$("body").on("click", ".js-close-modal-order", function(e){
+		e.preventDefault();
+		$(this).parent().fadeOut();
+	});
+
+	setTimeout(function(){
+		$('.js-close-modal-order').parent().fadeOut();
+	}, 10000);
+});
+

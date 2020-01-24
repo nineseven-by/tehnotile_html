@@ -10874,21 +10874,46 @@ html {
     display: flex;
 }
 
+.main-slider__list .slick-arrow {
+    position: absolute;
+    bottom: 30px;
+    z-index: 10;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    border: none;
+    background-position: center center;
+    font-size: 0;
+    text-indent: -99999px;
+    width: 30px;
+    height: 80px;
+    opacity: 1;
+}
+
+.main-slider__list .slick-prev {
+    left: 5px;
+    background-image: url(https://technotile.fortest.org/local/templates/technotile/html/docs/img/content/prev.png);
+}    
+
+.main-slider__list .slick-next {
+    right: 5px;
+    background-image: url(https://technotile.fortest.org/local/templates/technotile/html/docs/img/content/next.png);
+}
+
+.main-slider__list .slick-disabled {
+    opacity: 0;
+}
+
+.main-slider__list .video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 @media screen and (max-width: 1439px) {
-    .main-slider__list .slick-arrow {
-        position: absolute;
-        bottom: 0;
-        z-index: 5;
-    }
-
-    .main-slider__list .slick-prev {
-        left: 0
-    }    
-
-    .main-slider__list .slick-next {
-        right: 0
-    }
-
     .main-slider__paginator {
         padding-left: 30px;
         padding-right: 30px;
@@ -11023,7 +11048,121 @@ html {
     transition: all 0.1s ease;
 }
 
+.catalog__item:hover .catalog-descr {
+    transition: transform 0.2s ease 0.2s, z-index 0s ease 0s, opacity 0s ease, -webkit-transform 0.2s ease 0.2s
+}
+
+@media screen and (max-width: 1024px) {
+    .slider__item--md:hover .catalog-descr.catalog-descr--left {
+        transform: translateX(calc(-100% - 12px));
+    }
+
+    .catalog__item--md:nth-child(2n):hover .catalog-descr {
+        transform: translateX(calc(-100% - 10px));
+    }
+
+    .slider__item--md:nth-child(2n+1):hover .catalog-descr {
+        transform: translateX(calc(100% + 30px));
+    }
+
+    .slider__item--md:nth-child(2n+1):hover .catalog-descr::before {
+        left: -14px;
+    }
+
+    .slider__item--md:nth-child(2n):hover .catalog-descr {
+        transform: translateX(calc(-100% - 12px));
+    }
+
+    .catalog__item--md:hover .catalog-descr {
+        transform: translateX(calc(100% + 30px));
+    }
+
+    .catalog__item--md:nth-child(2n+1):hover .catalog-descr {
+        transform: translateX(calc(100% + 30px));
+    }
+
+    .catalog__item--md:nth-child(2n+1):hover .catalog-descr::before {
+        left: -14px;
+    }
+
+    .slider__item--lg:nth-child(2n+1):hover .catalog-descr {
+        transform: translateX(calc(100% + 30px));
+    }
+
+    .slider__item--lg:nth-child(2n+1):hover .catalog-descr::before {
+        left: -14px;
+    }
+
+    .slider__item--lg:nth-child(2n):hover .catalog-descr {
+        transform: translateX(calc(-100% - 12px));
+    }
+
+    .catalog__item--lg.large-container_init:hover .catalog-descr {
+        transform: translateX(calc(100% + 30px));
+    }
+
+    .catalog__item--lg.large-container_init:hover .catalog-descr::before {
+        left: -14px;
+    }
+}
+
 /* тикет 8166 */
 .js-add-prod-basket_active {
     background: #dddddd url(/local/templates/technotile/html/docs/css/../img/svg/cart.svg) center no-repeat;
+}
+
+#sticker-order {
+
+    right: 20px;
+    width: 360px;
+    z-index: 200;
+    position: fixed;
+}
+
+.modal-order {
+    position: fixed;
+    right: 20px;
+    width: 360px;
+    background: #fff;
+    color: #000;
+    padding: 40px;
+    transition: all 0.3s ease;
+    box-shadow: 0px 6px 15px 0px rgba(0, 0, 0, 0.13);
+}
+
+.modal-order__title {
+    font-size: 24px!important;
+    line-height: 1.2!important;
+    font-weight: bold!important;
+    color: rgb(44, 44, 44);
+    text-align: center;
+    margin-bottom: 20px!important;
+}
+
+.modal-order_centered-ctn {
+    text-align: center;
+    display: none;
+}
+
+.modal-order .btn {
+    width: 180px;
+    height: 36px;
+    font-size: 17px;
+    padding: 0 10px;
+    text-align: center;
+    line-height: 34px;
+}
+
+.modal-order .btn_text-small {
+    font-size: 14px;
+}
+
+.modal-order .btn_gray {
+    background-color: rgb(221, 221, 221);
+    color: #212121;
+    border-color: rgb(221, 221, 221);
+}
+
+.modal-order .btn_gray:hover {
+    border-color: #323232;
 }
