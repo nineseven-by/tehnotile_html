@@ -11166,3 +11166,8 @@ html {
 .modal-order .btn_gray:hover {
     border-color: #323232;
 }
+
+/* тикет 8155 */
+#sticker {
+    z-index: 100!important;
+}
