@@ -11032,6 +11032,10 @@ html {
         font-size: 16px;
         line-height: 1.2;
     }
+
+    .main-slider__item video {
+        display: none;
+    }
 }
 
 
