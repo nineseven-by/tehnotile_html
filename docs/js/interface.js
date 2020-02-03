@@ -474,8 +474,35 @@ $(document).ready(function() {
 			]
 		});
 
-	}
 
+
+		$(window).on('load ready resize', function () {
+		   var windowWidth = $(window).width();
+		   if (windowWidth > 1023) {
+		   	$('.popular-slider .slick-slide.slick-active').eq(3).find('.catalog-descr').addClass('catalog-descr--left'); 
+
+		     $('.popular-slider').on('afterChange', function() {
+		     	$('.popular-slider .slick-slide .catalog-descr').removeClass('catalog-descr--left');
+		     	$('.popular-slider .slick-slide.slick-active').eq(3).find('.catalog-descr').addClass('catalog-descr--left');
+		     });	
+		   } else if (windowWidth > 800) {
+		   	$('.popular-slider .slick-slide.slick-active').eq(2).find('.catalog-descr').addClass('catalog-descr--left'); 
+		     $('.popular-slider').on('afterChange', function() {
+		     	$('.popular-slider .slick-slide .catalog-descr').removeClass('catalog-descr--left');
+		     	$('.popular-slider .slick-slide.slick-active').eq(2).find('.catalog-descr').addClass('catalog-descr--left');
+		     });	
+		   }
+		   else if (windowWidth > 599) {
+		   	$('.popular-slider .slick-slide.slick-active').eq(1).find('.catalog-descr').addClass('catalog-descr--left'); 
+		     $('.popular-slider').on('afterChange', function() {
+		     	$('.popular-slider .slick-slide .catalog-descr').removeClass('catalog-descr--left');
+		     	$('.popular-slider .slick-slide.slick-active').eq(1).find('.catalog-descr').addClass('catalog-descr--left');
+		     });	
+		   }  		 
+		});
+
+
+	}
 	if($('.index-news-slider').length>0){
 		var $indexNewsSlider = $('.index-news-slider');
 
@@ -864,11 +891,11 @@ $(document).ready(function() {
 	});
 
 	var texture = $("div.texture").find(".active").length;
-	if (texture >= 2) {
+	if (texture >= 1) {
 		$("a.texture").html($("a.texture").html() + ": " + texture);
 	}
 	var appointment = $("div.appointment").find(".active").length;
-	if (appointment >= 2) {
+	if (appointment >= 1) {
 		$("a.appointment").html($("a.appointment").html() + ": " + appointment);
 	}
 });
@@ -1450,12 +1477,13 @@ $(function () {
 	$(".slick-arrow").on("click", function () {
 		$('.main-slider__item').each(function () {
 			if (!$(this).hasClass("slick-active")) {
-				console.log($(this).find('video')[0]);
-				$(this).find('video').get(0).pause();
+				if($(this).find('video')[0]) {
+					$(this).find('video').get(0).pause();
+				}
 			}else
-			{
+			{if($(this).find('video')[0]) {
 				$(this).find('video').get(0).play();
-			}
+			}}
 		})
 	})
 })

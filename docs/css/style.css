@@ -11044,17 +11044,40 @@ html {
 	overflow: visible;
 }
 
-.catalog .slider__item .catalog-descr {
+.catalog .slider__item .catalog-descr, .catalog .catalog__item .catalog-descr, .popular-slider .slider__item .catalog-descr {
     transition: all 0.3s ease;
 }
 
-.catalog .slider__item .catalog-descr::before {
-    transition: all 0.1s ease;
+.catalog .slider__item .catalog-descr::before, .popular-slider .slider__item .catalog-descr::before, {
+    transition: opacity 0s linear 0s!important;
 }
 
-.catalog__item:hover .catalog-descr {
-    transition: transform 0.2s ease 0.2s, z-index 0s ease 0s, opacity 0s ease, -webkit-transform 0.2s ease 0.2s
+.catalog__item:hover .catalog-descr, .popular-slider .catalog__item:hover .catalog-descr {
+    transition: transform 0.2s ease 0.2s, z-index 0s ease 0s, opacity 0s ease;
 }
+
+.popular-slider .slider__item:hover .catalog-descr.catalog-descr--left {
+    transform: translateX(calc(-100% - 12px))!important;
+}
+
+.popular-slider .slider__item:hover .catalog-descr::before, .popular-slider .catalog__item:hover .catalog-descr::before {
+    transition: opacity 0s linear 0s!important;
+}
+
+.popular-slider .slider__item:hover .catalog-descr.catalog-descr--left::before {
+    right: -2px!important;
+    left: auto!important;
+    border-left: 0!important;
+    border-bottom: 0!important;
+    border-right: 1px solid #e2e2e2!important;
+    border-top: 1px solid #e2e2e2!important;
+}
+
+.catalog .slider__item:hover .catalog-descr::before,
+.catalog .catalog__item:hover .catalog-descr::before  {
+    transition: opacity 0s linear 0s!important;
+}
+
 
 @media screen and (max-width: 1024px) {
     .slider__item--md:hover .catalog-descr.catalog-descr--left {
@@ -11107,6 +11130,60 @@ html {
 
     .catalog__item--lg.large-container_init:hover .catalog-descr::before {
         left: -14px;
+    }
+
+    .popular-slider .slider__item--md:nth-child(2n):hover .catalog-descr, .popular-slider .catalog__item--md:nth-child(2n):hover .catalog-descr {
+        transform: translateX(calc(100% + 30px));
+    }
+
+    .popular-slider .slider__item--md:nth-child(2n):hover .catalog-descr::before, .popular-slider .catalog__item--md:nth-child(2n):hover .catalog-descr::before {
+        left: -14px;
+        right: auto;
+        border-left: 1px solid #e2e2e2;
+        border-bottom: 1px solid #e2e2e2;
+        border-right-color: transparent; 
+        border-top-color: transparent; 
+    }
+
+    .popular-slider .slider__item--md:nth-child(2n):hover .catalog-descr.catalog-descr--left, .popular-slider .catalog__item--md:nth-child(2n):hover .catalog-descr.catalog-descr--left {
+        transform: translateX(calc(-100% - 12px));
+    }
+
+    .popular-slider .slider__item:nth-child(2n):hover .catalog-descr.catalog-descr--left::before, .popular-slider .catalog__item:nth-child(2n):hover .catalog-descr.catalog-descr--left::before {
+        right: -2px!important;
+        left: auto!important;
+        border-left: 0!important;
+        border-bottom: 0!important;
+        border-right: 1px solid #e2e2e2!important;
+        border-top: 1px solid #e2e2e2!important;
+    }
+}
+
+@media screen and (max-width: 799px) {
+    .popular-slider .slider__item--md:nth-child(2n):hover .catalog-descr, .popular-slider .catalog__item--md:nth-child(2n):hover .catalog-descr {
+        transform: translateX(calc(100% + 30px));
+    }
+
+    .popular-slider .slider__item--md:nth-child(2n):hover .catalog-descr::before, .popular-slider .catalog__item--md:nth-child(2n):hover .catalog-descr::before {
+        left: -14px;
+        right: auto;
+        border-left: 1px solid #e2e2e2;
+        border-bottom: 1px solid #e2e2e2;
+        border-right-color: transparent; 
+        border-top-color: transparent; 
+    }
+
+    .popular-slider .slider__item--md:nth-child(2n):hover .catalog-descr.catalog-descr--left, .popular-slider .catalog__item--md:nth-child(2n):hover .catalog-descr.catalog-descr--left {
+        transform: translateX(calc(-100% - 12px));
+    }
+
+    .popular-slider .slider__item:nth-child(2n):hover .catalog-descr.catalog-descr--left::before, .popular-slider .catalog__item:nth-child(2n):hover .catalog-descr.catalog-descr--left::before {
+        right: -2px!important;
+        left: auto!important;
+        border-left: 0!important;
+        border-bottom: 0!important;
+        border-right: 1px solid #e2e2e2!important;
+        border-top: 1px solid #e2e2e2!important;
     }
 }
 
@@ -11175,3 +11252,4 @@ html {
 #sticker {
     z-index: 100!important;
 }
+
