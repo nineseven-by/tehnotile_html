@@ -852,10 +852,6 @@ $(document).ready(function() {
 			}
 		}
 	});
-<<<<<<< HEAD
-=======
-
->>>>>>> 65cd7f8a29fafb9c5431af3482ae8215d69ced46
 	var texture = $("div.texture").find(".active").length;
 	if (texture >= 2) {
 		$("a.texture").html($("a.texture").html() + ": " + texture);
