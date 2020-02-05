@@ -3636,7 +3636,7 @@ textarea, input {
 .top-select-item input[type="checkbox"]:checked + label:before {
     content: '';
     position: absolute;
-    left: 0px;
+    left: -13px;
     top: 0px;
     height: 17px;
     width: 17px;
@@ -11274,6 +11274,7 @@ html {
 	width: 100%;
 	margin-top: 8px;
 	text-align: left;
+	padding-left: 0;
 }
 
 .form-profile__col {
@@ -11293,6 +11294,7 @@ html {
 .form-profile .sale-personal-profile-detail-form-title-row {
 	max-width: 100%;
 	padding-right: 0;
+	padding-left: 0;
 }
 
 @media screen and (max-width: 767px) {
