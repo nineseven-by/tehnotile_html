@@ -1474,7 +1474,7 @@ $(function () {
 });
 $(function () {
 
-	$(".slick-arrow").on("click", function () {
+	$(".main-slider").on("click", function () {
 		$('.main-slider__item').each(function () {
 			if (!$(this).hasClass("slick-active")) {
 				if($(this).find('video')[0]) {
