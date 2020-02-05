@@ -10313,7 +10313,7 @@ ul.profile-tabs__list {
 
 /* Тикет 8048 */
 .top-select-item--check:before {
-    top: 17px;
+    margin: auto;
 }
 
 .top-select-toggle-l .top-select-toggle .top-select-toggle__collection {
