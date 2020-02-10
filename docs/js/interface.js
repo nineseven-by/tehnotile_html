@@ -909,7 +909,6 @@ $(document).ready(function() {
 			}
 		}
 	});
-
 	var texture = $("div.texture").find(".active").length;
 	if (texture >= 1) {
 		$("a.texture").html($("a.texture").html() + ": " + texture);
