@@ -10564,6 +10564,7 @@ html {
     font-size: 17px;
     font-stretch: normal;
     font-style: normal;
+    font-weight: bold;
     line-height: normal;
     letter-spacing: normal;
     color: #ffffff;
@@ -10572,6 +10573,7 @@ html {
 
 .advantages__item-text-link {
     margin-top: 15px;
+    font-weight: normal;
 }
 
 .advantages__item-text-link a {
@@ -11578,4 +11580,7 @@ html {
         border-right: 0;
         border-top: 0;
     }
+}
+.content_sert{
+    display: block;
 }
