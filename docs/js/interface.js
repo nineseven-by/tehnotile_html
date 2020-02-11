@@ -50,6 +50,7 @@ $(document).ready(function() {
 		$('.tooltip').tooltipster({
 			animation: 'fade',
 			delay: 100,
+			contentCloning: true
 		});
 	}
 	if ($('.tooltip-content').length>0) {

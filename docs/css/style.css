@@ -11604,10 +11604,37 @@ html {
     }
 
 }
+
+
 .content_sert{
     display: block;
 }
 .fav-count{
     display: none;
+}
 
+/* выравнивание слайдера новинки по центру */
+.popular-slider .slick-track {
+    margin-left: 0!important;
+    margin-right: 0!important;
+}
+
+/* тикет 8402 */
+.product-chars__item.tooltip {
+    padding: 0;
+    width: auto;
+    height: auto;
+    text-align: left;
+    margin-top: 0;
+    border: 0;
+}
+
+.tooltipster-sidetip.tooltipster-bottom .tooltipster-arrow-border {
+    border-bottom-color: #dddddd;
+}
+
+.tooltipster-sidetip.tooltipster-bottom .tooltipster-arrow-background {
+    border-bottom-color: #ffffff;
+    left: -1px;
+    top: 2px;
 }
