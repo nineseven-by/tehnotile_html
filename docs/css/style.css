@@ -10562,9 +10562,9 @@ html {
 .advantages__item-text {
     font-family: "PT Sans", sans-serif;
     font-size: 17px;
-    font-weight: bold;
     font-stretch: normal;
     font-style: normal;
+    font-weight: bold;
     line-height: normal;
     letter-spacing: normal;
     color: #ffffff;
@@ -10573,6 +10573,7 @@ html {
 
 .advantages__item-text-link {
     margin-top: 15px;
+    font-weight: normal;
 }
 
 .advantages__item-text-link a {
@@ -11062,6 +11063,27 @@ html {
 
 .catalog__item:hover .catalog-descr, .popular-slider .catalog__item:hover .catalog-descr {
     transition: transform 0.2s ease 0.2s, z-index 0s ease 0s, opacity 0s ease;
+<<<<<<< HEAD
+}
+
+.popular-slider .slider__item:hover .catalog-descr.catalog-descr--left {
+    transform: translateX(calc(-100% - 12px))!important;
+}
+
+.popular-slider .slider__item:hover .catalog-descr::before, .popular-slider .catalog__item:hover .catalog-descr::before,.novelty-slider_inner .slider__item:hover .catalog-descr::before, .novelty-slider_inner .catalog__item:hover .catalog-descr::before  {
+    transition: opacity 0.2s linear 0.2s!important;
+}
+
+.popular-slider .slider__item:hover .catalog-descr.catalog-descr--left::before {
+    right: -2px!important;
+    left: auto!important;
+    border-left: 0!important;
+    border-bottom: 0!important;
+    border-right: 1px solid #e2e2e2!important;
+    border-top: 1px solid #e2e2e2!important;
+}
+
+=======
 }
 
 .popular-slider .slider__item:hover .catalog-descr.catalog-descr--left {
@@ -11580,4 +11602,12 @@ html {
         border-right: 0;
         border-top: 0;
     }
+
+}
+.content_sert{
+    display: block;
+}
+.fav-count{
+    display: none;
+
 }
