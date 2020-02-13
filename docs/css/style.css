@@ -11638,3 +11638,9 @@ html {
     left: -1px;
     top: 2px;
 }
+.tooltip-default {
+    padding: 0;
+    text-align: left;
+    margin-top: 0;
+    border: 0;
+}

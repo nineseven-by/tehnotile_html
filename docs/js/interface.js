@@ -53,6 +53,13 @@ $(document).ready(function() {
 			contentCloning: true
 		});
 	}
+	if ($('.tooltip-default').length>0) {
+		$('.tooltip-default').tooltipster({
+			animation: 'fade',
+			delay: 100,
+			contentCloning: true
+		});
+	}
 	if ($('.tooltip-content').length>0) {
 		$ ( '.tooltip-content' ). tooltipster ({
 			functionInit : function ( instance , helper ) { var content = $ ( helper . origin ). find ( '.tooltip_content' ). detach ();
@@ -1118,6 +1125,12 @@ function updateMainBasket() {
 				}
 				if ($('.tooltip').length > 0) {
 					$('.tooltip').tooltipster({
+						animation: 'fade',
+						delay: 100,
+					});
+				}
+				if ($('.tooltip-default').length > 0) {
+					$('.tooltip-default').tooltipster({
 						animation: 'fade',
 						delay: 100,
 					});
