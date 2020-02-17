@@ -925,7 +925,10 @@ $(document).ready(function() {
 	if (appointment >= 1) {
 		$("a.appointment").html($("a.appointment").html() + ": " + appointment);
 	}
-
+	var color_wrap = $("div.color_wrap").find(".active").length;
+	if (color_wrap >= 1) {
+		$("a.color_wrap").html($("a.color_wrap").html() + ": " + color_wrap);
+	}
 
 	$(".main-slider").show()
 
