@@ -1532,5 +1532,15 @@ $(function () {
 		})
 	})
 })
-
-
+$(document).ready(function () {
+		var height = 0;
+		$('.js_height_auto').find('.top-select-item').each(function (index, element) {
+			if (index <= 15) {
+				height += $(element).height();
+				height += 12.5;
+				console.log($(element).text());
+			} else {
+				$(element).parents('.top-select-list').height(height);
+			}
+		})
+})
