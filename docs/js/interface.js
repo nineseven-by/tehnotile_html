@@ -1538,7 +1538,6 @@ $(document).ready(function () {
 			if (index <= 15) {
 				height += $(element).height();
 				height += 12.5;
-				console.log($(element).text());
 			} else {
 				$(element).parents('.top-select-list').height(height);
 			}

@@ -19,6 +19,7 @@ summary {
     display: block; }
 
 audio,
+
 canvas,
 progress,
 video {
@@ -3591,7 +3592,7 @@ textarea, input {
     transition: -webkit-transform 0.26s ease;
     transition: transform 0.26s ease;
     transition: transform 0.26s ease, -webkit-transform 0.26s ease;
-    /*max-height: 400px;*/
+    max-height: 400px;
     overflow-y: auto; }
 .top-select-list:before {
     content: "";
@@ -7521,10 +7522,13 @@ ul.profile-tabs__list li a:hover {
     z-index: 2; }
 
 .tile-photo__img {
+    display: flex;
+    align-items: center;
     width: 100px;
     height: 100px;
     margin-left: 20px; }
 .tile-photo__img img {
+
     display: block;
     max-width: 100%;
     height: auto;
@@ -10268,7 +10272,9 @@ ul.profile-tabs__list {
 .slider__item {
     z-index: 3;
 }
-
+.main-filter-container{
+    margin-left: -5px;
+}
 /* тикет 7949 */
 .main-filter-container::before {
     display: block;
@@ -11064,7 +11070,6 @@ html {
 
 .catalog__item:hover .catalog-descr, .popular-slider .catalog__item:hover .catalog-descr {
     transition: transform 0.2s ease 0.2s, z-index 0s ease 0s, opacity 0s ease;
-<<<<<<< HEAD
 }
 
 .popular-slider .slider__item:hover .catalog-descr.catalog-descr--left {
@@ -11082,9 +11087,6 @@ html {
     border-bottom: 0!important;
     border-right: 1px solid #e2e2e2!important;
     border-top: 1px solid #e2e2e2!important;
-}
-
-=======
 }
 
 .popular-slider .slider__item:hover .catalog-descr.catalog-descr--left {
@@ -11644,4 +11646,30 @@ html {
     text-align: left;
     margin-top: 0;
     border: 0;
+}
+
+/* тикет 8540 */
+.advantages__item {
+	transition: all .3s ease-in-out;
+	background-size: 120%;
+}
+
+.advantages__item:hover {
+	background-size: 130%;
+}
+
+.main-slider__item {
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.main-slider__item-wrap {
+	max-width: 1620px;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.main-slider__paginator {
+	max-width: 1620px;
 }
