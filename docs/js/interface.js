@@ -1533,13 +1533,19 @@ $(function () {
 	})
 })
 $(document).ready(function () {
+	function select() {
 		var height = 0;
 		$('.js_height_auto').find('.top-select-item').each(function (index, element) {
-			if (index <= 15) {
+			if (index < 15) {
 				height += $(element).height();
-				height += 12.5;
+				height += 13;
+				console.log(height);
 			} else {
+				$(element).parents('.top-select-list').css({'max-height': 'none'});
 				$(element).parents('.top-select-list').height(height);
+
 			}
 		})
+	};
+	setTimeout(select, 2000);
 })
