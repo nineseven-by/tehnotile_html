@@ -319,6 +319,7 @@ $(document).ready(function() {
 				},
 			]
 		});
+		
 
 		$(window).on('load ready resize', function () {
 			var windowWidth = $(window).width();
