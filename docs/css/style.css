@@ -4808,7 +4808,20 @@ a.breadcrumbs__item:hover {
     border: 1px solid #979797;
     border-radius: 50%;
     cursor: pointer; }
-
+.new-tooltip{
+    padding: 0;
+    width: 14px;
+    height: 14px;
+    text-align: center;
+    vertical-align: middle;
+    display: inline-block;
+    margin-top: -2px;
+    font-size: 9px;
+    color: #979797;
+    border: 1px solid #979797;
+    border-radius: 50%;
+    cursor: pointer;
+}
 .tooltip-content {
     padding: 0;
     width: 14px;
