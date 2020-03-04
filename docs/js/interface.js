@@ -331,7 +331,7 @@ $(document).ready(function() {
 		     	$('.novelty-slider_inner .slick-slide.slick-active').eq(2).find('.catalog-descr').addClass('catalog-descr--left');
 		     	$('.novelty-slider_inner .slick-slide.slick-active').eq(1).find('.catalog-descr').removeClass('catalog-descr--left');
 		     	$('.novelty-slider_inner .slick-slide.slick-active').eq(0).find('.catalog-descr').removeClass('catalog-descr--left');
-		     });	
+		     });
 		   }
 		   else if (windowWidth > 0) {
 		   	$('.novelty-slider_inner .slick-slide.slick-active').eq(1).find('.catalog-descr').addClass('catalog-descr--left'); 
