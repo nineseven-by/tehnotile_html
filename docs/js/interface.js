@@ -322,7 +322,6 @@ $(document).ready(function() {
 		
 
 		$(window).on('load ready resize', function () {
-<<<<<<< HEAD
 		   var windowWidth = $(window).width();
 		   if (windowWidth > 799) {
 		   	$('.novelty-slider_inner .slick-slide.slick-active').eq(2).find('.catalog-descr').addClass('catalog-descr--left'); 
