@@ -10264,10 +10264,12 @@ span.close:before {
 /**/
 .search-product-img img {
     /*object-fit: contain;*/
-    max-width: 195px;
+    max-width: 140px;
     width: 100%;
 }
-
+.img_tr{
+    max-width: 84px !important;
+}
 .search-product-img {
     align-items: flex-start;
 }
@@ -11711,6 +11713,6 @@ html {
 	padding-right: 20px;
 	z-index: 2;	
 }
-tr_basket{
+.tr_basket{
     height: 150px;
 }
