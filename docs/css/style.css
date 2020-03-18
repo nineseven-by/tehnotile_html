@@ -4809,7 +4809,7 @@ a.breadcrumbs__item:hover {
     border-radius: 50%;
     cursor: pointer; }
 .new-tooltip{
-    padding: 0;
+    padding: unset;
     width: 14px;
     height: 14px;
     text-align: center;
