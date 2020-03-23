@@ -9383,8 +9383,92 @@ ul.profile-tabs__list {
   left: 20px;
 }
 
+.delivery{
+  
+}
+.delivery__wrap{
+   display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+          -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
 
+.delivery__info{
+  width: 50%;
+  padding-right: 5px;
+}
+.delivery__info ol{
+  padding-right: 50px;
+}
+.delivery .instruction-message{
+  width: 50%;
+}
+.payment{
+  margin-bottom: 30px;
+}
+.payment h2{
+      font-weight: 500;
+          margin-bottom: 36px;
+}
+.payment__item{
+  padding-right: 70px;
+}
+.payment__title{
+  color: #2c2c2c;
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+.payment__info{
+  margin-bottom: 20px;
+}
+.payment .safety__img {
+    margin-top: 0;
+     display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.safety__item{
+  margin-right: 20px;
 
+}
+.delivery h2{
+      font-weight: 500;
+          margin-bottom: 28px;
+}
+.delivery h4{
+  margin-bottom: 25px;;
+}
+.safety__item:last-child{
+  margin-right: 0;
+}
+.safety__item img{
+  display: block;
+}
+.payment__icon{
+  margin-bottom: 26px;
+}
+.payment__icon img{
+  display: block;
+  max-width: 100%;
+}
+.delivery .instruction-message:before {
+    top: 25px;
+    transform: none;
+    left: 23px;
+}
 
 @media screen and (max-width: 1600px) {
   .tile-close {
@@ -9439,7 +9523,15 @@ ul.profile-tabs__list {
 
 @media screen and (max-width: 1300px) {
   .catalog-descr {
-    padding: 11px 13px; } }
+    padding: 11px 13px; }
+  .payment__item {
+      padding-right: 20px;
+  }
+  .payment__title {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+  }
 
 @media screen and (max-width: 1250px) {
   .address-item {
@@ -9978,6 +10070,14 @@ ul.profile-tabs__list {
     max-width: 100%;
     width: 100%;
   }
+  .delivery__info {
+    width: 100%;
+    padding-right: 0;
+    margin-bottom: 20px;
+  }
+  .delivery .instruction-message {
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -10169,6 +10269,9 @@ ul.profile-tabs__list {
   .top-select-list,
   .top-select__arrow {
     display: none; }
+    .payment__item {
+      margin-bottom: 20px;
+  }
   .tile-photo__img {
     display: none; } }
 
