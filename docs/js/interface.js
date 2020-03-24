@@ -1079,6 +1079,8 @@ $('body').append(
 		<li><a href="menu.html">Menu</a></li> \
 		<li><a href="sravnit.html">Sravnit</a></li> \
 		<li><a href="interior.html">Interior</a></li> \
+		<li><a href="instruction.html">Instruction</a></li> \
+		<li><a href="payment.html">Оплата</a></li> \
 	</ol> \
 </div>');
 */
