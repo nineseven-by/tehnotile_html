@@ -966,7 +966,34 @@ $(document).ready(function() {
 
 	$(".tooltip-content").each(function(){
 		$(this).show();
-	})
+	});
+
+
+	//TABS
+	$('ul.tabs li').click(function(){
+		var tab_id = $(this).attr('data-tab');
+
+		$(this).parents('.tabs-wrap').find('ul.tabs li').removeClass('current');
+		$(this).parents('.tabs-wrap').find('.tab-content').removeClass('current');
+
+		$(this).addClass('current');
+		$("#"+tab_id).addClass('current');
+	});
+
+	$(".js-gallery").fancybox({
+		infobar: false,
+		closeExisting: true,
+		loop:true,
+		buttons: [
+			"close"
+		],
+		 caption : function( instance, item ) {
+		    var caption = $(this).data('caption') || '';
+		    
+		    return ( caption.length ? caption + '<br />' : '' ) + '<span data-fancybox-index></span> / <span data-fancybox-count></span>';
+		}
+	});
+
 });
 
 if ($('.layout--interior').length>0) {
