@@ -7394,7 +7394,15 @@ ul.profile-tabs__list li a:hover {
     font-weight: bold; }
 .tile-item a:hover {
     color: #056493; }
-
+.tile-item span.flag{
+        width: 16px;
+    height: 16px;
+    line-height: 16px;
+    vertical-align: middle;
+    display: inline-block;
+    padding: 0;
+    margin-top:-1px;
+}
 .tile-add__txt {
     font-weight: bold; }
 .tile-add__txt span {
@@ -7621,7 +7629,11 @@ ul.profile-tabs__list li a:hover {
     padding-left: 20px; }
 
 .tile-photo__item--right {
+    padding-left: 10px;
     text-align: right; }
+    .tile-photo__item--left{
+        padding-right: 10px;
+    }
 .tile-photo__item--right .tile-photo__format,
 .tile-photo__item--right .tile-photo__price {
     padding-right: 20px; }
