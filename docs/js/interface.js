@@ -1615,4 +1615,10 @@ $(document).ready(function () {
 		var src = $(element).find('img').data('src');
 		$(element).find('img').attr("src", src);
 	})
+	$('.window-close').click(function () {
+		window.close();
+	})
+	$(".basket_quantity").click(function () {
+$(this).val('');
+	})
 })
