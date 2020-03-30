@@ -9824,6 +9824,10 @@ ymaps[class*="-copyright"] {
 .top-select-item input[type="checkbox"]:checked + label:after {
     left: 1px!important;
 }
+.bx-filter.bx-filter-horizontal{
+    position: relative;
+    z-index: 1;
+}
 
 @media screen and (max-width: 1600px) {
     .tile-close {
