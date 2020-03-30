@@ -287,3 +287,8 @@
         });
     };
 });
+$(document).ready(function () {
+    $(".basket_quantity").click(function () {
+        $(this).val('');
+    })
+})
