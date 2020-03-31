@@ -11761,3 +11761,13 @@ html {
 	padding: 5px 7px 3px 7px;
 	color: #fff;
 }
+
+/* тикет 8752 */
+.tooltip-content, .new-tooltip  {
+    background: url(/local/templates/technotile/images/warning-icon.svg);
+    background-size: 13px;
+    border: 0;
+    font-size: 0;
+    width: 13px;
+    height: 13px;
+}
