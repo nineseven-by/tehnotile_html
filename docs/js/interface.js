@@ -1510,9 +1510,10 @@ $(document).on('click', '.top-search-mobile__link', function (e) {
 	e.preventDefault();
 });
 
+
 $(document).on('change', '.js-select__input', function () {
 	let value = $(this).val();
-	var b = $(this).attr('id').split('_')[1];
+	//var b = $(this).attr('id').split('_')[1];
 	var input = $(this);
 	var select =$(this).siblings('.select__val');
 	if(value>=0) {
@@ -1520,7 +1521,7 @@ $(document).on('change', '.js-select__input', function () {
 			type: "POST",
 			url: "/local/php_interface/include/quantity.php",
 			dataType: "json",
-			data: "idprod=" + b + "&cnt=" + value,
+			data: "idprod="+"&cnt=" + value,
 			success: function (data) {
 				input.val(data);
 				select.html(data);
@@ -1618,7 +1619,5 @@ $(document).ready(function () {
 	$('.window-close').click(function () {
 		window.close();
 	})
-	$(".basket_quantity").click(function () {
-$(this).val('');
-	})
+
 })
