@@ -996,180 +996,180 @@ $(document).ready(function() {
 
 
 
-if($('.index-slider').length>0){
-    var slideWrapper = $(".index-slider"),
-    iframes = slideWrapper.find('.embed-player'),
-    lazyImages = slideWrapper.find('.slide-image'),
-    lazyCounter = 0;
+	if($('.index-slider').length>0){
+	    var slideWrapper = $(".index-slider"),
+	    iframes = slideWrapper.find('.embed-player'),
+	    lazyImages = slideWrapper.find('.slide-image'),
+	    lazyCounter = 0;
 
-    // POST commands to YouTube or Vimeo API
-    function postMessageToPlayer(player, command){
-      if (player == null || command == null) return;
-      player.contentWindow.postMessage(JSON.stringify(command), "*");
-    }
+	    // POST commands to YouTube or Vimeo API
+	    function postMessageToPlayer(player, command){
+	      if (player == null || command == null) return;
+	      player.contentWindow.postMessage(JSON.stringify(command), "*");
+	    }
 
-    // When the slide is changing
-    function playPauseVideo(slick, control){
-      var currentSlide, slideType, startTime, player, video;
+	    // When the slide is changing
+	    function playPauseVideo(slick, control){
+	      var currentSlide, slideType, startTime, player, video;
 
-      currentSlide = slick.find(".slick-current");
-      slideType = currentSlide.attr("class").split(" ")[1];
-      player = currentSlide.find("iframe").get(0);
-      startTime = currentSlide.data("video-start");
+	      currentSlide = slick.find(".slick-current");
+	      slideType = currentSlide.attr("class").split(" ")[1];
+	      player = currentSlide.find("iframe").get(0);
+	      startTime = currentSlide.data("video-start");
 
-      if (slideType === "youtube") {
-        switch (control) {
-          case "play":
-            postMessageToPlayer(player, {
-              "event": "command",
-              "func": "mute"
-            });
-            postMessageToPlayer(player, {
-              "event": "command",
-              "func": "playVideo"
-            });
-            break;
-          case "pause":
-            postMessageToPlayer(player, {
-              "event": "command",
-              "func": "pauseVideo"
-            });
-            break;
-        }
-      } else if (slideType === "video") {
-        video = currentSlide.children("video").get(0);
-        if (video != null) {
-          if (control === "play"){
-            video.play();
-          } else {
-            video.pause();
-          }
-        }
-      }
-    }
-    // Resize player
-    function resizePlayer(iframes, ratio) {
-      if (!iframes[0]) return;
-      var win = $(".index-slider"),
-          width = win.width(),
-          playerWidth,
-          height = win.height(),
-          playerHeight,
-          ratio = ratio || 16/9;
+	      if (slideType === "youtube") {
+	        switch (control) {
+	          case "play":
+	            postMessageToPlayer(player, {
+	              "event": "command",
+	              "func": "mute"
+	            });
+	            postMessageToPlayer(player, {
+	              "event": "command",
+	              "func": "playVideo"
+	            });
+	            break;
+	          case "pause":
+	            postMessageToPlayer(player, {
+	              "event": "command",
+	              "func": "pauseVideo"
+	            });
+	            break;
+	        }
+	      } else if (slideType === "video") {
+	        video = currentSlide.children("video").get(0);
+	        if (video != null) {
+	          if (control === "play"){
+	            video.play();
+	          } else {
+	            video.pause();
+	          }
+	        }
+	      }
+	    }
+	    // Resize player
+	    function resizePlayer(iframes, ratio) {
+	      if (!iframes[0]) return;
+	      var win = $(".index-slider"),
+	          width = win.width(),
+	          playerWidth,
+	          height = win.height(),
+	          playerHeight,
+	          ratio = ratio || 16/9;
 
-      iframes.each(function(){
-        var current = $(this);
-        if (width / ratio < height) {
-          playerWidth = Math.ceil(height * ratio);
-          current.width(playerWidth).height(height).css({
-            left: (width - playerWidth) / 2,
-             top: 0
-            });
-        } else {
-          playerHeight = Math.ceil(width / ratio);
-          current.width(width).height(playerHeight).css({
-            left: 0,
-            top: (height - playerHeight) / 2
-          });
-        }
-      });
-    }
+	      iframes.each(function(){
+	        var current = $(this);
+	        if (width / ratio < height) {
+	          playerWidth = Math.ceil(height * ratio);
+	          current.width(playerWidth).height(height).css({
+	            left: (width - playerWidth) / 2,
+	             top: 0
+	            });
+	        } else {
+	          playerHeight = Math.ceil(width / ratio);
+	          current.width(width).height(playerHeight).css({
+	            left: 0,
+	            top: (height - playerHeight) / 2
+	          });
+	        }
+	      });
+	    }
 
-    slideWrapper.on("init", function(slick){
-        slick = $(slick.currentTarget);
-        setTimeout(function(){
-          playPauseVideo(slick,"play");
-        }, 1000);
-        resizePlayer(iframes, 16/9);
-    });
-    // $('.index-slider__pager ul li').each( function( i ) {
-    //     $('.index-slider__pager .slide-' + i).click(function(e){
-    //         e.preventDefault();
-    //         $('.index-slider__pager ul li').removeClass('active');
-    //         $(this).addClass('active');
-    //         $('.index-slider').slick('slickGoTo', i);
-    //     })
-    // })
-    slideWrapper.on("beforeChange", function(event, slick, currentSlide, nextSlide) {
-        slick = $(slick.$slider);
-        playPauseVideo(slick,"pause");
+	    slideWrapper.on("init", function(slick){
+	        slick = $(slick.currentTarget);
+	        setTimeout(function(){
+	          playPauseVideo(slick,"play");
+	        }, 1000);
+	        resizePlayer(iframes, 16/9);
+	    });
+	    // $('.index-slider__pager ul li').each( function( i ) {
+	    //     $('.index-slider__pager .slide-' + i).click(function(e){
+	    //         e.preventDefault();
+	    //         $('.index-slider__pager ul li').removeClass('active');
+	    //         $(this).addClass('active');
+	    //         $('.index-slider').slick('slickGoTo', i);
+	    //     })
+	    // })
+	    slideWrapper.on("beforeChange", function(event, slick, currentSlide, nextSlide) {
+	        slick = $(slick.$slider);
+	        playPauseVideo(slick,"pause");
 
-        var next = nextSlide; 
-         // $('.index-slider__pager a').removeClass('active');
-         // $('.index-slider__pager .slide-' + next + ' a').addClass('active');
-    });
-    slideWrapper.on("afterChange", function(event, slick) {
-        slick = $(slick.$slider);
-        playPauseVideo(slick,"play");
-    });
-    slideWrapper.on("lazyLoaded", function(event, slick, image, imageSource) {
-        lazyCounter++;
-        if (lazyCounter === lazyImages.length){
-          lazyImages.addClass('show');
-          // slideWrapper.slick("slickPlay");
-        }
-    });
-
-
-    slideWrapper.slick({
-        touchThreshold: 10,
-        arrows:false,
-        useTransform:true,
-        accessibility: false,
-        infinite: true,
-        fade:true,
-        accessibility: false,
-        focusOnSelect: true,
-        //asNavFor: '.index-slider-in',
-        cssEase:"cubic-bezier(0.87, 0.03, 0.41, 0.9)"
-    });
+	        var next = nextSlide; 
+	         // $('.index-slider__pager a').removeClass('active');
+	         // $('.index-slider__pager .slide-' + next + ' a').addClass('active');
+	    });
+	    slideWrapper.on("afterChange", function(event, slick) {
+	        slick = $(slick.$slider);
+	        playPauseVideo(slick,"play");
+	    });
+	    slideWrapper.on("lazyLoaded", function(event, slick, image, imageSource) {
+	        lazyCounter++;
+	        if (lazyCounter === lazyImages.length){
+	          lazyImages.addClass('show');
+	          // slideWrapper.slick("slickPlay");
+	        }
+	    });
 
 
+	    slideWrapper.slick({
+	        touchThreshold: 10,
+	        arrows:false,
+	        useTransform:true,
+	        accessibility: false,
+	        infinite: true,
+	        fade:true,
+	        accessibility: false,
+	        focusOnSelect: true,
+	        //asNavFor: '.index-slider-in',
+	        cssEase:"cubic-bezier(0.87, 0.03, 0.41, 0.9)"
+	    });
 
 
-    $('.index-slider-in').slick({
-        slidesToShow: 5,
-        slidesToScroll: 1,
-        accessibility: false,
-        dots: false,
-        arrows:false,
-        asNavFor: '.index-slider',
-        infinite:false,
-        focusOnSelect: true,
-        //draggable: false,
-        centerMode:false,
-        responsive: [
-            {
-                  breakpoint: 768,
-                  settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 1,
-                    dots:false,
-                    arrows:true,
-                  }
-            },
-            {
-                  breakpoint: 600,
-                  settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 1,
-                    dots:false,
-                    arrows:true,
-                  }
-            },
-            {
-                  breakpoint: 500,
-                  settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    dots:false,
-                    arrows:true,
-                  }
-            },
-        ]
-    });
-}
 
+
+	    $('.index-slider-in').slick({
+	        slidesToShow: 5,
+	        slidesToScroll: 1,
+	        accessibility: false,
+	        dots: false,
+	        arrows:false,
+	        asNavFor: '.index-slider',
+	        infinite:false,
+	        focusOnSelect: true,
+	        //draggable: false,
+	        centerMode:false,
+	        responsive: [
+	            {
+	                  breakpoint: 768,
+	                  settings: {
+	                    slidesToShow: 3,
+	                    slidesToScroll: 1,
+	                    dots:false,
+	                    arrows:true,
+	                  }
+	            },
+	            {
+	                  breakpoint: 600,
+	                  settings: {
+	                    slidesToShow: 2,
+	                    slidesToScroll: 1,
+	                    dots:false,
+	                    arrows:true,
+	                  }
+	            },
+	            {
+	                  breakpoint: 500,
+	                  settings: {
+	                    slidesToShow: 1,
+	                    slidesToScroll: 1,
+	                    dots:false,
+	                    arrows:true,
+	                  }
+	            },
+	        ]
+	    });
+	}
+});
 
 if ($('.layout--interior').length>0) {
 	$(window).on('resize.interior', function() {
