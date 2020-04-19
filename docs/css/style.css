@@ -12461,6 +12461,13 @@ html {
     text-align: left;
     color: #fff;
 }
+
+.index-slider-in{
+    display: none;
+}
+.index-slider-in.slick-initialized{
+    display: flex;
+}
 .index-slider__pager .index-slider-in {
     margin: 0;
     padding: 0;
@@ -12515,6 +12522,7 @@ html {
     display: flex;
     align-items: center;
     margin-bottom: 0!important;
+    cursor: pointer;
 }
 .index-slider__pager .index-slider-in__item:before{
     display: none;
