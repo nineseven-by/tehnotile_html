@@ -11560,10 +11560,10 @@ html {
     object-fit: cover;
 }
 
-.menu-color:empty{
+/*.menu-color:empty{
     display: none!important;
 }
-
+*/
 @media screen and (max-width: 1439px) {
     .main-slider__paginator {
         padding-left: 30px;
