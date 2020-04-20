@@ -1169,7 +1169,63 @@ $(document).ready(function() {
 	        ]
 	    });
 	}
+
+
+	sliderAdvantagesInit();
 });
+
+
+
+$(window).resize(function () {
+	sliderAdvantagesInit();
+});
+
+function sliderAdvantagesInit() {
+	if ($('.advantages__list').length>0) {
+	    var $slider = $('.advantages__list');
+	    if($(window).width() < 1024) {
+	        $slider.not('.slick-initialized').slick({
+	            infinite: true,
+	            dots: false,
+	            arrows:true,
+	            slidesToShow: 4,
+	            slidesToScroll: 1,
+	            adaptiveHeight: false,
+	            responsive: [
+				    {
+				      	breakpoint: 850,
+				      	settings: {
+				        	slidesToShow: 3,
+				        	slidesToScroll: 1,
+				      	}
+				    },
+				    {
+				      	breakpoint: 700,
+				      	settings: {
+				        	slidesToShow: 2,
+				        	slidesToScroll: 1,
+				      	}
+				    },
+				    {
+				      	breakpoint: 600,
+				      	settings: {
+				        	slidesToShow: 1,
+				        	slidesToScroll: 1,
+				      	}
+				    },
+				]
+	        });
+
+	       
+	    } else{
+	        if($slider.hasClass('slick-initialized')) {
+	            $slider.slick("unslick");
+	        }
+	    }
+	}
+}
+
+
 
 if ($('.layout--interior').length>0) {
 	$(window).on('resize.interior', function() {
