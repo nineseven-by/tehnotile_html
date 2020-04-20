@@ -12429,6 +12429,7 @@ html {
 .index-slider-wrap{
     position: relative;
     margin-bottom: 30px;
+    min-height: 750px;
 }
 .index-slider{
     margin-top: -30px;
@@ -12480,12 +12481,17 @@ html {
     text-align: left;
     color: #fff;
 }
+
 .index-slider__pager .index-slider-in {
     margin: 0;
     padding: 0;
-        display: flex;
+        display: none;
     width: 100%;
 }
+.index-slider__pager .index-slider-in.slick-initialized{
+    display: flex;
+}
+
 .index-slider-in .slick-arrow{
     display: inline-block;
     border: 0;
@@ -12534,6 +12540,7 @@ html {
     display: flex;
     align-items: center;
     margin-bottom: 0!important;
+	cursor: pointer;
 }
 .index-slider__pager .index-slider-in__item:before{
     display: none;
@@ -12659,8 +12666,12 @@ html {
     .index-slider__title {
         font-size: 40px;
     }
-
+    .index-slider-wrap{
+        min-height:530px;
+    }
 }
+
+
 
 
 @media screen and (max-width: 768px){
@@ -12682,6 +12693,15 @@ html {
     }
     .index-slider-wrap .btn {
         padding: 5px 10px;
+    }
+    .index-slider {
+        margin-top: 0;
+    }
+    .index-slider__item {
+        height: 460px;
+    }
+    .index-slider-wrap{
+        min-height:460px;
     }
 }
 
