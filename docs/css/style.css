@@ -12482,15 +12482,12 @@ html {
     color: #fff;
 }
 
-<<<<<<< HEAD
-=======
 .index-slider-in{
     display: none;
 }
 .index-slider-in.slick-initialized{
     display: flex;
 }
->>>>>>> 59ba8506edcad9c7caeedd8d55776e7018ef536c
 .index-slider__pager .index-slider-in {
     margin: 0;
     padding: 0;
