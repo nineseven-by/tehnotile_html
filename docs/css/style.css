@@ -11278,6 +11278,26 @@ html {
     background-size: contain;
 }
 
+.product-info{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-flex-direction: column !important;
+    -ms-flex-direction: column !important;
+    flex-direction: column !important;
+
+    min-height: -webkit-calc(100% - 250px);
+    min-height: expression(100% - 250px);
+    min-height: -moz-calc(100% - 250px);
+    min-height: -o-calc(100% - 250px);
+    min-height: calc(100% - 250px);
+}
+
 @media screen and (max-width: 1399px) {
     .advantages__list {
         justify-content: center;
