@@ -11270,6 +11270,13 @@ html {
 .pr-favorite.active{
     background: url(../img/svg/c-fav-icon-a.svg);
 }
+.contacts-gallery-tour.m-gallery:before{
+    width: 32px;
+    height: 32px;
+    background: url(../img/content/f-gallery-icon.png) no-repeat;
+    -webkit-background-size: contain;
+    background-size: contain;
+}
 
 @media screen and (max-width: 1399px) {
     .advantages__list {
