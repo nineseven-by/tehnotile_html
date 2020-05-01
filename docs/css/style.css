@@ -11224,6 +11224,53 @@ html {
     font-weight: normal;
 }
 
+.default-price{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    position: relative;
+        padding-right: 50px;
+}
+.product-icons{
+    position: absolute;
+    right: 0;
+        top: 50%;
+    transform: translateY(-50%);
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-top: 2px;
+}
+.pr-compare{
+    display: inline-block;
+    width: 24px;
+    height: 16px;
+    background: url(../img/svg/c-comp-icon.svg);
+    margin-right: 8px;
+}
+.pr-compare.active{
+    background: url(../img/svg/c-comp-icon-a.svg);
+}
+.pr-favorite{
+    display: inline-block;
+    width: 18px;
+    height: 17px;
+    background: url(../img/svg/c-fav-icon.svg);
+}
+.pr-favorite.active{
+    background: url(../img/svg/c-fav-icon-a.svg);
+}
+
 @media screen and (max-width: 1399px) {
     .advantages__list {
         justify-content: center;
