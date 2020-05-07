@@ -121,7 +121,7 @@ $(document).ready(function() {
 
 
 	$('.js-truncate').jTruncate({
-		length: 200,
+		length: 500,
 		minTrail: 0,
 		moreText: "Читать дальше",
 		lessText: "Скрыть",
