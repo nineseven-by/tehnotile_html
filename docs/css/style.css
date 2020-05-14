@@ -7841,9 +7841,9 @@ ul.profile-tabs__list li a:hover {
 .similar-slider .catalog-info {
     padding: 0 16px 9px; }
 .similar-slider .catalog__item:after {
-    width: 10px;
-    left: -webkit-calc(100% - 10px);
-    left: calc(100% - 10px); }
+    width: 2px;
+    left: -webkit-calc(100% - 2px);
+    left: calc(100% - 2px); }
 .similar-slider .catalog-slider__item:after {
     width: 0;
     left: auto;
