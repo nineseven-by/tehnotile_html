@@ -12658,15 +12658,15 @@ html {
 }
 
 .index-slider-in{
-    display: none;
-}
-.index-slider-in.slick-initialized{
     display: flex;
 }
+/*.index-slider-in.slick-initialized{
+    display: flex;
+}*/
 .index-slider__pager .index-slider-in {
     margin: 0;
     padding: 0;
-        display: none;
+/*        display: none;*/
     width: 100%;
 }
 .index-slider__pager .index-slider-in.slick-initialized{
@@ -12888,7 +12888,9 @@ html {
 .advantages {
     overflow: hidden;
 }
-
+.index-slider__pager .index-slider-in__item.slick-current {
+    border-color: transparent;
+}
 
 
 
@@ -12980,6 +12982,9 @@ html {
     }
     .index-slider-wrap{
         min-height:460px;
+    }
+    .layout--index .page-content{
+        padding-top: 0;
     }
 }
 

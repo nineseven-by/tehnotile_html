@@ -1078,25 +1078,24 @@ $(document).ready(function() {
 	    slideWrapper.on("init", function(slick){
 	        slick = $(slick.currentTarget);
 	        setTimeout(function(){
-	          playPauseVideo(slick,"play");
+	          	playPauseVideo(slick,"play");
 	        }, 1000);
 	        resizePlayer(iframes, 16/9);
 	    });
-	    // $('.index-slider__pager ul li').each( function( i ) {
-	    //     $('.index-slider__pager .slide-' + i).click(function(e){
-	    //         e.preventDefault();
-	    //         $('.index-slider__pager ul li').removeClass('active');
-	    //         $(this).addClass('active');
-	    //         $('.index-slider').slick('slickGoTo', i);
-	    //     })
-	    // })
+	    $('.index-slider-in__item').each( function( i ) {
+			$('.index-slider-in__item.slide-' + i).click(function(){
+				$('.index-slider-in__item').removeClass('slick-current');
+				$(this).addClass('slick-current');
+				slideWrapper.slick('slickGoTo', i);
+			})
+		})
 	    slideWrapper.on("beforeChange", function(event, slick, currentSlide, nextSlide) {
 	        slick = $(slick.$slider);
 	        playPauseVideo(slick,"pause");
 
 	        var next = nextSlide; 
-	         // $('.index-slider__pager a').removeClass('active');
-	         // $('.index-slider__pager .slide-' + next + ' a').addClass('active');
+	         $('.index-slider-in__item').removeClass('slick-current');
+	         $('.index-slider-in__item.slide-' + next).addClass('slick-current');
 	    });
 	    slideWrapper.on("afterChange", function(event, slick) {
 	        slick = $(slick.$slider);
@@ -1121,33 +1120,84 @@ $(document).ready(function() {
 	        accessibility: false,
 	        focusOnSelect: true,
 	        //asNavFor: '.index-slider-in',
+	        autoplay: true,
+  			autoplaySpeed: 4000,
+  			pauseOnHover: false,
 	        cssEase:"cubic-bezier(0.87, 0.03, 0.41, 0.9)"
 	    });
 
 
 
 
-	    $('.index-slider-in').slick({
-	        slidesToShow: 5,
+	    // $('.index-slider-in').slick({
+	    //     slidesToShow: 5,
+	    //     slidesToScroll: 1,
+	    //     accessibility: false,
+	    //     dots: false,
+	    //     arrows:false,
+	    //     asNavFor: '.index-slider',
+	    //     infinite:false,
+	    //     focusOnSelect: true,
+	    //     //draggable: false,
+	    //     centerMode:false,
+	    //     responsive: [
+	    //         {
+	    //               breakpoint: 768,
+	    //               settings: {
+	    //                 slidesToShow: 3,
+	    //                 slidesToScroll: 1,
+	    //                 dots:false,
+	    //                 arrows:true,
+	    //               }
+	    //         },
+	    //         {
+	    //               breakpoint: 600,
+	    //               settings: {
+	    //                 slidesToShow: 2,
+	    //                 slidesToScroll: 1,
+	    //                 dots:false,
+	    //                 arrows:true,
+	    //               }
+	    //         },
+	    //         {
+	    //               breakpoint: 500,
+	    //               settings: {
+	    //                 slidesToShow: 1,
+	    //                 slidesToScroll: 1,
+	    //                 dots:false,
+	    //                 arrows:true,
+	    //               }
+	    //         },
+	    //     ]
+	    // });
+	}
+
+
+	sliderAdvantagesInit();
+	sliderMobileStart();
+});
+
+
+
+$(window).resize(function () {
+	sliderAdvantagesInit();
+	sliderMobileStart()
+});
+
+function sliderMobileStart() {
+	var $soc_a = $('.index-slider-in');
+	if($(window).width() < 750) {
+		$soc_a.not('.slick-initialized').slick({
+		  	slidesToShow: 3,
 	        slidesToScroll: 1,
 	        accessibility: false,
 	        dots: false,
-	        arrows:false,
+	        arrows:true,
 	        asNavFor: '.index-slider',
 	        infinite:false,
 	        focusOnSelect: true,
-	        //draggable: false,
 	        centerMode:false,
 	        responsive: [
-	            {
-	                  breakpoint: 768,
-	                  settings: {
-	                    slidesToShow: 3,
-	                    slidesToScroll: 1,
-	                    dots:false,
-	                    arrows:true,
-	                  }
-	            },
 	            {
 	                  breakpoint: 600,
 	                  settings: {
@@ -1167,18 +1217,13 @@ $(document).ready(function() {
 	                  }
 	            },
 	        ]
-	    });
+		});
+	} else{
+		if($soc_a.hasClass('slick-initialized')) {
+			$soc_a.slick("unslick");
+		}
 	}
-
-
-	sliderAdvantagesInit();
-});
-
-
-
-$(window).resize(function () {
-	sliderAdvantagesInit();
-});
+}
 
 function sliderAdvantagesInit() {
 	if ($('.advantages__list').length>0) {
