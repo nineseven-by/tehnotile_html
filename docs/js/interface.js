@@ -1121,7 +1121,7 @@ $(document).ready(function() {
 	        focusOnSelect: true,
 	        //asNavFor: '.index-slider-in',
 	        autoplay: true,
-  			autoplaySpeed: 4000,
+  			autoplaySpeed: 10000,
   			pauseOnHover: false,
 	        cssEase:"cubic-bezier(0.87, 0.03, 0.41, 0.9)"
 	    });
