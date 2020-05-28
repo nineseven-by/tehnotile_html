@@ -12046,7 +12046,27 @@ html {
 	padding-right: 0;
 	padding-left: 0;
 }
-
+@media screen and (max-width: 850px) {
+    .product-item {
+        width: 33.333%;
+    }
+    .catalog-descr{
+        width: 100%;
+    }
+    .product-item:hover .catalog-descr{
+        -webkit-transform: translateX(100%)!important;
+        -ms-transform: translateX(100%)!important;
+        transform: translateX(100%)!important;
+    }
+    .product-item:hover .catalog-descr:before{
+        display: none;
+    }
+    .product-item:nth-child(3n+3):hover .catalog-descr{
+        -webkit-transform: translateX(-100%)!important;
+        -ms-transform: translateX(-100%)!important;
+        transform: translateX(-100%)!important;
+    }
+}
 @media screen and (max-width: 767px) {
 	.form-profile .form-group {
 		flex-direction: column;
@@ -12074,6 +12094,17 @@ html {
 		padding-left: 0;
 		padding-right: 0;
 	}
+    .product-item {
+        width: 50%;
+    }
+    .catalog-descr{
+        display: none;
+    }
+}
+@media screen and (max-width: 600px){
+    .product-item {
+        width: 100%;
+    }
 }
 
 .sale-order-detail .sale-order-detail-general-head {
@@ -12890,6 +12921,42 @@ html {
 }
 .index-slider__pager .index-slider-in__item.slick-current {
     border-color: transparent;
+}
+.default-price__count,
+.old-price__count{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    white-space: nowrap;
+}
+.default-price__amount{
+    color: #fff;
+    background: #f50000;
+   padding: 3px 3px 3px 0;
+    margin-left: 20px;
+    font-size: 14px;
+    font-weight: normal;
+    position: relative;
+}
+.default-price__amount:before{
+    content: "";
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 12px 11px 12px 0;
+    border-color: transparent #f50000 transparent transparent;
+    position: absolute;
+    top: 0;
+    right: 100%;
+}
+.default-price__sum{
+    position: relative;
+    z-index: 1;
 }
 
 
