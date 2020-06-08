@@ -11256,7 +11256,6 @@ html {
     width: 24px;
     height: 16px;
     background: url(../img/svg/c-comp-icon.svg);
-    margin-right: 8px;
 }
 .pr-compare.active{
     background: url(../img/svg/c-comp-icon-a.svg);
@@ -12938,7 +12937,7 @@ html {
     color: #fff;
     background: #f50000;
    padding: 3px 3px 3px 0;
-    margin-left: 20px;
+    margin-left: 12px;
     font-size: 14px;
     font-weight: normal;
     position: relative;
