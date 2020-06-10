@@ -7823,6 +7823,9 @@ ul.profile-tabs__list li a:hover {
 .similar-slider {
     display: none;
     margin-right: -10px; }
+    .similar-slider .slick-track{
+        min-width: 100%;
+    }
 .similar-slider.slick-initialized {
     display: block; }
 .similar-slider .catalog-inner {
