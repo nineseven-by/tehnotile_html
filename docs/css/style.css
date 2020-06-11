@@ -6402,6 +6402,7 @@ ul.profile-tabs__list li a:hover {
     display: block; }
 
 .catalog-descr__el {
+    position: relative;
     font-size: 14px;
     color: #808080;
     margin-bottom: 10px; }
@@ -7823,6 +7824,9 @@ ul.profile-tabs__list li a:hover {
 .similar-slider {
     display: none;
     margin-right: -10px; }
+    .similar-slider .slick-track{
+        min-width: 100%;
+    }
 .similar-slider.slick-initialized {
     display: block; }
 .similar-slider .catalog-inner {
@@ -8165,7 +8169,7 @@ ul.profile-tabs__list li a:hover {
     position: relative; }
 .product-item .catalog-descr {
     height: -webkit-calc(100% - 10px);
-    height: calc(100% - 10px);
+    height: calc(100% - 5px);
     top: 5px;
     padding: 10px 20px; }
 .product-item .catalog-descr a {
