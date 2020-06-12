@@ -8168,10 +8168,10 @@ ul.profile-tabs__list li a:hover {
     transition: box-shadow 0.3s ease, -webkit-box-shadow 0.3s ease;
     position: relative; }
 .product-item .catalog-descr {
-    height: -webkit-calc(100% - 10px);
+    height: -webkit-calc(100% - 5px);
     height: calc(100% - 5px);
     top: 5px;
-    padding: 10px 20px; }
+    padding: 10px 10px; }
 .product-item .catalog-descr a {
     font-weight: 700; }
 .product-item .catalog-descr__top {
