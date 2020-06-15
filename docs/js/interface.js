@@ -125,7 +125,7 @@ $(document).ready(function() {
 
 
 	$('.js-truncate').jTruncate({
-		length: 200,
+		length: 500,
 		minTrail: 0,
 		moreText: "Читать дальше",
 		lessText: "Скрыть",
@@ -970,8 +970,311 @@ $(document).ready(function() {
 
 	$(".tooltip-content").each(function(){
 		$(this).show();
-	})
+	});
+
+
+	//TABS
+	$('ul.tabs li').click(function(){
+		var tab_id = $(this).attr('data-tab');
+
+		$(this).parents('.tabs-wrap').find('ul.tabs li').removeClass('current');
+		$(this).parents('.tabs-wrap').find('.tab-content').removeClass('current');
+
+		$(this).addClass('current');
+		$("#"+tab_id).addClass('current');
+	});
+
+	$(".js-gallery").fancybox({
+		infobar: false,
+		closeExisting: true,
+		loop:true,
+		buttons: [
+			"close"
+		],
+		 caption : function( instance, item ) {
+		    var caption = $(this).data('caption') || '';
+		    
+		    return ( caption.length ? caption + '<br />' : '' ) + '<span data-fancybox-index></span> / <span data-fancybox-count></span>';
+		}
+	});
+
+
+
+	if($('.index-slider').length>0){
+	    var slideWrapper = $(".index-slider"),
+	    iframes = slideWrapper.find('.embed-player'),
+	    lazyImages = slideWrapper.find('.slide-image'),
+	    lazyCounter = 0;
+
+	    // POST commands to YouTube or Vimeo API
+	    function postMessageToPlayer(player, command){
+	      if (player == null || command == null) return;
+	      player.contentWindow.postMessage(JSON.stringify(command), "*");
+	    }
+
+	    // When the slide is changing
+	    function playPauseVideo(slick, control){
+	      var currentSlide, slideType, startTime, player, video;
+
+	      currentSlide = slick.find(".slick-current");
+	      slideType = currentSlide.attr("class").split(" ")[1];
+	      player = currentSlide.find("iframe").get(0);
+	      startTime = currentSlide.data("video-start");
+
+	      if (slideType === "youtube") {
+	        switch (control) {
+	          case "play":
+	            postMessageToPlayer(player, {
+	              "event": "command",
+	              "func": "mute"
+	            });
+	            postMessageToPlayer(player, {
+	              "event": "command",
+	              "func": "playVideo"
+	            });
+	            break;
+	          case "pause":
+	            postMessageToPlayer(player, {
+	              "event": "command",
+	              "func": "pauseVideo"
+	            });
+	            break;
+	        }
+	      } else if (slideType === "video") {
+	        video = currentSlide.children("video").get(0);
+	        if (video != null) {
+	          if (control === "play"){
+	            video.play();
+	          } else {
+	            video.pause();
+	          }
+	        }
+	      }
+	    }
+	    // Resize player
+	    function resizePlayer(iframes, ratio) {
+	      if (!iframes[0]) return;
+	      var win = $(".index-slider"),
+	          width = win.width(),
+	          playerWidth,
+	          height = win.height(),
+	          playerHeight,
+	          ratio = ratio || 16/9;
+
+	      iframes.each(function(){
+	        var current = $(this);
+	        if (width / ratio < height) {
+	          playerWidth = Math.ceil(height * ratio);
+	          current.width(playerWidth).height(height).css({
+	            left: (width - playerWidth) / 2,
+	             top: 0
+	            });
+	        } else {
+	          playerHeight = Math.ceil(width / ratio);
+	          current.width(width).height(playerHeight).css({
+	            left: 0,
+	            top: (height - playerHeight) / 2
+	          });
+	        }
+	      });
+	    }
+
+	    slideWrapper.on("init", function(slick){
+	        slick = $(slick.currentTarget);
+	        setTimeout(function(){
+	          	playPauseVideo(slick,"play");
+	        }, 1000);
+	        resizePlayer(iframes, 16/9);
+	    });
+	    $('.index-slider-in__item').each( function( i ) {
+			$('.index-slider-in__item.slide-' + i).click(function(){
+				$('.index-slider-in__item').removeClass('slick-current');
+				$(this).addClass('slick-current');
+				slideWrapper.slick('slickGoTo', i);
+			})
+		})
+	    slideWrapper.on("beforeChange", function(event, slick, currentSlide, nextSlide) {
+	        slick = $(slick.$slider);
+	        playPauseVideo(slick,"pause");
+
+	        var next = nextSlide; 
+	         $('.index-slider-in__item').removeClass('slick-current');
+	         $('.index-slider-in__item.slide-' + next).addClass('slick-current');
+	    });
+	    slideWrapper.on("afterChange", function(event, slick) {
+	        slick = $(slick.$slider);
+	        playPauseVideo(slick,"play");
+	    });
+	    slideWrapper.on("lazyLoaded", function(event, slick, image, imageSource) {
+	        lazyCounter++;
+	        if (lazyCounter === lazyImages.length){
+	          lazyImages.addClass('show');
+	          // slideWrapper.slick("slickPlay");
+	        }
+	    });
+
+
+	    slideWrapper.slick({
+	        touchThreshold: 10,
+	        arrows:false,
+	        useTransform:true,
+	        accessibility: false,
+	        infinite: true,
+	        fade:true,
+	        accessibility: false,
+	        focusOnSelect: true,
+	        //asNavFor: '.index-slider-in',
+	        autoplay: true,
+  			autoplaySpeed: 10000,
+  			pauseOnHover: false,
+	        cssEase:"cubic-bezier(0.87, 0.03, 0.41, 0.9)"
+	    });
+
+
+
+
+	    // $('.index-slider-in').slick({
+	    //     slidesToShow: 5,
+	    //     slidesToScroll: 1,
+	    //     accessibility: false,
+	    //     dots: false,
+	    //     arrows:false,
+	    //     asNavFor: '.index-slider',
+	    //     infinite:false,
+	    //     focusOnSelect: true,
+	    //     //draggable: false,
+	    //     centerMode:false,
+	    //     responsive: [
+	    //         {
+	    //               breakpoint: 768,
+	    //               settings: {
+	    //                 slidesToShow: 3,
+	    //                 slidesToScroll: 1,
+	    //                 dots:false,
+	    //                 arrows:true,
+	    //               }
+	    //         },
+	    //         {
+	    //               breakpoint: 600,
+	    //               settings: {
+	    //                 slidesToShow: 2,
+	    //                 slidesToScroll: 1,
+	    //                 dots:false,
+	    //                 arrows:true,
+	    //               }
+	    //         },
+	    //         {
+	    //               breakpoint: 500,
+	    //               settings: {
+	    //                 slidesToShow: 1,
+	    //                 slidesToScroll: 1,
+	    //                 dots:false,
+	    //                 arrows:true,
+	    //               }
+	    //         },
+	    //     ]
+	    // });
+	}
+
+
+	sliderAdvantagesInit();
+	sliderMobileStart();
 });
+
+
+
+$(window).resize(function () {
+	sliderAdvantagesInit();
+	sliderMobileStart()
+});
+
+function sliderMobileStart() {
+	var $soc_a = $('.index-slider-in');
+	if($(window).width() < 750) {
+		$soc_a.not('.slick-initialized').slick({
+		  	slidesToShow: 3,
+	        slidesToScroll: 1,
+	        accessibility: false,
+	        dots: false,
+	        arrows:true,
+	        asNavFor: '.index-slider',
+	        infinite:false,
+	        focusOnSelect: true,
+	        centerMode:false,
+	        responsive: [
+	            {
+	                  breakpoint: 600,
+	                  settings: {
+	                    slidesToShow: 2,
+	                    slidesToScroll: 1,
+	                    dots:false,
+	                    arrows:true,
+	                  }
+	            },
+	            {
+	                  breakpoint: 500,
+	                  settings: {
+	                    slidesToShow: 1,
+	                    slidesToScroll: 1,
+	                    dots:false,
+	                    arrows:true,
+	                  }
+	            },
+	        ]
+		});
+	} else{
+		if($soc_a.hasClass('slick-initialized')) {
+			$soc_a.slick("unslick");
+		}
+	}
+}
+
+function sliderAdvantagesInit() {
+	if ($('.advantages__list').length>0) {
+	    var $slider = $('.advantages__list');
+	    if($(window).width() < 1024) {
+	        $slider.not('.slick-initialized').slick({
+	            infinite: true,
+	            dots: false,
+	            arrows:true,
+	            slidesToShow: 4,
+	            slidesToScroll: 1,
+	            adaptiveHeight: false,
+	            responsive: [
+				    {
+				      	breakpoint: 850,
+				      	settings: {
+				        	slidesToShow: 3,
+				        	slidesToScroll: 1,
+				      	}
+				    },
+				    {
+				      	breakpoint: 700,
+				      	settings: {
+				        	slidesToShow: 2,
+				        	slidesToScroll: 1,
+				      	}
+				    },
+				    {
+				      	breakpoint: 600,
+				      	settings: {
+				        	slidesToShow: 1,
+				        	slidesToScroll: 1,
+				      	}
+				    },
+				]
+	        });
+
+	       
+	    } else{
+	        if($slider.hasClass('slick-initialized')) {
+	            $slider.slick("unslick");
+	        }
+	    }
+	}
+}
+
+
 
 if ($('.layout--interior').length>0) {
 	$(window).on('resize.interior', function() {
@@ -1083,6 +1386,8 @@ $('body').append(
 		<li><a href="menu.html">Menu</a></li> \
 		<li><a href="sravnit.html">Sravnit</a></li> \
 		<li><a href="interior.html">Interior</a></li> \
+		<li><a href="instruction.html">Instruction</a></li> \
+		<li><a href="payment.html">Оплата</a></li> \
 	</ol> \
 </div>');
 */
@@ -1518,30 +1823,30 @@ $(function () {
 });
 
 //липкий блок на странице о нас
-$(window).on('load ready resize', function () {
-	var windowWidth = $(window).width();
+// $(window).on('load ready resize', function () {
+// 	var windowWidth = $(window).width();
 
-	if (windowWidth > 991) {
-		stick();
-	}
-	else {
-		unstick();
-	}
-});
+// 	if (windowWidth > 991) {
+// 		stick();
+// 	}
+// 	else {
+// 		unstick();
+// 	}
+// });
 
-function stick() {
-	$("#sticker").sticky({
-		topSpacing: 80,
-		responsiveWidth: true
-	});
+// function stick() {
+// 	$("#sticker").sticky({
+// 		topSpacing: 80,
+// 		responsiveWidth: true
+// 	});
 
-	$("#sticker-order").sticky({
-		topSpacing: 80,
-		responsiveWidth: true,
-		zIndex: 200,
-		className: 'asd'
-	});
-}
+// 	$("#sticker-order").sticky({
+// 		topSpacing: 80,
+// 		responsiveWidth: true,
+// 		zIndex: 200,
+// 		className: 'asd'
+// 	});
+// }
 
 function unstick() {
 	$('#sticker').unstick();
