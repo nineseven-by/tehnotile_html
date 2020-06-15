@@ -95,6 +95,10 @@ $(document).ready(function() {
 		$('.js-phone-mask').inputmask('+7(999)999-99-99');
 	}
 
+	if ($('.js-date-mask').length>0) {
+		$('.js-date-mask').inputmask({"mask": "99.99.9999", "placeholder": "дд.мм.гггг"});
+	}
+
 	if ($('.r-tabs').length>0) {
 		var activeTab = $('.r-tabs').attr('data-active');
 		$('.r-tabs').responsiveTabs({
