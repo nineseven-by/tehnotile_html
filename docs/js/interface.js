@@ -1310,7 +1310,40 @@ $(function(){
 	}
 });
 
+$(function(){
+	if($('.product-img-slider').length>0){
+		var $productImgSlider = $('.product-img-slider');
+		$productImgSlider.slick({
+			//speed: 250,
+			swipe: true,
+			swipeToSlide: true,
+			touchThreshold: 10,
+			arrows:false,
+			dots:true,
+			useTransform:true,
+			accessibility: false,
+			infinite: true,
+			slidesToShow: 1,
+			slidesToScroll: 1,
+			fade:true,
+			autoplay: true,
+  			autoplaySpeed: 3000,
+		});
 
+		function slickPause() {
+			$productImgSlider.slick('slickPause');
+		}
+
+		slickPause();
+
+		$('.product-img-slider').mouseover(function() {
+			$(this).slick('slickPlay')
+		});
+		$productImgSlider.mouseout(function() {
+			slickPause();
+		});
+	}
+});
 
 
 

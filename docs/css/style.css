@@ -12962,6 +12962,49 @@ html {
     z-index: 1;
 }
 
+.product-img-slider{
+    height: 250px;
+    overflow: hidden;
+    opacity: 0; 
+}
+.product-img-slider.slick-initialized{
+    overflow: visible;
+    opacity: 1; 
+}
+.product-img-slider .slick-dots{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin-bottom: 0;
+    padding: 0 19px;
+    position: absolute;
+    bottom: 15px;
+    width: 100%;
+    z-index: 3;
+}
+.product-img-slider .slick-dots li{
+    padding-left: 0;
+    margin-bottom: 0;
+    line-height: 1;
+    height: 2px;
+    background: #dddddd;
+    margin-right: 3px;
+    flex-grow: 1;
+    /*sdf*/
+}
+.product-img-slider .slick-dots li.slick-active{
+    background: #808080;
+}
+.product-img-slider .slick-dots li:before{
+    display: none;
+}
+.product-img-slider .slick-dots li:last-child{
+    margin-right: 0;
+}
+.product-img-slider .slick-dots li button{
+    display: none;
+}
 
 
 @media screen and (max-width: 1300px) {
