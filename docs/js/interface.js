@@ -1347,6 +1347,40 @@ $(function(){
 
 
 
+
+$(function(){
+	if ($('.tile-photo-slider').length>0) {
+		var $tileSlider = $('.tile-photo-slider');
+		$tileSlider.slick({
+			speed: 250,
+			swipe: true,
+			swipeToSlide: true,
+			touchThreshold: 10,
+			arrows:true,
+			useTransform:true,
+			accessibility: false,
+			infinite: false,
+			fade:true,
+		});
+		$('.slider-nav-thumbnails__item').each( function( i ) {
+			$('.slider-nav-thumbnails__item.slide-' + i).click(function(){
+				console.log(i);
+				$('.slider-nav-thumbnails__item').removeClass('slick-active');
+				$(this).addClass('slick-active');
+				$('.tile-photo-slider').slick('slickGoTo', i);
+			})
+		})
+	 	$('.tile-photo-slider').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+		 	var next = nextSlide; 
+		 	$('.slider-nav-thumbnails__item').removeClass('slick-active');
+		 	$('.slider-nav-thumbnails__item.slide-' + next).addClass('slick-active');
+		});
+	}
+});
+
+
+
+
 $(window).resize(function () {
 
 });

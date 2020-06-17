@@ -13062,6 +13062,99 @@ html {
 }
 
 
+.tile-photo__wrap{
+    overflow: hidden; 
+
+}
+.tile-photo__inner{
+    margin-bottom: 0;
+}
+.tile-photo-slider{
+    display: none;
+     margin-bottom: 10px;
+}
+.tile-photo-slider.slick-initialized{
+    display: block;
+}
+.tile-photo-slider .slick-arrow{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: inline-block;
+    width: 22px;
+    height: 36px;
+    text-indent: -9999em;
+    z-index: 2;
+    padding: 0;
+    border: 0;
+}
+.tile-photo-slider .slick-arrow:hover{
+    opacity: .6;
+}
+.tile-photo-slider .slick-arrow.slick-disabled{
+    opacity: .6;
+    pointer-events: none;
+}
+.tile-photo-slider .slick-arrow.slick-next{
+    right: 0;
+    background: url(../img/svg/t-next.svg) no-repeat;
+}
+.tile-photo-slider .slick-arrow.slick-prev{
+    left: 0;
+    background: url(../img/svg/t-next.svg) no-repeat;
+    transform: translateY(-50%) rotate(180deg);
+}
+.slider-nav-thumbnails{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center ;
+    margin-bottom: 30px;
+}
+.slider-nav-thumbnails__item{
+    width: 81px;
+    height: 81px;
+        background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 10px;
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+.slider-nav-thumbnails__item.slick-active{
+    border: 2px solid #f8a303;
+}
+.slider-nav-thumbnails__item:last-child{
+    margin-right: 0;
+}
+.slider-nav-thumbnails__item img{
+    display: block;
+    max-width: 100%;
+}
+.tile-photo__item--left .tile-photo__img{
+    order: 1;
+    margin-left: 0;
+}
+.tile-photo__item--left .tile-photo__info{
+    order: 2;
+}
+
+.tile-photo__item--right .tile-photo__img{
+    order: 2;
+    margin-left: 20px;
+    margin-right: 0;
+}
+.tile-photo__item--right .tile-photo__info{
+    order: 1;
+}
+.tile-photo__item--right .tile-photo__format, .tile-photo__item--right .tile-photo__price {
+    padding-right: 0;
+}
+
 @media screen and (max-width: 1300px) {
     .index-slider__pager .index-slider-in__item{
         font-size: 16px;
@@ -13153,6 +13246,16 @@ html {
     }
     .layout--index .page-content{
         padding-top: 0;
+    }
+    .slider-nav-thumbnails__item {
+        width: 40px;
+        height: 40px;
+    }
+    .tile-photo__item--left .tile-photo__format,
+    .tile-photo__item--left .tile-photo__price,
+    .tile-photo__item--left .tile-photo__top,
+    .tile-photo__item--left .tile-photo__left{
+        padding-left: 0;
     }
 }
 
