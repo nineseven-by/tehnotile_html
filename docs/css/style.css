@@ -10716,9 +10716,9 @@ ymaps[class*="-copyright"] {
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
     .product-item:nth-child(4n+4):hover .catalog-descr {
-        -webkit-transform: translateX(-105%);
-        -ms-transform: translateX(-105%);
-        transform: translateX(-105%);
+        -webkit-transform: translateX(-100%);
+        -ms-transform: translateX(-100%);
+        transform: translateX(-100%);
     }
     .product-item:nth-child(4n+4) .catalog-descr:before {
         content: " ";
@@ -10732,9 +10732,9 @@ ymaps[class*="-copyright"] {
 }
 @media screen and (min-width: 1025px) and (max-width: 1450px) {
     .product-item:nth-child(5n+5):hover .catalog-descr {
-        -webkit-transform: translateX(-105%);
-        -ms-transform: translateX(-105%);
-        transform: translateX(-105%);
+        -webkit-transform: translateX(-100%);
+        -ms-transform: translateX(-100%);
+        transform: translateX(-100%);
     }
     .product-item:nth-child(5n+5) .catalog-descr:before {
         content: " ";
@@ -10748,9 +10748,9 @@ ymaps[class*="-copyright"] {
 }
 @media screen and (min-width: 1451px) {
     .product-item:nth-child(7n+7):hover .catalog-descr {
-        -webkit-transform: translateX(-105%);
-        -ms-transform: translateX(-105%);
-        transform: translateX(-105%);
+        -webkit-transform: translateX(-100%);
+        -ms-transform: translateX(-100%);
+        transform: translateX(-100%);
     }
     .product-item:nth-child(7n+7) .catalog-descr:before {
         content: " ";
@@ -11826,15 +11826,15 @@ html {
 
 @media screen and (max-width: 1024px) {
     .slider__item--md:hover .catalog-descr.catalog-descr--left {
-        transform: translateX(calc(-100% - 12px));
+        transform: translateX(-100%);
     }
 
     .catalog__item--md:nth-child(2n):hover .catalog-descr {
-        transform: translateX(calc(-100% - 10px));
+        transform: translateX(-100%);
     }
 
     .slider__item--md:nth-child(2n+1):hover .catalog-descr {
-        transform: translateX(calc(100% + 30px));
+        transform: translateX(100%);
     }
 
     .slider__item--md:nth-child(2n+1):hover .catalog-descr::before {
@@ -11842,15 +11842,15 @@ html {
     }
 
     .slider__item--md:nth-child(2n):hover .catalog-descr {
-        transform: translateX(calc(-100% - 12px));
+        transform: translateX(-100%);
     }
 
     .catalog__item--md:hover .catalog-descr {
-        transform: translateX(calc(100% + 30px));
+        transform: translateX(100%);
     }
 
     .catalog__item--md:nth-child(2n+1):hover .catalog-descr {
-        transform: translateX(calc(100% + 30px));
+        transform: translateX(100%);
     }
 
     .catalog__item--md:nth-child(2n+1):hover .catalog-descr::before {
@@ -11858,7 +11858,7 @@ html {
     }
 
     .slider__item--lg:nth-child(2n+1):hover .catalog-descr {
-        transform: translateX(calc(100% + 30px));
+        transform: translateX(100%);
     }
 
     .slider__item--lg:nth-child(2n+1):hover .catalog-descr::before {
@@ -11866,11 +11866,11 @@ html {
     }
 
     .slider__item--lg:nth-child(2n):hover .catalog-descr {
-        transform: translateX(calc(-100% - 12px));
+        transform: translateX(-100%);
     }
 
     .catalog__item--lg.large-container_init:hover .catalog-descr {
-        transform: translateX(calc(100% + 30px));
+        transform: translateX(100%);
     }
 
     .catalog__item--lg.large-container_init:hover .catalog-descr::before {
@@ -11878,7 +11878,7 @@ html {
     }
 
     .popular-slider .slider__item--md:nth-child(2n):hover .catalog-descr, .popular-slider .catalog__item--md:nth-child(2n):hover .catalog-descr {
-        transform: translateX(calc(100% + 30px));
+        transform: translateX(100%);
     }
 
     .popular-slider .slider__item--md:nth-child(2n):hover .catalog-descr::before, .popular-slider .catalog__item--md:nth-child(2n):hover .catalog-descr::before {
@@ -11891,11 +11891,11 @@ html {
     }
 
     .popular-slider .slider__item--md:nth-child(2n):hover .catalog-descr.catalog-descr--left, .popular-slider .catalog__item--md:nth-child(2n):hover .catalog-descr.catalog-descr--left {
-        transform: translateX(calc(-100% - 12px))!important;
+        transform: translateX(-100%)!important;
     }
 
     .popular-slider .catalog__item--md:nth-child(2n+1):hover .catalog-descr.catalog-descr--left {
-        transform: translateX(calc(-100% - 12px))!important;
+        transform: translateX(-100%)!important;
     }
 
     .popular-slider .slider__item:nth-child(2n):hover .catalog-descr.catalog-descr--left::before, .popular-slider .catalog__item:nth-child(2n):hover .catalog-descr.catalog-descr--left::before, .popular-slider .catalog__item--md:nth-child(2n+1):hover .catalog-descr.catalog-descr--left::before {
@@ -11910,7 +11910,7 @@ html {
 
 @media screen and (max-width: 799px) {
     .popular-slider .slider__item--md:nth-child(2n):hover .catalog-descr, .popular-slider .catalog__item--md:nth-child(2n):hover .catalog-descr {
-        transform: translateX(calc(100% + 30px));
+        transform: translateX(100%);
     }
 
     .popular-slider .slider__item--md:nth-child(2n):hover .catalog-descr::before, .popular-slider .catalog__item--md:nth-child(2n):hover .catalog-descr::before {
@@ -11923,7 +11923,7 @@ html {
     }
 
     .popular-slider .slider__item--md:nth-child(2n):hover .catalog-descr.catalog-descr--left, .popular-slider .catalog__item--md:nth-child(2n):hover .catalog-descr.catalog-descr--left {
-        transform: translateX(calc(-100% - 12px));
+        transform: translateX(-100%);
     }
 
     .popular-slider .slider__item:nth-child(2n):hover .catalog-descr.catalog-descr--left::before, .popular-slider .catalog__item:nth-child(2n):hover .catalog-descr.catalog-descr--left::before {
@@ -13296,6 +13296,16 @@ html {
 }
 .catalog-descr{
     padding: 15px 20px;
+}
+.product-item .catalog-descr{
+    height: 100%;
+    width: 100%;
+    top: 0;
+}
+.product-item:hover .catalog-descr{
+    -webkit-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    transform: translateX(100%);
 }
 
 @media screen and (max-width: 1300px) {
