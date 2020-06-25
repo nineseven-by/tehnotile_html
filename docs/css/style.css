@@ -11242,7 +11242,7 @@ html {
 }
 .product-icons{
     position: absolute;
-    right: 0;
+    right: 6px;
         top: 50%;
     transform: translateY(-50%);
     display: -webkit-box;
