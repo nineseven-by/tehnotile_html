@@ -13308,6 +13308,51 @@ html {
     transform: translateX(100%);
 }
 
+.download-links{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+.download-link{
+    font-size: 14px;
+     display: -webkit-inline-box;
+    display: -webkit-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-right: 15px;
+    color: #808080;
+    margin-bottom: 10px;
+}
+.download-link:last-child{
+    margin-right: 0;
+}
+.download-format{
+    color: #b8b8b8;
+    margin-left: 4px;
+}
+.download-size{
+    color: #b8b8b8;
+    margin-left: 4px;
+}
+.download-icon{
+    margin-right: 3px;
+}
+.download-icon img{
+    display: block;
+}
+
 @media screen and (max-width: 1300px) {
     .index-slider__pager .index-slider-in__item{
         font-size: 16px;
