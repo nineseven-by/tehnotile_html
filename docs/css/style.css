@@ -6021,7 +6021,7 @@ ul.profile-tabs__list li a:hover {
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
-    margin-bottom: 20px; }
+    margin-bottom: 0; }
 
 .catalog-sort__select {
     margin-left: 20px;
@@ -6049,11 +6049,11 @@ ul.profile-tabs__list li a:hover {
     align-items: center; }
 
 .catalog__label {
-    margin-right: 10px;
+    margin-right: 15px;
     background: #eeeeee;
     font-size: 17px;
     color: #808080;
-    padding: 6px 13px;
+/*    padding: 6px 13px;*/
     border-radius: 3px;
     display: -webkit-box;
     display: -webkit-flex;
@@ -6062,8 +6062,7 @@ ul.profile-tabs__list li a:hover {
     -webkit-box-align: center;
     -webkit-align-items: center;
     -ms-flex-align: center;
-    align-items: center;
-    margin-bottom: 20px; }
+    align-items: center; }
 .catalog__label:last-child {
     margin-right: 0; }
 
@@ -6072,7 +6071,11 @@ ul.profile-tabs__list li a:hover {
     width: 9px;
     height: 9px;
     background: url(../img/svg/close.svg) no-repeat;
-    margin-left: 12px; }
+    margin-left: 5px;
+    opacity: 0.7;}
+.catalog__label__close:hover{
+    opacity: 1;
+}
 
 .back {
     color: #808080;
@@ -13703,6 +13706,9 @@ html {
 @media screen and (max-width: 768px){
     .index-slider__pager .index-slider-in {
         padding: 0 30px;
+    }
+    .catalog__label{
+        margin-bottom: 20px;
     }
 }
 
