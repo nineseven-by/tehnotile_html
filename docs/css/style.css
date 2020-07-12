@@ -6396,14 +6396,16 @@ ul.profile-tabs__list li a:hover {
 
 .manuf-icon {
     display: inline-block;
+        vertical-align: bottom;
     width: 16px;
-    height: 11px;
+    height: 16px;
     position: relative;
     top: 1px;
     margin-left: 5px; }
 .manuf-icon img {
-    max-width: 100%;
-    display: block; }
+        max-width: 100%;
+    display: inline-block;
+    max-height: 100%;}
 
 .catalog-descr__el {
     position: relative;
@@ -13164,6 +13166,14 @@ html {
 .catalog-descr a{
     font-size: 14px;
     color: #2c2c2c;
+    display: -webkit-inline-box;
+    display: -webkit-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex; 
+    -webkit-box-align: end;
+    -webkit-align-items: flex-end;
+    -ms-flex-align: end;
+    align-items: flex-end;
 }
 .catalog-descr__st {
     position: relative;
