@@ -4668,7 +4668,7 @@ textarea, input {
 
 .page-top {
     background: #eeeeee;
-    padding: 19px 0 22px; }
+    padding: 20px 0; }
 .page-top + .container-fluid {
     padding-top: 22px;
     padding-bottom: 60px; }
@@ -13279,7 +13279,6 @@ html {
     align-items: center;
     margin-right: 15px;
     color: #808080;
-    margin-bottom: 10px;
 }
 .download-link:last-child{
     margin-right: 0;
@@ -13297,6 +13296,32 @@ html {
 }
 .download-icon img{
     display: block;
+}
+.catalog-sort{
+    font-size: 14px;
+}
+.catalog-sort-line {
+    padding-top: 8px;
+}
+.catalog-sort__select {
+    margin-left: 10px;
+    min-width: auto;
+    width: auto;
+}
+.catalog-sort__select__link {
+    border: 0;
+    padding: 0;
+    height: auto;
+    color: #808080;
+}
+.catalog-sort__select__link:after {
+    border-top: 4px solid #000;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+    position: static;
+    display: inline-block;
+    vertical-align: middle;
+    margin: -2px 0 0 4px;
 }
 
 /*RAL*/
@@ -13623,6 +13648,13 @@ html {
         font-size: 35px;
     }
 }
+
+@media screen and (max-width: 1024px){
+    .download-links{
+        margin-bottom: 20px;
+    }
+}
+
 @media screen and (max-width: 1000px){
     .index-slider__pager .index-slider-in__item{
         padding: 0 10!important; 
