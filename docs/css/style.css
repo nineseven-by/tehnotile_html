@@ -9750,6 +9750,7 @@ ymaps[class*="-copyright"] {
 .fancybox-caption, .fancybox-infobar, .fancybox-navigation .fancybox-button, .fancybox-toolbar{
     opacity: 1;
     visibility: visible;
+    display: none;
 }
 .fancybox-caption__body {
     font-size: 24px;
@@ -13832,4 +13833,9 @@ html {
         border-color: #e2e2e2;
         border-top: 0;
     }
+}
+.pr-compare.active{
+    display: inline-block;
+    width: 24px;
+    height: 16px;
 }
