@@ -75,6 +75,15 @@ $(document).ready(function() {
 			distance: 0,
 			contentAsHTML:true,
 			interactive: true,
+			trigger:"custom",
+			triggerOpen: {
+		      click: true,  // For mouse
+		      tap: true    // For touch device
+		    },
+		    triggerClose: {
+		      click: true,  // For mouse
+		      tap: true    // For touch device
+		    }
 		});
 	}
 
