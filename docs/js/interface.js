@@ -104,6 +104,10 @@ $(document).ready(function() {
 		$('.js-phone-mask').inputmask('+7(999)999-99-99');
 	}
 
+	if ($('.js-date-mask').length>0) {
+		$('.js-date-mask').inputmask({"mask": "99.99.9999", "placeholder": "дд.мм.гггг"});
+	}
+
 	if ($('.r-tabs').length>0) {
 		var activeTab = $('.r-tabs').attr('data-active');
 		$('.r-tabs').responsiveTabs({
@@ -1866,6 +1870,7 @@ $(document).on('click', '.top-search-mobile__link', function (e) {
 $(document).on('change', '.js-select__input', function () {
 	let value = $(this).val();
 	//var b = $(this).attr('id').split('_')[1];
+	var id = $(this).parent().parent().parent().find('.add-prod-basket').attr('data-prodid');
 	var input = $(this);
 	var select =$(this).siblings('.select__val');
 	if(value>=0) {
@@ -1873,7 +1878,7 @@ $(document).on('change', '.js-select__input', function () {
 			type: "POST",
 			url: "/local/php_interface/include/quantity.php",
 			dataType: "json",
-			data: "idprod="+"&cnt=" + value,
+			data: "idprod="+id+"&cnt=" + value,
 			success: function (data) {
 				input.val(data);
 				select.html(data);
