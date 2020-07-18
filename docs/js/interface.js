@@ -1330,12 +1330,13 @@ $(function(){
 		    $(value).find(".list-unit-image").each(function(index1, value1) {
 		        var slider = $(value1);
 		        var imagesAmount = slider.find(".list-unit-image-unit-wrap").length;
-		        for (var i = 0; i < imagesAmount; i++) {
-		            slider.find(".list-unit-dots").append("<li></li>");
-
+		        if (imagesAmount>1) {
+		        	for (var i = 0; i < imagesAmount; i++) {
+			            slider.find(".list-unit-dots").append("<li></li>");
+			        }
 		        }
+		       
 		        slider.find(".list-unit-dots li").eq(0).addClass("slick-active");
-		        console.log(imagesAmount)
 		    });
 
 		    $(value).hover(function() {
