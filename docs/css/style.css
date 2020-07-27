@@ -6424,6 +6424,7 @@ ul.profile-tabs__list li a:hover {
 
 .catalog-slider {
     height: 100%;
+    z-index: 4;
     display: none; }
 .catalog-slider.slick-initialized {
     display: block; }
@@ -13192,6 +13193,7 @@ html {
 }
 .catalog-descr__el{
     display: block;
+    margin-bottom: 2px;
 }
 .catalog-descr a{
     font-size: 14px;
@@ -13229,11 +13231,18 @@ html {
     width: 20%;
     padding-right: 2px;
     margin-bottom: 2px;
+    height: 60px;
+    overflow: hidden;
 }
 .style-img{
     width: 100%;
-    padding-top: 100%; /* 1:1 Aspect Ratio */
+ /*   padding-top: -webkit-calc(100% - 7px);
+    padding-top: expression(100% - 7px);
+    padding-top: -moz-calc(100% - 7px);
+    padding-top: -o-calc(100% - 7px);
+    padding-top: calc(100% - 7px);*/
     position: relative;
+    height: 100%;
 }
 .style-img img{
     display: block;
