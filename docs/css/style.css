@@ -8137,10 +8137,10 @@ ul.profile-tabs__list li a:hover {
     flex-wrap: wrap;
     margin-bottom: 40px;
     overflow: hidden; }
-.collection-list .slider__item:hover {
+/*.collection-list .slider__item:hover {
     z-index: inherit; }
 .collection-list .catalog__item {
-    z-index: 1; }
+    z-index: 1; }*/
 
 .catalog__item--video .catalog-inner:before {
     content: "";
@@ -8256,7 +8256,7 @@ ul.profile-tabs__list li a:hover {
     -webkit-transform: skewX(-25deg);
     transform: skewX(-25deg);
 }
-.list-unit-dots:hover:before{
+.shine .list-unit-dots:hover:before{
         -webkit-animation: shine .5s;
     animation: shine .5s;
     opacity: 1;
