@@ -7493,7 +7493,7 @@ ul.profile-tabs__list li a:hover {
 .tile-photo__inner {
     width: 577px;
     height: 577px;
-    background-size: cover;
+
     background-repeat: no-repeat;
     background-position: center;
     position: relative;
@@ -13164,7 +13164,6 @@ html {
 .slider-nav-thumbnails__item{
     width: 81px;
     height: 81px;
-        background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     margin-right: 10px;
