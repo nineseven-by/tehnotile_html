@@ -6426,6 +6426,15 @@ ul.profile-tabs__list li a:hover {
     height: 100%;
     z-index: 4;
     display: none; }
+.slider__item .catalog-descr{
+    -webkit-animation-delay: 1s;
+    -moz-animation-delay: 1s;
+    -o-animation-delay: 1s;
+    animation-delay: 1s;
+}
+.slider__item:hover .catalog-descr {
+    z-index: 5;
+}
 .catalog-slider.slick-initialized {
     display: block; }
 .catalog-slider .slick-track,
@@ -13999,6 +14008,10 @@ html {
     -ms-flex-align: center;
     align-items: center;
     margin-bottom: 20px;
+}
+
+.catalog-descr__view{
+    margin-left: 10px;
 }
 
 
