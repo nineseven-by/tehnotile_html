@@ -9789,7 +9789,7 @@ ymaps[class*="-copyright"] {
 .fancybox-caption, .fancybox-infobar, .fancybox-navigation .fancybox-button, .fancybox-toolbar{
     opacity: 1;
     visibility: visible;
-    display: none;
+   /* display: none;*/
 }
 .fancybox-caption__body {
     font-size: 24px;
@@ -14009,6 +14009,10 @@ html {
 
 .catalog-descr__view{
     margin-left: 10px;
+}
+
+.gallery-hidden{
+    display: none;
 }
 
 
