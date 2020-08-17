@@ -1188,6 +1188,15 @@ $(document).ready(function() {
 
 	sliderAdvantagesInit();
 	sliderMobileStart();
+
+
+	$(".magazine-link").click(function(e) {
+	    e.preventDefault();
+	    var aid = $(this).attr("href");
+	    $('html,body').animate({scrollTop: $(aid).offset().top - 80},'slow');
+	    $('.magazine-item').removeClass('active');
+	    $(this).parents('.magazine-item').addClass('active');
+	});
 });
 
 
