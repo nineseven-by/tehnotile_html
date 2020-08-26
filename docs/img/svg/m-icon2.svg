@@ -1,0 +1,25 @@
+<svg id="керамическая_плитка" data-name="керамическая плитка" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22">
+  <defs>
+    <style>
+      .cls-1 {
+        fill-opacity: 0;
+        stroke: #2c2c2c;
+        stroke-linejoin: round;
+        stroke-width: 1px;
+      }
+
+      .cls-2 {
+        fill: #2c2c2c;
+      }
+    </style>
+  </defs>
+  <rect class="cls-1" x="0.5" y="11.5" width="10" height="10"/>
+  <rect id="Rectangle_20_copy_2" data-name="Rectangle 20 copy 2" class="cls-1" x="11.5" y="11.5" width="10" height="10"/>
+  <rect id="Rectangle_20_copy" data-name="Rectangle 20 copy" class="cls-1" x="0.5" y="0.5" width="10" height="10"/>
+  <g id="Группа_1" data-name="Группа 1">
+    <rect class="cls-2" x="12.5" y="1.5" width="8" height="1"/>
+    <rect id="Rectangle_21_copy" data-name="Rectangle 21 copy" class="cls-2" x="12.5" y="3.5" width="8" height="1"/>
+    <rect id="Rectangle_21_copy_2" data-name="Rectangle 21 copy 2" class="cls-2" x="12.5" y="5.5" width="8" height="1"/>
+    <rect id="Rectangle_21_copy_3" data-name="Rectangle 21 copy 3" class="cls-2" x="12.5" y="7.5" width="8" height="1"/>
+  </g>
+</svg>

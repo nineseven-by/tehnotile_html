@@ -1,0 +1,18 @@
+<svg id="мозаика" xmlns="http://www.w3.org/2000/svg" width="24" height="29" viewBox="0 0 24 29">
+  <defs>
+    <style>
+      .cls-1 {
+        fill-opacity: 0;
+        stroke: #2c2c2c;
+        stroke-linejoin: round;
+        stroke-width: 1px;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path class="cls-1" d="M51.509,372.991l6.5,6.5-6.5,6.5-6.5-6.5Z" transform="translate(-44.5 -367.5)"/>
+  <path id="Rectangle_18_copy" data-name="Rectangle 18 copy" class="cls-1" d="M58.488,368.008l4.5,4.494-4.5,4.5-4.5-4.5Z" transform="translate(-44.5 -367.5)"/>
+  <path id="Rectangle_18_copy_5" data-name="Rectangle 18 copy 5" class="cls-1" d="M64.167,373.468l3.827,3.763-3.827,3.762-3.827-3.762Z" transform="translate(-44.5 -367.5)"/>
+  <path id="Rectangle_18_copy_7" data-name="Rectangle 18 copy 7" class="cls-1" d="M53.513,387l4.5,4.5-4.5,4.5-4.5-4.5Z" transform="translate(-44.5 -367.5)"/>
+  <path id="Rectangle_18_copy_6" data-name="Rectangle 18 copy 6" class="cls-1" d="M60.491,380l5.5,5.506-5.5,5.506-5.5-5.506Z" transform="translate(-44.5 -367.5)"/>
+</svg>

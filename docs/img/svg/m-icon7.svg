@@ -1,0 +1,27 @@
+<svg id="сопутствующие_товары" data-name="сопутствующие товары" xmlns="http://www.w3.org/2000/svg" width="33" height="31" viewBox="0 0 33 31">
+  <defs>
+    <style>
+      .cls-1 {
+        fill-opacity: 0;
+      }
+
+      .cls-1, .cls-2 {
+        stroke: #2c2c2c;
+        stroke-linejoin: round;
+        stroke-width: 1px;
+        fill-rule: evenodd;
+      }
+
+      .cls-2 {
+        fill: #eee;
+      }
+    </style>
+  </defs>
+  <g id="Группа_2" data-name="Группа 2">
+    <path class="cls-1" d="M70.579,550.088l-0.807-.807-0.807.807,0.807,0.806-2.421,2.419-0.807-.806-0.807.806,0.807,0.806-2.421,2.419-0.807-.806-0.807.806,0.807,0.807L60.9,559.764l-0.807-.807-0.807.807,0.807,0.806-2.421,2.419-9.683-9.676,2.421-2.419,0.807,0.806,0.807-.806-0.807-.806,2.421-2.419,0.807,0.806,0.807-.806-0.807-.807,2.421-2.419,0.807,0.807,0.807-.807-0.807-.806,2.421-2.419,0.807,0.807,0.807-.807-0.807-.806,2.421-2.419L73,547.669Z" transform="translate(-40.5 -532.5)"/>
+    <path class="cls-2" d="M55.538,552.087l3.357,3.354-7.552,7.547-3.357-3.354Z" transform="translate(-40.5 -532.5)"/>
+  </g>
+  <path id="Rounded_Rectangle_4" data-name="Rounded Rectangle 4" class="cls-1" d="M52,536h1a1,1,0,0,1,1,1v5a1,1,0,0,1-1,1H52a1,1,0,0,1-1-1v-5A1,1,0,0,1,52,536Zm-2,2h5a1,1,0,0,1,1,1v1a1,1,0,0,1-1,1H50a1,1,0,0,1-1-1v-1A1,1,0,0,1,50,538Z" transform="translate(-40.5 -532.5)"/>
+  <path id="Rounded_Rectangle_4_copy" data-name="Rounded Rectangle 4 copy" class="cls-1" d="M46,542h1a1,1,0,0,1,1,1v5a1,1,0,0,1-1,1H46a1,1,0,0,1-1-1v-5A1,1,0,0,1,46,542Zm-2,2h5a1,1,0,0,1,1,1v1a1,1,0,0,1-1,1H44a1,1,0,0,1-1-1v-1A1,1,0,0,1,44,544Z" transform="translate(-40.5 -532.5)"/>
+  <path id="Rounded_Rectangle_4_copy_2" data-name="Rounded Rectangle 4 copy 2" class="cls-1" d="M44,533h1a1,1,0,0,1,1,1v5a1,1,0,0,1-1,1H44a1,1,0,0,1-1-1v-5A1,1,0,0,1,44,533Zm-2,2h5a1,1,0,0,1,1,1v1a1,1,0,0,1-1,1H42a1,1,0,0,1-1-1v-1A1,1,0,0,1,42,535Z" transform="translate(-40.5 -532.5)"/>
+</svg>
