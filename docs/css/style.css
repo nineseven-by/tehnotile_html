@@ -3520,7 +3520,10 @@ textarea, input {
 
 .top-select-toggle__link {
     position: relative;
-    display: inline-block;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
     vertical-align: top;
     font-size: 14px;
     padding-right: 13px;
@@ -3561,6 +3564,12 @@ textarea, input {
     position: relative; }
 .top-select-toggle:last-child {
     margin-right: 0; }
+    .top-select-toggle:last-child .top-select-toggle__link{
+        display: -webkit-inline-box;
+        display: -webkit-inline-flex;
+        display: -ms-inline-flexbox;
+        display: inline-flex;
+    }
 .top-select-toggle:hover .top-select-list {
     -webkit-transform: scaleY(1) translateX(-50%);
     -ms-transform: scaleY(1) translateX(-50%);
@@ -3763,9 +3772,10 @@ textarea, input {
     align-items: center; }
 
 .extended-search-link {
-    display: inline-block;
-    vertical-align: top;
-    margin-top: -4px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
     font-size: 14px;
     color: rgba(255, 255, 255, 0.6);
     position: relative;
@@ -3809,8 +3819,7 @@ textarea, input {
     border-color: #ffffff transparent transparent transparent;
     position: absolute;
     right: 0;
-    top: 50%;
-    margin-top: -3px; }
+    top: 50%;}
 
 .top-select-toggle__collection input[type="checkbox"]:not(:checked),
 .top-select-toggle__collection input[type="checkbox"]:checked {
@@ -14357,6 +14366,10 @@ ol.magazine-list li:before {
     -ms-flex-align: center;
     align-items: center;
 }
+.top-select-toggle .texture{
+    display: inline-block;
+    margin-right: 0;
+}
 
 .pr-compare.active{
     display: inline-block;
@@ -14800,6 +14813,9 @@ ol.magazine-list li:before {
     .texture{
         margin-right: -40px;
     }
+    .top-select-toggle .texture{
+        margin-right: 0;
+    }
     .texture__item {
         padding-right: 40px;
     }
@@ -14917,6 +14933,10 @@ ol.magazine-list li:before {
     }
     .center__title:before{
         display: none;
+    }
+    .top-select-toggle:last-child .top-select-toggle__link {
+        position: relative;
+        top: 1px;
     }
 }
 
@@ -15053,6 +15073,9 @@ ol.magazine-list li:before {
     }
     .texture {
         margin-right: -20px;
+    }
+    .top-select-toggle .texture{
+        margin-right: 0;
     }
     .texture__item {
         padding-right: 20px;
