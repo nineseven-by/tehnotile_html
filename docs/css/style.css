@@ -14449,7 +14449,8 @@ ol.magazine-list li:before {
     top: 6px;
 }
 .catalog-menu__link.active{
-    background: #f8a303;
+    background: transparent;
+    color: #f8a303;
 }
 .catalog-menu__link.active i{
     background-color: transparent;
@@ -14460,6 +14461,7 @@ ol.magazine-list li:before {
     -ms-transform: translateY(6px) rotate(45deg);
     -o-transform: translateY(6px) rotate(45deg);
     transform: translateY(6px) rotate(45deg);
+    background-color: #f8a303;
 }
 .catalog-menu__link.active i:after{
     -webkit-transform: translateY(-6px) rotate(-45deg);
@@ -14467,6 +14469,7 @@ ol.magazine-list li:before {
     -ms-transform: translateY(-6px) rotate(-45deg);
     -o-transform: translateY(-6px) rotate(-45deg);
     transform: translateY(-6px) rotate(-45deg);
+    background-color: #f8a303;
 }
 .catalog-menu__view{
     position: absolute;
@@ -14482,6 +14485,9 @@ ol.magazine-list li:before {
     overflow: hidden;
     display: none;
 }
+.catalog-menu__view .container-fluid{
+    padding: 0;
+}
 .catalog-menu__wrap{
     display: -webkit-box;
     display: -webkit-flex;
@@ -14489,13 +14495,13 @@ ol.magazine-list li:before {
     display: flex; 
 }
 .catalog-menu-select{
-    width: 240px;
-    min-width: 240px;
+    width: 260px;
+    min-width: 260px;
     background: #eeeeee;
     padding-bottom: 30px;
     position: relative;
 }
-.catalog-menu-select:before{
+/*.catalog-menu-select:before{
     content: "";
     display: block;
     height: 100%;
@@ -14504,7 +14510,7 @@ ol.magazine-list li:before {
     position: absolute;
     right: 100%;
     top: 0;
-}
+}*/
 .catalog-menu__screen{
     -webkit-box-flex: 1;
     -webkit-flex: 1;
@@ -14521,7 +14527,7 @@ ol.magazine-list li:before {
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
-    padding: 15px 5px 15px 5px;
+    padding: 15px 5px 15px 20px;
     color: #2c2c2c;
     border-bottom: 1px solid #fff;
     transition: background .3s ease;
@@ -14633,6 +14639,9 @@ ol.magazine-list li:before {
     margin-bottom: 7px;
     font-weight: 700;
 }
+.m-menu__top:hover{
+    color: #4055c3;
+}
 .m-menu__top.m-sale{
     color: #f50000;
     padding-left: 20px;
@@ -14653,6 +14662,9 @@ ol.magazine-list li:before {
     display: block;
     color:#808080;
     margin-bottom: 9px;
+}
+.m-menu__link:hover{
+    color: #4055c3;
 }
 .catalog-menu-mobile-link{
     display: block;
