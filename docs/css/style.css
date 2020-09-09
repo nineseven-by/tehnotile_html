@@ -7513,17 +7513,6 @@ ul.profile-tabs__list li a:hover {
     position: relative;
     margin: 0 auto 30px; }
 
-.tile-photo__inner:before{
-    content: "";
-    display: block;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    background: rgba(0,0,0,0.05);
-}
-
 .save-photo {
     position: absolute;
     z-index: 2;;
