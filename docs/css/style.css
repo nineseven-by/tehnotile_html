@@ -14051,8 +14051,11 @@ html {
     padding: 0 40px;
 }
 
-.magazine-item{
+.magazine-section{
     margin-bottom: 40px;
+}
+.magazine-section:last-child{
+    margin-bottom: 0;
 }
 .magazine-item ol li{
     padding-left: 38px;
@@ -14061,9 +14064,7 @@ html {
 .magazine-item ol li:last-child{
     margin-bottom: 0;
 }
-.magazine-item:last-child{
-    margin-bottom: 0;
-}
+
 .magazine-top{
     margin-bottom: 25px;
     position: relative;
@@ -14999,6 +15000,9 @@ ol.magazine-list li:before {
     .texture__item,.t-price__item {
         padding-right: 40px;
     }
+    ol.magazine-list li:before {
+        top: 12px;
+    }
 }
 @media screen and (max-width: 1200px){
     .advantages__item-img {
@@ -15031,6 +15035,9 @@ ol.magazine-list li:before {
     .magazine-link {
         font-size: 15px;
     }
+    ol.magazine-list li:before {
+        top: 10px;
+    }
 }
 @media screen and (max-width: 1100px){
     .ral-main input[type="checkbox"]:not(:checked) + label,
@@ -15056,6 +15063,9 @@ ol.magazine-list li:before {
     .magazine-link {
         font-size: 14px;
         padding: 10px 5px 10px 0;
+    }
+    ol.magazine-list li:before {
+        top: 8px;
     }
 }
 
@@ -15157,6 +15167,9 @@ ol.magazine-list li:before {
     .segmentTriangle,
     .segmentTriangle:after{
         width:15px;
+    }
+    ol.magazine-list li:before {
+        top: 14px;
     }
 }
 

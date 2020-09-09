@@ -1190,13 +1190,34 @@ $(document).ready(function() {
 	sliderMobileStart();
 
 
-	$(".magazine-link").click(function(e) {
-	    e.preventDefault();
-	    var aid = $(this).attr("href");
-	    $('html,body').animate({scrollTop: $(aid).offset().top - 80},'slow');
-	    $('.magazine-item').removeClass('active');
-	    $(this).parents('.magazine-item').addClass('active');
-	});
+	$('.magazine-link').on('click', function() {
+
+	    var scrollAnchor = $(this).attr('data-scroll'),
+	        scrollPoint = $('.magazine-section[data-anchor="' + scrollAnchor + '"]').offset().top - 28;
+
+	    $('body,html').animate({
+	        scrollTop: scrollPoint
+	    }, 500);
+
+	    return false;
+
+	})
+
+
+	$(window).scroll(function() {
+	    var windscroll = $(window).scrollTop();
+	    if (windscroll >= 100) {
+	        $('.magazine-section').each(function(i) {
+	            if ($(this).position().top <= windscroll - 120) {
+	                $('.magazine-item.active').removeClass('active');
+	                $('.magazine-link').eq(i).parents('.magazine-item').addClass('active');
+	            }
+	        });
+	    } else {
+	        $('.magazine-item.active').removeClass('active');
+	        $('.magazine-item:first').addClass('active');
+	    }
+	}).scroll();
 
 
 
