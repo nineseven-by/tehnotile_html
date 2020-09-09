@@ -2001,4 +2001,15 @@ $(document).ready(function () {
 		window.close();
 	})
 
+	function count(str, symb) {
+
+		for (var count = -1, index = 0; index != -1; count++, index = str.indexOf(symb, index + 1));
+
+		return count;
+	}
+
+	if(count(location.href, '/')<=4 && (location.href.indexOf('/filter/') + 1)){
+		$('.catalog').hide();
+		$('.lds-css').hide();
+	}
 })
