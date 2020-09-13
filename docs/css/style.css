@@ -14681,6 +14681,21 @@ ol.magazine-list li:before {
     top:50%;
     transform: translateY(-50%); 
 }
+
+
+.m-menu__top.with-icon{
+   padding-left: 20px;
+   position: relative;
+}
+.m-menu__top.with-icon img {
+   display: inline-block;
+   width:15px;
+   height:15px;
+   position: absolute;
+   left:0;
+   top:50%;
+   transform: translateY(-50%);
+}
 .m-menu__link{
     display: block;
     color:#808080;
