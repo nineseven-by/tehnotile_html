@@ -759,6 +759,8 @@ $(document).ready(function() {
 		buttons: [
 			"close"
 		],
+		arrows : false,
+		'showNavArrows' : false,
 		image : {
 			protect : true,
 		}

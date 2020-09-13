@@ -14971,6 +14971,10 @@ ol.magazine-list li:before {
     font-weight: 700;
 }
 
+.fancybox-navigation .fancybox-button[disabled] {
+  display: none;
+}
+
 @media screen and (max-width: 1350px){
     .ral-list {
         padding-right: 25px;
