@@ -11319,7 +11319,8 @@ html {
     display: inline-block;
     width: 24px;
     height: 16px;
-    background: url(../img/svg/c-comp-icon.svg);
+    background: url(../img/svg/c-comp-icon.svg) center no-repeat;
+    background-size: 24px 16px;
 }
 .pr-compare.active{
     background: url(../img/svg/c-comp-icon-a.svg);
