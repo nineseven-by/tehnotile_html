@@ -1270,6 +1270,9 @@ $(document).ready(function() {
 		e.preventDefault();
 		$('.mobile-catalog-second').removeClass('active');
 	});
+
+
+	
 });
 
 

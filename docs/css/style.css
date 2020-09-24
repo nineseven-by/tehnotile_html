@@ -14428,12 +14428,8 @@ ol.magazine-list li:before {
     left: 0;
     top:0;
     position: absolute;
-/*    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%);*/
-    background: url(../img/svg/play.svg) center no-repeat;
 }
-.tile-photo__link .m-video{
+.tile-photo__link.m-video{
     background: url(../img/svg/play.svg) center no-repeat;   
 }
 .tile-photo__inner iframe{
@@ -14984,6 +14980,9 @@ ol.magazine-list li:before {
 }
 .fancybox-navigation .fancybox-button svg{
     display: none;
+}
+.fancybox-slide--video .fancybox-content{
+    pointer-events: none;
 }
 
 @media screen and (max-width: 1350px){
