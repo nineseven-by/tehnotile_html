@@ -1410,7 +1410,7 @@ $(function(){
 
 $(function(){
 	if($('.list-unit-image').length>0){
-		$('#PRODUCT_ITEMS .product-item').each(function(index, value) {
+		$('#PRODUCT_ITEMS .product-item, .product-list .catalog .product-item').each(function(index, value) {
 
 		    $(value).find(".list-unit-image").each(function(index1, value1) {
 		        var slider = $(value1);
