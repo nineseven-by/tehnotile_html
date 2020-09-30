@@ -1,0 +1,17 @@
+<svg id="клинкерная_плитка" data-name="клинкерная плитка" xmlns="http://www.w3.org/2000/svg" width="31" height="21" viewBox="0 0 31 21">
+  <defs>
+    <style>
+      .cls-1 {
+        fill-opacity: 0;
+        stroke: #2c2c2c;
+        stroke-linejoin: round;
+        stroke-width: 1px;
+      }
+    </style>
+  </defs>
+  <rect id="Rectangle_18_copy_17" data-name="Rectangle 18 copy 17" class="cls-1" x="6.5" y="14.5" width="11" height="6"/>
+  <rect id="Rectangle_18_copy_18" data-name="Rectangle 18 copy 18" class="cls-1" x="0.5" y="7.5" width="11" height="6"/>
+  <rect id="Rectangle_18_copy_19" data-name="Rectangle 18 copy 19" class="cls-1" x="12.5" y="7.5" width="11" height="6"/>
+  <rect id="Rectangle_18_copy_20" data-name="Rectangle 18 copy 20" class="cls-1" x="7.5" y="0.5" width="11" height="6"/>
+  <rect id="Rectangle_18_copy_21" data-name="Rectangle 18 copy 21" class="cls-1" x="19.5" y="0.5" width="11" height="6"/>
+</svg>

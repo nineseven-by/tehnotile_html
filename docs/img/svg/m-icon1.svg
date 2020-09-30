@@ -1,0 +1,27 @@
+<svg id="керамогранит" xmlns="http://www.w3.org/2000/svg" width="30" height="21" viewBox="0 0 30 21">
+  <defs>
+    <style>
+      .cls-1, .cls-3 {
+        fill: #fff;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        stroke: #2c2c2c;
+        stroke-width: 1px;
+        fill-rule: evenodd;
+      }
+
+      .cls-2 {
+        fill-opacity: 0;
+      }
+
+      .cls-3 {
+        stroke-linejoin: round;
+      }
+    </style>
+  </defs>
+  <path id="Rectangle_18_copy_22" data-name="Rectangle 18 copy 22" class="cls-1" d="M56.822,209.542l10.19,5.97-14.513,8.5-14.513-8.5,9.641-5.648" transform="translate(-37.5 -203.5)"/>
+  <path id="Rectangle_18_copy_11" data-name="Rectangle 18 copy 11" class="cls-2" d="M59.417,220l-7.433-4.5,7.433-4.5" transform="translate(-37.5 -203.5)"/>
+  <path id="Rectangle_18_copy_13" data-name="Rectangle 18 copy 13" class="cls-2" d="M44.6,211l7.4,4.5L44.6,220" transform="translate(-37.5 -203.5)"/>
+  <path id="Rectangle_18_copy_12" data-name="Rectangle 18 copy 12" class="cls-3" d="M52,203.992l6.995,5-6.995,5-6.995-5Z" transform="translate(-37.5 -203.5)"/>
+</svg>

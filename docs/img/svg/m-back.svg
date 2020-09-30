@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="5" height="9" viewBox="0 0 5 9">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: gray;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="Rounded_Rectangle_3_copy_10" data-name="Rounded Rectangle 3 copy 10" class="cls-1" d="M399,98.133L398.19,99,394,94.513l0.011-.012L394,94.489,398.19,90,399,90.869,395.6,94.5Z" transform="translate(-394 -90)"/>
+</svg>

@@ -1,0 +1,19 @@
+<svg id="Группа_1" data-name="Группа 1" xmlns="http://www.w3.org/2000/svg" width="32" height="30" viewBox="0 0 32 30">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        stroke: #f8a303;
+        stroke-linejoin: round;
+        stroke-width: 1px;
+        fill-rule: evenodd;
+      }
+
+      .cls-2 {
+        fill: #f8a812;
+      }
+    </style>
+  </defs>
+  <path id="Rectangle_13_copy" data-name="Rectangle 13 copy" class="cls-1" d="M1008.01,3047.84l-0.12.06v0.06l-0.06-.02L986.8,3059.99l-9.8-16.84,21.031-12.05,0.017-.07,0.046,0.03,0.118-.07,0.116,0.2,9.633,5.45-0.07,11Z" transform="translate(-976.5 -3030.5)"/>
+  <circle class="cls-2" cx="25" cy="10" r="1.5"/>
+</svg>

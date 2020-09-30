@@ -759,6 +759,8 @@ $(document).ready(function() {
 		buttons: [
 			"close"
 		],
+		arrows : false,
+		'showNavArrows' : false,
 		image : {
 			protect : true,
 		}
@@ -1188,6 +1190,89 @@ $(document).ready(function() {
 
 	sliderAdvantagesInit();
 	sliderMobileStart();
+
+
+	$('.magazine-link').on('click', function() {
+
+	    var scrollAnchor = $(this).attr('data-scroll'),
+	        scrollPoint = $('.magazine-section[data-anchor="' + scrollAnchor + '"]').offset().top - 28;
+
+	    $('body,html').animate({
+	        scrollTop: scrollPoint
+	    }, 500);
+
+	    return false;
+
+	})
+
+
+	$(window).scroll(function() {
+	    var windscroll = $(window).scrollTop();
+	    if (windscroll >= 100) {
+	        $('.magazine-section').each(function(i) {
+	            if ($(this).position().top <= windscroll - 120) {
+	                $('.magazine-item.active').removeClass('active');
+	                $('.magazine-link').eq(i).parents('.magazine-item').addClass('active');
+	            }
+	        });
+	    } else {
+	        $('.magazine-item.active').removeClass('active');
+	        $('.magazine-item:first').addClass('active');
+	    }
+	}).scroll();
+
+
+
+	$("body").on("click", ".js-catalog-menu__link", function(e){
+		e.preventDefault();
+		$(this).toggleClass('active');
+		$('.catalog-menu__view').slideToggle(200);
+	});
+	$(document).click(function (e){
+		var div = $(".catalog-menu__view");
+		var divSec = $(".catalog-menu__link");
+		if (!div.is(e.target) && !divSec.is(e.target) && div.has(e.target).length === 0) {
+			div.slideUp(200);
+			divSec.removeClass('active')
+		}
+	});
+
+
+
+	$('.catalog-menu-select__link').mouseenter(function () {
+	    var link = $(this).data('link');
+	    $('.catalog-menu-select__link').removeClass('active');
+	    $(this).addClass('active');
+	    $('.catalog-menu__item').addClass('dnone');
+        $('#cat-menu'+link).removeClass('dnone');
+	});
+
+	$("body").on("click", ".catalog-menu-mobile-link", function(e){
+		e.preventDefault();
+		$('.mobile-catalog').show();
+		$('.mobile-nav').hide();
+		$('.mobile-highlighted').hide();
+	});
+	$("body").on("click", ".mobile-catalog__back", function(e){
+		e.preventDefault();
+		$('.mobile-catalog').hide();
+		$('.mobile-nav').show();
+		$('.mobile-highlighted').show();
+	});
+
+
+	//mobile-second-level
+	$("body").on("click", ".m-second-level", function(e){
+		e.preventDefault();
+		$(this).parents('.mobile-catalog__item').find('.mobile-catalog-second').addClass('active');
+	});
+	$("body").on("click", ".mobile-catalog-second__back", function(e){
+		e.preventDefault();
+		$('.mobile-catalog-second').removeClass('active');
+	});
+
+
+	
 });
 
 
@@ -1325,7 +1410,7 @@ $(function(){
 
 $(function(){
 	if($('.list-unit-image').length>0){
-		$('#PRODUCT_ITEMS .product-item').each(function(index, value) {
+		$('#PRODUCT_ITEMS .product-item, .product-list .catalog .product-item').each(function(index, value) {
 
 		    $(value).find(".list-unit-image").each(function(index1, value1) {
 		        var slider = $(value1);
@@ -1432,42 +1517,6 @@ function revealOnScroll() {
 }
 
 
-// links pages
-/*
-$('body').append(
-	'<div style="position: fixed; z-index: 1005; bottom: 0; right: 0; background: #fff; border: solid 1px #828286; width: 200px;"> \
-		<a href="javascript:void(0);" style="float: right;background:#ccc; color:#000; padding: 5px 10px; text-decoration: none; font-size: 16px" onclick="$(this).parent().hide()">Close X</a> \
-	<style> \
-		#pages { padding: 10px 10px 0 30px; font-size: 16px; } \
-		#pages a { text-decoration: none; } \
-		#pages li { margin: 5px 0; } \
-	</style> \
-	<ol id="pages"> \
-		<li><a href="news.html">News</a></li> \
-		<li><a href="search.html">Search</a></li> \
-		<li><a href="reg.html">Registration</a></li> \
-		<li><a href="profile1.html">Profile1</a></li> \
-		<li><a href="profile2.html">Profile2</a></li> \
-		<li><a href="profile3.html">Profile3</a></li> \
-		<li><a href="profile4.html">Profile4</a></li> \
-		<li><a href="oformit.html">Oformit</a></li> \
-		<li><a href="page404.html">Page404</a></li> \
-		<li><a href="catalog.html">Catalog</a></li> \
-		<li><a href="history.html">History</a></li> \
-		<li><a href="favorite.html">Favorite</a></li> \
-		<li><a href="text.html">Text</a></li> \
-		<li><a href="index.html">Index</a></li> \
-		<li><a href="plitka.html">Plitka</a></li> \
-		<li><a href="cart.html">Korzina</a></li> \
-		<li><a href="product.html">Product</a></li> \
-		<li><a href="menu.html">Menu</a></li> \
-		<li><a href="sravnit.html">Sravnit</a></li> \
-		<li><a href="interior.html">Interior</a></li> \
-		<li><a href="instruction.html">Instruction</a></li> \
-		<li><a href="payment.html">Оплата</a></li> \
-	</ol> \
-</div>');
-*/
 
 $(document).ready(function () {
 	$.ajax({
