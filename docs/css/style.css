@@ -14330,3 +14330,7 @@ html {
     width: 24px;
     height: 16px;
 }
+.lds-spinnerNew {
+    width: 69px !important;
+    height: 18px !important;
+}
