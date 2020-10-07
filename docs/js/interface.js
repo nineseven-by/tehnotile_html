@@ -1239,7 +1239,15 @@ $(document).ready(function() {
 
 
 
-	$('.catalog-menu-select__link').mouseenter(function () {
+	// $('.catalog-menu-select__link').mouseenter(function () {
+	//     var link = $(this).data('link');
+	//     $('.catalog-menu-select__link').removeClass('active');
+	//     $(this).addClass('active');
+	//     $('.catalog-menu__item').addClass('dnone');
+ //        $('#cat-menu'+link).removeClass('dnone');
+	// });
+
+	$('body').on('mouseenter', '.catalog-menu-select__link', function(e){
 	    var link = $(this).data('link');
 	    $('.catalog-menu-select__link').removeClass('active');
 	    $(this).addClass('active');
