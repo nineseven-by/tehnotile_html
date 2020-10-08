@@ -1239,20 +1239,19 @@ $(document).ready(function() {
 
 
 
-	// $('.catalog-menu-select__link').mouseenter(function () {
-	//     var link = $(this).data('link');
-	//     $('.catalog-menu-select__link').removeClass('active');
-	//     $(this).addClass('active');
-	//     $('.catalog-menu__item').addClass('dnone');
- //        $('#cat-menu'+link).removeClass('dnone');
-	// });
 
 	$('body').on('mouseenter', '.catalog-menu-select__link', function(e){
 	    var link = $(this).data('link');
 	    $('.catalog-menu-select__link').removeClass('active');
-	    $(this).addClass('active');
+	    
 	    $('.catalog-menu__item').addClass('dnone');
-        $('#cat-menu'+link).removeClass('dnone');
+        
+
+        setTimeout(function (){
+        	$(this).addClass('active');
+			$('#cat-menu'+link).removeClass('dnone');
+
+		}, 300); 
 	});
 
 	$("body").on("click", ".catalog-menu-mobile-link", function(e){
