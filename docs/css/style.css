@@ -5060,7 +5060,7 @@ a.breadcrumbs__item:hover {
     font-size: 17px;
     color: #000000;
     display: block;
-    padding: 10px 28px;
+    padding: 10px;
     border: 1px solid #dddddd; }
 
 .r-tabs-state-default .r-tabs-anchor {
@@ -14575,7 +14575,7 @@ ol.magazine-list li:before {
     -webkit-box-sizing: content-box;
     box-sizing: content-box;
 }
-.catalog-menu-select__link:hover,
+/*.catalog-menu-select__link:hover,*/
 .catalog-menu-select__link.active{
     background: #fff;
 }
@@ -14984,6 +14984,82 @@ ol.magazine-list li:before {
 .fancybox-slide--video .fancybox-content{
     pointer-events: none;
 }
+
+
+.menu-screen{
+    width: 100%;
+    min-height: 100%;
+    transition: all .3s ease;
+    opacity: 1;
+}
+.catalog-menu__item.dnone{
+    display: none!important;
+}
+.catalog-menu__screen{
+    box-sizing: content-box;
+}
+
+.b-toggle__link{
+    display: inline-block;
+    font-size: 14px;
+    line-height: 20px;
+    color: #808080;
+    position: relative;
+    margin-top: 5px;
+    z-index: 3;
+}
+.b-toggle__link:after{
+    content: "";
+    display: inline-block;
+    width: 10px;
+    height: 7px;
+    background-image: url("data:image/svg+xml,%3Csvg width='10' height='7' viewBox='0 0 10 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5 5L9 1' stroke='%23B6B6B6' stroke-width='2'/%3E%3C/svg%3E%0A");
+    margin-left: 5px;
+}
+.b-toggle__item{
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+.b-toggle__item:last-child{
+    margin-bottom: 0;
+}
+.b-toggle__item .contacts-gallery__link {
+    width: -webkit-calc(33.333% - 4px);
+    width: -moz-calc(33.333% - 4px);
+    width: calc(33.333% - 4px);
+}
+.b-toggle{
+    position: relative;
+}
+.b-toggle.m-txt{
+    font-size: 14px;
+    line-height: 20px;
+    
+    overflow: hidden;
+}
+.b-toggle.m-txt.m-hidden{
+    max-height: 200px;
+}
+
+.b-toggle.m-photo.m-hidden{
+    max-height: 120px;
+}
+
+
+.b-toggle.m-hidden:after{
+    content: "";
+    height: 127px;
+    width: 100%;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 25.98%);
+    position: absolute;
+    left:0;
+    bottom: -95px;
+    z-index: 2;
+}
+.b-toggle-center{
+    text-align: center;
+}
+
 
 @media screen and (max-width: 1350px){
     .ral-list {
