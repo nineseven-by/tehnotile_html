@@ -15060,6 +15060,37 @@ ol.magazine-list li:before {
     text-align: center;
 }
 
+.cookies{
+    position: fixed;
+    bottom: 0;
+    background: #F4F4F4;
+    font-size: 17px;
+    line-height: 22px;
+    color: #808080;
+    z-index: 50;
+    padding: 12px 20px 15px;
+    border-radius: 10px 10px 0 0;
+    text-align: center;
+    width: 100%;
+}
+.cookies a:not([class]){
+    color: #808080;
+    text-decoration: underline;
+}
+.cookies a:not([class]):hover{
+    text-decoration: none;
+}
+
+.cookies__accept{
+    display: inline-block;
+    font-size: 17px;
+    color:#000;
+    background: #FFFFFF;
+    padding: 7px 21px;
+    margin-left: 16px; 
+}
+
+
 
 @media screen and (max-width: 1350px){
     .ral-list {

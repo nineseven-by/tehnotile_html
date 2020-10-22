@@ -937,7 +937,21 @@
 			
 		</div><!-- END LAYOUT-->
 
+		<div class="cookies">
+	        <div class="cookies__in">
+	        	На этом сайте используются файлы cookie. Продолжая просмотр сайта, вы разрешаете их использование и принимаете <a href="https://technotile.ru/about/">пользовательское соглашение</a>.
+	        	<a href="#" class="cookies__accept">Принять</a>
+	        </div>
+	        	
+	    </div>
+
 		<script src="js/libs.min.js"></script>
 		<script src="js/interface.js"></script>
+		<script>
+        	$("body").on("click", ".cookies__accept", function(e){
+				e.preventDefault();
+				$(this).parents('.cookies').hide();
+			})
+        </script>	
 	</body>
 </html>
