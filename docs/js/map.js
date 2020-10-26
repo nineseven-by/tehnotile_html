@@ -10,6 +10,12 @@ $(document).ready(function() {
 
 	}
 
+
+    if($('<div id="page-map-voronezh"></div>').length){
+        ymaps.ready(initMapVoronezh);
+
+    }
+
 });
 
 // Карта списка аптек
@@ -64,5 +70,33 @@ function initMap2() {
     //     new ymaps.control.ZoomControl()
     // );
 	 myMap.controls.add(new ymaps.control.ZoomControl({options: { position: { right: 10, top: 50 }}}));
+    myMap.behaviors.disable('scrollZoom')  
+}
+
+
+function initMapVoronezh() {
+
+    var icon = "img/content/label.png";
+
+    var myMap = new ymaps.Map("page-map-voronezh", {
+        center:[51.6605982,39.2005858],
+        zoom: 16,
+        controls: []
+    }); 
+            
+    var myPlacemark = new ymaps.Placemark([51.6605982,39.2005858],{
+            
+        },{
+        iconLayout: 'default#image',
+        iconImageHref: icon, 
+        iconImageSize: [30, 42],
+        iconImageOffset: [-15, -38]
+    });    
+
+    myMap.geoObjects.add(myPlacemark);
+ //    myMap.controls.add(
+    //     new ymaps.control.ZoomControl()
+    // );
+     myMap.controls.add(new ymaps.control.ZoomControl({options: { position: { right: 10, top: 50 }}}));
     myMap.behaviors.disable('scrollZoom')  
 }
