@@ -15090,6 +15090,10 @@ ol.magazine-list li:before {
     margin-left: 16px; 
 }
 
+.fancybox-slide--image .fancybox-image{
+    transform: scale(1.4);
+}
+
 
 
 @media screen and (max-width: 1350px){
