@@ -1457,6 +1457,15 @@ $(document).ready(function() {
         $(this).hide();
         $(this).parents('.b-toggle__item').find('.b-toggle').removeClass('m-hidden');
     });
+
+
+
+
+
+    $("body").on("click", ".catalog-i", function(e){
+		e.preventDefault();
+		$(this).parents('.catalog__item, .catalog-slider__item ').find('.catalog-descr').slideToggle()
+	})
 });
 
 
