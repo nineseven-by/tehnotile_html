@@ -15263,7 +15263,9 @@ ol.magazine-list li:before {
     margin-bottom: 24px;
 }
 
-
+.index-complex-slider .slick-track{
+    min-width: 100%;
+}
 .index-complex-slider__item .product-img{
     overflow: hidden;
     position: relative;
@@ -15278,9 +15280,6 @@ ol.magazine-list li:before {
     min-height: calc(100% - 215px);
     position: relative;
     padding-bottom: 30px;
-}
-.index-complex-slider__item .product-inner{
-    border-right: 0;
 }
 
 .index-complex-slider__item .product-price{
