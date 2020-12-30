@@ -601,10 +601,8 @@ $(document).ready(function() {
 	}
 
 
-	if($('.index-history-slider').length>0){
-		var $indexHistorySlider = $('.index-history-slider');
-
-		$indexHistorySlider.slick({
+	$( ".index-history" ).load( "ajax/test.html", function() {
+	  	$('.index-history-slider').slick({
 			swipe: true,
 			swipeToSlide: true,
 			touchThreshold: 10,
@@ -668,7 +666,7 @@ $(document).ready(function() {
 				},
 			]
 		});
-	}
+	});
 
 
 	if($('.index-complex-slider').length>0){
