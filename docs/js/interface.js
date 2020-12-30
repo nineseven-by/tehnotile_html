@@ -456,61 +456,55 @@ $(document).ready(function() {
 
 	if($('.novelty-slider').length>0){
 		var $noveltySlider = $('.novelty-slider');
-
-
-
-		$noveltySlider.slick({
-			//speed: 250,
-			swipe: true,
-			swipeToSlide: true,
-			touchThreshold: 10,
-			//arrows:false,
-			dots:false,
-			useTransform:true,
-			accessibility: false,
-			infinite: false,
-			slidesToShow: 4,
-			slidesToScroll: 1,
-			prevArrow: $('.novelty-slider__left'),
-			nextArrow: $('.novelty-slider__right'),
-			responsive: [
-				{
-					breakpoint: 1024,
-					settings: {
-						slidesToShow: 3,
-						slidesToScroll: 1,
-					}
-				},
-				{
-					breakpoint: 800,
-					settings: {
-						slidesToShow: 2,
-						slidesToScroll: 1,
-					}
-				},
-				{
-					breakpoint: 600,
-					settings: {
-						slidesToShow: 1,
-						slidesToScroll: 1,
-					}
-				},
-			]
-		});
+		$('.novelty-slider').each(function () {
+			var slickNoveltyInduvidual = $ (this);
+			slickNoveltyInduvidual.slick({
+				swipe: true,
+				swipeToSlide: true,
+				touchThreshold: 10,
+				dots:false,
+				useTransform:true,
+				accessibility: false,
+				infinite: false,
+				slidesToShow: 4,
+				slidesToScroll: 1,
+				prevArrow: slickNoveltyInduvidual.prev('.novelty-slider__arrows').find('.novelty-slider__left'),
+				nextArrow: slickNoveltyInduvidual.prev('.novelty-slider__arrows').find('.novelty-slider__right'),
+				responsive: [
+					{
+						breakpoint: 1024,
+						settings: {
+							slidesToShow: 3,
+							slidesToScroll: 1,
+						}
+					},
+					{
+						breakpoint: 800,
+						settings: {
+							slidesToShow: 2,
+							slidesToScroll: 1,
+						}
+					},
+					{
+						breakpoint: 600,
+						settings: {
+							slidesToShow: 1,
+							slidesToScroll: 1,
+						}
+					},
+				]
+			});
+		});	
 
 	}
 
 	if($('.popular-slider').length>0){
 		var $noveltySlider = $('.popular-slider');
 
-
-
 		$noveltySlider.slick({
-			//speed: 250,
 			swipe: true,
 			swipeToSlide: true,
 			touchThreshold: 10,
-			//arrows:false,
 			dots:false,
 			useTransform:true,
 			accessibility: false,
