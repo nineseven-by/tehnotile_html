@@ -3775,7 +3775,7 @@ textarea, input {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    font-size: 17px;
+    font-size: 14px;
     color: rgba(255, 255, 255, 0.6);
     position: relative;
     padding-right: 12px;
@@ -10128,9 +10128,9 @@ ymaps[class*="-copyright"] {
     .index-news-slider__title {
         font-size: 20px;
         margin-bottom: 15px; }
-    .top-select-toggle__link,
+    /* .top-select-toggle__link,
     .top-select-toggle__collection {
-        font-size: 17px; }
+        font-size: 17px; } */
     .product-item {
         width: 19.95%;
     }
@@ -14737,6 +14737,7 @@ ol.magazine-list li:before {
 .mobile-catalog{
     background: #eeeeee;
     padding: 25px 0;
+    margin-bottom: 15px;
     display: none;
 }
 .mobile-catalog__link{
