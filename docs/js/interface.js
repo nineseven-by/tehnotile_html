@@ -1316,13 +1316,14 @@ $(document).ready(function() {
             infinite: true,
             dots: false,
             arrows:false,
-            slidesToShow: 4,
+            slidesToShow: 5,
             slidesToScroll: 1,
             adaptiveHeight: false,
             responsive: [
             	{
 			      	breakpoint: 1400,
 			      	settings: {
+						slidesToShow: 4,
 			        	arrows:true,
 			      	}
 			    },
