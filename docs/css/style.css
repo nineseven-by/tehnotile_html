@@ -12929,9 +12929,12 @@ html {
     min-height: 33px;
 }
 
-
+.advantages__list{
+    display: none;
+}
 .advantages__list.slick-initialized{
     position: relative;
+    display: block;
 }
 .advantages__list.slick-initialized .slick-next{
     display: inline-block;
@@ -15150,7 +15153,12 @@ ol.magazine-list li:before {
     margin-bottom: 24px;
 }
 
-
+.index-history-slider{
+    display: none;
+}
+.index-history-slider.slick-initialized{
+    display: block;
+}
 .index-history-slider__item .product-img{
     overflow: hidden;
     position: relative;
