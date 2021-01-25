@@ -15263,6 +15263,9 @@ ol.magazine-list li:before {
 .index-history-slider__right.slick-disabled {
     display: none!important;
 }
+.index-history-slider .slick-list{
+    min-width: 100%;
+}
 .index-history-slider__item{
     height: auto;
     box-sizing: border-box;

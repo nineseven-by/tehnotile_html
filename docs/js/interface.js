@@ -661,6 +661,10 @@ $(document).ready(function() {
 					},
 				]
 			});
+
+			if(!$('.index-history-slider').hasClass('slick-initialized')){
+				$('.index-history-slider__arrows').hide()
+			}
 		}, 500);
 	  	
 	});
