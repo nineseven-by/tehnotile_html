@@ -15258,10 +15258,10 @@ ol.magazine-list li:before {
     z-index: 4;
 }
 .index-history-slider__left.slick-disabled {
-    display: none;
+    display: none!important;
 }
 .index-history-slider__right.slick-disabled {
-    display: none;
+    display: none!important;
 }
 .index-history-slider__item{
     height: auto;
