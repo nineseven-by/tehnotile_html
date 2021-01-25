@@ -15154,10 +15154,18 @@ ol.magazine-list li:before {
 }
 
 .index-history-slider{
-    display: none;
+    /* display: none; */
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
 }
 .index-history-slider.slick-initialized{
-    display: block;
+    /* display: block; */
+}
+.index-history-slider__item{
+    width: 14.2857%;
+    /* min-width: 14.2857%; */
 }
 .index-history-slider__item .product-img{
     overflow: hidden;
