@@ -595,79 +595,79 @@ $(document).ready(function() {
 	}
 
 
-	$( ".index-history" ).load( "ajax/test.html", function() {
-		setTimeout(function(){
-			$('.index-history-slider').slick({
-				swipe: true,
-				swipeToSlide: true,
-				touchThreshold: 10,
-				dots:false,
-				useTransform:true,
-				accessibility: false,
-				infinite: false,
-				slidesToShow: 7,
-				slidesToScroll: 1,
-				prevArrow: $('.index-history-slider__left'),
-				nextArrow: $('.index-history-slider__right'),
-				responsive: [
-					{
-						breakpoint: 1350,
-						settings: {
-							slidesToShow: 6,
-							slidesToScroll: 1,
-						}
-					},
-					{
-						breakpoint: 1200,
-						settings: {
-							slidesToShow: 5,
-							slidesToScroll: 1,
-						}
-					},
-					{
-						breakpoint: 1000,
-						settings: {
-							slidesToShow: 4,
-							slidesToScroll: 1,
-						}
-					},
-					{
-						breakpoint: 850,
-						settings: {
-							slidesToShow: 3,
-							slidesToScroll: 1,
-						}
-					},
-					{
-						breakpoint: 768,
-						settings: {
-							slidesToShow: 2,
-							slidesToScroll: 1,
-						}
-					},
-					{
-						breakpoint: 600,
-						settings: {
-							slidesToShow: 1,
-							slidesToScroll: 1,
-						}
-					},
-					{
-						breakpoint: 400,
-						settings: {
-							slidesToShow: 1,
-							slidesToScroll: 1,
-						}
-					},
-				]
-			});
+	// $( ".index-history" ).load( "ajax/test.html", function() {
+	// 	setTimeout(function(){
+	// 		$('.index-history-slider').slick({
+	// 			swipe: true,
+	// 			swipeToSlide: true,
+	// 			touchThreshold: 10,
+	// 			dots:false,
+	// 			useTransform:true,
+	// 			accessibility: false,
+	// 			infinite: false,
+	// 			slidesToShow: 7,
+	// 			slidesToScroll: 1,
+	// 			prevArrow: $('.index-history-slider__left'),
+	// 			nextArrow: $('.index-history-slider__right'),
+	// 			responsive: [
+	// 				{
+	// 					breakpoint: 1350,
+	// 					settings: {
+	// 						slidesToShow: 6,
+	// 						slidesToScroll: 1,
+	// 					}
+	// 				},
+	// 				{
+	// 					breakpoint: 1200,
+	// 					settings: {
+	// 						slidesToShow: 5,
+	// 						slidesToScroll: 1,
+	// 					}
+	// 				},
+	// 				{
+	// 					breakpoint: 1000,
+	// 					settings: {
+	// 						slidesToShow: 4,
+	// 						slidesToScroll: 1,
+	// 					}
+	// 				},
+	// 				{
+	// 					breakpoint: 850,
+	// 					settings: {
+	// 						slidesToShow: 3,
+	// 						slidesToScroll: 1,
+	// 					}
+	// 				},
+	// 				{
+	// 					breakpoint: 768,
+	// 					settings: {
+	// 						slidesToShow: 2,
+	// 						slidesToScroll: 1,
+	// 					}
+	// 				},
+	// 				{
+	// 					breakpoint: 600,
+	// 					settings: {
+	// 						slidesToShow: 1,
+	// 						slidesToScroll: 1,
+	// 					}
+	// 				},
+	// 				{
+	// 					breakpoint: 400,
+	// 					settings: {
+	// 						slidesToShow: 1,
+	// 						slidesToScroll: 1,
+	// 					}
+	// 				},
+	// 			]
+	// 		});
 
-			if(!$('.index-history-slider').hasClass('slick-initialized')){
-				$('.index-history-slider__arrows').hide()
-			}
-		}, 500);
+	// 		if(!$('.index-history-slider').hasClass('slick-initialized')){
+	// 			$('.index-history-slider__arrows').hide()
+	// 		}
+	// 	}, 500);
 	  	
-	});
+	// });
 
 
 	if($('.index-complex-slider').length>0){
