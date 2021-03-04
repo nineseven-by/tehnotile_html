@@ -670,57 +670,57 @@ $(document).ready(function() {
 	// });
 
 
-	if($('.index-complex-slider').length>0){
-		var $indexComplexSlider = $('.index-complex-slider');
+	// if($('.index-complex-slider').length>0){
+	// 	var $indexComplexSlider = $('.index-complex-slider');
 
-		$('.index-complex-slider').each(function () {
-			var slickInduvidual = $ (this);
-			slickInduvidual.slick({
-				swipe: true,
-				swipeToSlide: true,
-				touchThreshold: 10,
-				dots:false,
-				useTransform:true,
-				accessibility: false,
-				infinite: false,
-				slidesToShow: 5,
-				slidesToScroll: 1,
-				prevArrow: slickInduvidual.prev('.index-complex-slider__arrows').find('.index-complex-slider__left'),
-				nextArrow: slickInduvidual.prev('.index-complex-slider__arrows').find('.index-complex-slider__right'),
-				responsive: [
-					{
-						breakpoint: 1350,
-						settings: {
-							slidesToShow: 4,
-							slidesToScroll: 1,
-						}
-					},
-					{
-						breakpoint: 1200,
-						settings: {
-							slidesToShow: 3,
-							slidesToScroll: 1,
-						}
-					},
-					{
-						breakpoint: 1000,
-						settings: {
-							slidesToShow: 2,
-							slidesToScroll: 1,
-						}
-					},
-					{
-						breakpoint: 850,
-						settings: {
-							slidesToShow: 1,
-							slidesToScroll: 1,
-						}
-					},
-				]
-			});
-		});
+	// 	$('.index-complex-slider').each(function () {
+	// 		var slickInduvidual = $ (this);
+	// 		slickInduvidual.slick({
+	// 			swipe: true,
+	// 			swipeToSlide: true,
+	// 			touchThreshold: 10,
+	// 			dots:false,
+	// 			useTransform:true,
+	// 			accessibility: false,
+	// 			infinite: false,
+	// 			slidesToShow: 5,
+	// 			slidesToScroll: 1,
+	// 			prevArrow: slickInduvidual.prev('.index-complex-slider__arrows').find('.index-complex-slider__left'),
+	// 			nextArrow: slickInduvidual.prev('.index-complex-slider__arrows').find('.index-complex-slider__right'),
+	// 			responsive: [
+	// 				{
+	// 					breakpoint: 1350,
+	// 					settings: {
+	// 						slidesToShow: 4,
+	// 						slidesToScroll: 1,
+	// 					}
+	// 				},
+	// 				{
+	// 					breakpoint: 1200,
+	// 					settings: {
+	// 						slidesToShow: 3,
+	// 						slidesToScroll: 1,
+	// 					}
+	// 				},
+	// 				{
+	// 					breakpoint: 1000,
+	// 					settings: {
+	// 						slidesToShow: 2,
+	// 						slidesToScroll: 1,
+	// 					}
+	// 				},
+	// 				{
+	// 					breakpoint: 850,
+	// 					settings: {
+	// 						slidesToShow: 1,
+	// 						slidesToScroll: 1,
+	// 					}
+	// 				},
+	// 			]
+	// 		});
+	// 	});
 
-	}
+	// }
 
 
 
