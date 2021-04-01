@@ -1267,7 +1267,16 @@ $(document).ready(function() {
 	        autoplay: true,
   			autoplaySpeed: 10000,
   			pauseOnHover: false,
-	        cssEase:"cubic-bezier(0.87, 0.03, 0.41, 0.9)"
+	        cssEase:"cubic-bezier(0.87, 0.03, 0.41, 0.9)",
+			responsive: [
+				{
+	                breakpoint: 600,
+	                settings: {
+	                    dots:true,
+	                    arrows:true,
+	                }
+	            },
+	        ]
 	    });
 
 
@@ -1320,7 +1329,7 @@ $(document).ready(function() {
 	if ($('.advantages__list').length>0) {
 	    var $slider = $('.advantages__list');
         $slider.slick({
-            infinite: true,
+            infinite: false,
             dots: false,
             arrows:false,
             slidesToShow: 5,
@@ -1491,18 +1500,9 @@ function sliderMobileStart() {
 	            {
 	                  breakpoint: 600,
 	                  settings: {
-	                    slidesToShow: 2,
-	                    slidesToScroll: 1,
-	                    dots:false,
-	                    arrows:true,
-	                  }
-	            },
-	            {
-	                  breakpoint: 500,
-	                  settings: {
 	                    slidesToShow: 1,
 	                    slidesToScroll: 1,
-	                    dots:false,
+	                    dots:true,
 	                    arrows:true,
 	                  }
 	            },
