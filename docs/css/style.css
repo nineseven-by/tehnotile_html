@@ -7153,6 +7153,7 @@ ul.profile-tabs__list li a:hover {
     height: 100%;}
 
 .novelty {
+    overflow: hidden;
     margin-bottom: 35px; }
 .novelty h2 {
     font-size: 32px;
@@ -7850,6 +7851,7 @@ ul.profile-tabs__list li a:hover {
     color: #545454; }
 
 .similar {
+    overflow: hidden;
     margin-bottom: 35px; }
 .similar:last-child{
     margin-bottom: 0;
@@ -15265,6 +15267,7 @@ ol.magazine-list li:before {
     top: 0;
     right: -4px;
     background: #fff;
+    opacity: 0;
 }
 .index-complex{
     margin-bottom: 30px;
@@ -15806,7 +15809,12 @@ ol.magazine-list li:before {
         overflow: visible; 
         padding-right: 50px;
     }
-    
+    .novelty-slider{
+        padding-right: 130px;
+    }
+    .novelty-slider .slick-list{
+        overflow: visible;
+    }
 }
 
 @media screen and (max-width: 1350px){
@@ -15966,6 +15974,32 @@ ol.magazine-list li:before {
     .catalog-label.catalog-label--new i{
         background: #f8a303 url(../img/content/new-h.png) center no-repeat;
     }
+    .novelty {
+        overflow: visible;}
+    .novelty-slider{
+        padding-right: 0;
+    }
+    .novelty-slider .slick-list{
+        overflow: hidden;
+    }
+    .index-history-slider{
+        padding-right:80px;
+    }
+    .index-history-slider .slick-list{
+        overflow: visible;
+    }
+    .index-complex-slider-wrap{
+        overflow: hidden;
+    }
+    .index-complex-slider.slick-initialized{
+        padding-right: 75px;
+    }
+    .index-complex-slider.slick-initialized .slick-list{
+        overflow: visible;
+    }
+    .collection-list{
+        display: none;
+    }
 }
 
 @media screen and (max-width: 1024px){
@@ -16040,6 +16074,7 @@ ol.magazine-list li:before {
         margin-left: 0;
         margin-right: 10px;
     }
+    
 }
 
 @media screen and (max-width: 1000px){
@@ -16210,9 +16245,30 @@ ol.magazine-list li:before {
     .top-phone .top-select-toggle{
         margin-left: 15px;
     }
+    .index-history-slider{
+        padding-right:0;
+    }
+    .index-history-slider .slick-list{
+        overflow: hidden;
+    }
 }
 
 @media screen and (max-width: 768px){
+    .catalog-descr.catalog-descr--left:before{
+        border-right: 0;
+        border-top: 0;
+        left: auto;
+        right: 8px;
+    }
+    .product-item:nth-child(5n+5) .catalog-descr:before {
+        content: "";
+        left: auto;
+        right: 8px;
+        border-right: 0;
+        border-top: 0;
+        border-left: 1px solid #e2e2e2;
+        border-bottom: 1px solid #e2e2e2;
+    }
     .index-slider__pager .index-slider-in {
         padding: 0 30px;
     }
@@ -16316,7 +16372,7 @@ ol.magazine-list li:before {
         height: 17px;
         background-size: cover;
     }
-    .product-item .catalog-descr{
+    .product-list .product-item .catalog-descr{
         height: auto;
         width: calc(100% - 20px);
         top: 50px;
@@ -16328,6 +16384,17 @@ ol.magazine-list li:before {
         z-index: 5!important;
         opacity: 1;
         display: none;
+    }
+    .product-item:nth-child(4n+4) .catalog-descr:before {
+        content: "";
+        left: auto;
+        right: 10px;
+        border-left: 0;
+        border-bottom: 0;
+        border-right: 0;
+        border-top: 0;
+        border-left: 1px solid #e2e2e2;
+        border-bottom: 1px solid #e2e2e2;
     }
     .product-item .catalog-descr.active{
         display: block;
@@ -16425,6 +16492,12 @@ ol.magazine-list li:before {
     .catalog-descr__el{
         margin-bottom:0;
     }
+    .collection-list{
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;;
+    }
 }
 
 @media screen and (max-width: 650px){
@@ -16456,7 +16529,7 @@ ol.magazine-list li:before {
         margin-bottom: 20px;
     }
     .index-slider-wrap .btn {
-        padding: 5px 10px;
+        padding: 15px 23px;
     }
     .index-slider {
         margin-top: 0;
@@ -16939,7 +17012,7 @@ ol.magazine-list li:before {
         width: 100%;
         min-width: 100%;
         position: static;
-        height: 350px;
+        height: 121px;
         padding-right: 20px;
         margin-top: 20px;
     }
@@ -16951,6 +17024,22 @@ ol.magazine-list li:before {
     .index-complex-slider__left.slick-disabled,
     .index-complex-slider__right.slick-disabled{
         display: inline-block!important;
+    }
+    .index-complex__info{
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
+        padding: 30px 25px;
     }
     .top-phone{
         display: none;
@@ -17147,6 +17236,15 @@ ol.magazine-list li:before {
         border-bottom: 1px solid #e2e2e2;
         border-right: 0;
         border-top: 0;
+    }
+    .index-complex__txt{
+        display: none;
+    }
+    .index-complex-slider-wrap{
+        overflow: visible;
+    }
+    .socials{
+        padding-top:40px;
     }
 }
 

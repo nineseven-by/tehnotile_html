@@ -472,9 +472,16 @@ $(document).ready(function() {
 				nextArrow: slickNoveltyInduvidual.prev('.novelty-slider__arrows').find('.novelty-slider__right'),
 				responsive: [
 					{
-						breakpoint: 1024,
+						breakpoint: 1400,
 						settings: {
 							slidesToShow: 3,
+							slidesToScroll: 1,
+						}
+					},
+					{
+						breakpoint: 1050,
+						settings: {
+							slidesToShow: 4,
 							slidesToScroll: 1,
 						}
 					},
@@ -703,7 +710,7 @@ $(document).ready(function() {
 						}
 					},
 					{
-						breakpoint: 1000,
+						breakpoint: 1100,
 						settings: {
 							slidesToShow: 2,
 							slidesToScroll: 1,
