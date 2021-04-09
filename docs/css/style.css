@@ -15714,8 +15714,7 @@ ol.magazine-list li:before {
   }
 
 .phpdevorg-filters__init{
-    display: flex;
-    flex-wrap: wrap;
+    display: block;
 }
 
 .phpdevorg-filters__init .catalog__label.item-line-title {
