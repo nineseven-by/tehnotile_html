@@ -1,3 +1,9 @@
+// 22.03.2021
+$(function(){
+	$('.index-slider-preloader-main').hide();
+})
+// end 22.03.2021
+
 $(document).ready(function() {
 	flexibility(document.documentElement);
 	$("body").on("click", ".js-catalog-sort__select__link", function(e){

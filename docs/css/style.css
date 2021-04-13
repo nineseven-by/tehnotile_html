@@ -7863,14 +7863,14 @@ ul.profile-tabs__list li a:hover {
 
 .similar {
     margin-bottom: 35px; }
-.similar h3 {
+.similar .title__desc {
     font-size: 22px;
-    margin-bottom: 0;
     font-weight: normal;
     display: -webkit-inline-box;
     display: -webkit-inline-flex;
     display: -ms-inline-flexbox;
-    display: inline-flex; }
+    display: inline-flex;
+    line-height: 1.2;  }
 .similar .slider__item:hover {
     z-index: inherit; }
 
@@ -15702,6 +15702,18 @@ ol.magazine-list li:before {
     margin-bottom: 10px;
   }
 
+/* 22.03.2021 */
+.index-slider-preloader-main.index-slider-preloader {
+    position: fixed;
+    z-index: 51;
+    background-color: #dfdfdf;
+    background-color: rgba(223, 223, 223, 0.8);
+}
+
+.index-slider-preloader-main .sk-cube {
+    background-color: #ffb324;
+}
+/* end 22.03.2021 */
 
 @media screen and (max-width: 1700px){
     .index-reviews-slider__right,
