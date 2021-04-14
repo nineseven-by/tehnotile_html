@@ -1,3 +1,7 @@
+$(function(){
+	$('.index-slider-preloader-main').hide();
+})
+
 $(document).ready(function() {
 	flexibility(document.documentElement);
 	$("body").on("click", ".js-catalog-sort__select__link", function(e){

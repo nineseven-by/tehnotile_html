@@ -15702,6 +15702,16 @@ ol.magazine-list li:before {
     margin-bottom: 10px;
   }
 
+.index-slider-preloader-main.index-slider-preloader {
+    position: fixed;
+    z-index: 51;
+    background-color: #dfdfdf;
+    background-color: rgba(223, 223, 223, 0.8);
+}
+
+.index-slider-preloader-main .sk-cube {
+    background-color: #ffb324;
+}
 
 @media screen and (max-width: 1700px){
     .index-reviews-slider__right,
