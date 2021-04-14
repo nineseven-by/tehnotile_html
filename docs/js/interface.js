@@ -1,6 +1,8 @@
+// 22.03.2021
 $(function(){
 	$('.index-slider-preloader-main').hide();
 })
+// end 22.03.2021
 
 $(document).ready(function() {
 	flexibility(document.documentElement);
@@ -476,9 +478,16 @@ $(document).ready(function() {
 				nextArrow: slickNoveltyInduvidual.prev('.novelty-slider__arrows').find('.novelty-slider__right'),
 				responsive: [
 					{
-						breakpoint: 1024,
+						breakpoint: 1400,
 						settings: {
 							slidesToShow: 3,
+							slidesToScroll: 1,
+						}
+					},
+					{
+						breakpoint: 1050,
+						settings: {
+							slidesToShow: 4,
 							slidesToScroll: 1,
 						}
 					},
@@ -707,7 +716,7 @@ $(document).ready(function() {
 						}
 					},
 					{
-						breakpoint: 1000,
+						breakpoint: 1100,
 						settings: {
 							slidesToShow: 2,
 							slidesToScroll: 1,
@@ -1271,7 +1280,16 @@ $(document).ready(function() {
 	        autoplay: true,
   			autoplaySpeed: 10000,
   			pauseOnHover: false,
-	        cssEase:"cubic-bezier(0.87, 0.03, 0.41, 0.9)"
+	        cssEase:"cubic-bezier(0.87, 0.03, 0.41, 0.9)",
+			responsive: [
+				{
+	                breakpoint: 600,
+	                settings: {
+	                    dots:true,
+	                    arrows:true,
+	                }
+	            },
+	        ]
 	    });
 
 
@@ -1324,7 +1342,7 @@ $(document).ready(function() {
 	if ($('.advantages__list').length>0) {
 	    var $slider = $('.advantages__list');
         $slider.slick({
-            infinite: true,
+            infinite: false,
             dots: false,
             arrows:false,
             slidesToShow: 5,
@@ -1468,7 +1486,7 @@ $(document).ready(function() {
 
     $("body").on("click", ".catalog-i", function(e){
 		e.preventDefault();
-		$(this).parents('.catalog__item, .catalog-slider__item ').find('.catalog-descr').slideToggle()
+		$(this).parents('.catalog__item, .catalog-slider__item, .product-item').find('.catalog-descr').slideToggle()
 	})
 });
 
@@ -1495,18 +1513,9 @@ function sliderMobileStart() {
 	            {
 	                  breakpoint: 600,
 	                  settings: {
-	                    slidesToShow: 2,
-	                    slidesToScroll: 1,
-	                    dots:false,
-	                    arrows:true,
-	                  }
-	            },
-	            {
-	                  breakpoint: 500,
-	                  settings: {
 	                    slidesToShow: 1,
 	                    slidesToScroll: 1,
-	                    dots:false,
+	                    dots:true,
 	                    arrows:true,
 	                  }
 	            },
