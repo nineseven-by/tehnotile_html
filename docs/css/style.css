@@ -7531,7 +7531,7 @@ ul.profile-tabs__list li a:hover {
 .tile-photo__inner {
     width: 577px;
     height: 577px;
-
+    background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
     position: relative;
@@ -15694,9 +15694,7 @@ ol.magazine-list li:before {
     margin-bottom: 35px;
   }
   
-  .tile-photo__inner {
-    background-size: cover;
-  }
+  
   
   .save-photo {
     left: 0;
