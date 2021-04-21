@@ -1562,41 +1562,41 @@ $(function(){
 	}
 });
 
-$(function(){
-	if($('.list-unit-image').length>0){
-		$('#PRODUCT_ITEMS .product-item, .product-list .catalog .product-item').each(function(index, value) {
+// $(function(){
+// 	if($('.list-unit-image').length>0){
+// 		$('#PRODUCT_ITEMS .product-item, .product-list .catalog .product-item').each(function(index, value) {
 
-		    $(value).find(".list-unit-image").each(function(index1, value1) {
-		        var slider = $(value1);
-		        var imagesAmount = slider.find(".list-unit-image-unit-wrap").length;
-		        if (imagesAmount>1) {
-		        	for (var i = 0; i < imagesAmount; i++) {
-			            slider.find(".list-unit-dots").append("<li></li>");
-			        }
-		        }
+// 		    $(value).find(".list-unit-image").each(function(index1, value1) {
+// 		        var slider = $(value1);
+// 		        var imagesAmount = slider.find(".list-unit-image-unit-wrap").length;
+// 		        if (imagesAmount>1) {
+// 		        	for (var i = 0; i < imagesAmount; i++) {
+// 			            slider.find(".list-unit-dots").append("<li></li>");
+// 			        }
+// 		        }
 		       
-		        slider.find(".list-unit-dots li").eq(0).addClass("slick-active");
-		    });
+// 		        slider.find(".list-unit-dots li").eq(0).addClass("slick-active");
+// 		    });
 
-		    $(value).hover(function() {
-		        $(value).find(".list-unit-dots").find("li").on("mouseover", function() {
-		            var index = $(this).index();
-		            $(this).siblings().removeClass("slick-active");
-		            $(this).addClass("slick-active");
-		            var slider = $(this).parents(".product-item").find(".list-unit-image-wrap");
-		            slider.find(".list-unit-image-unit-wrap_active").removeClass("list-unit-image-unit-wrap_active");
-		            slider.find(".list-unit-image-unit-wrap").eq(index).addClass("list-unit-image-unit-wrap_active");
-		        })
-		    }, function() {
-		        var slider = $(this).find(".list-unit-image");
-		        slider.find(".list-unit-dots").find("li").removeClass("slick-active");
-		        slider.find(".list-unit-dots").find("li").eq(0).addClass("slick-active");
-		        slider.find(".list-unit-image-unit-wrap").removeClass("list-unit-image-unit-wrap_active");
-		        slider.find(".list-unit-image-unit-wrap").eq(0).addClass("list-unit-image-unit-wrap_active");
-		    });
-		});
-	}
-});
+// 		    $(value).hover(function() {
+// 		        $(value).find(".list-unit-dots").find("li").on("mouseover", function() {
+// 		            var index = $(this).index();
+// 		            $(this).siblings().removeClass("slick-active");
+// 		            $(this).addClass("slick-active");
+// 		            var slider = $(this).parents(".product-item").find(".list-unit-image-wrap");
+// 		            slider.find(".list-unit-image-unit-wrap_active").removeClass("list-unit-image-unit-wrap_active");
+// 		            slider.find(".list-unit-image-unit-wrap").eq(index).addClass("list-unit-image-unit-wrap_active");
+// 		        })
+// 		    }, function() {
+// 		        var slider = $(this).find(".list-unit-image");
+// 		        slider.find(".list-unit-dots").find("li").removeClass("slick-active");
+// 		        slider.find(".list-unit-dots").find("li").eq(0).addClass("slick-active");
+// 		        slider.find(".list-unit-image-unit-wrap").removeClass("list-unit-image-unit-wrap_active");
+// 		        slider.find(".list-unit-image-unit-wrap").eq(0).addClass("list-unit-image-unit-wrap_active");
+// 		    });
+// 		});
+// 	}
+// });
 
 
 
@@ -1635,7 +1635,9 @@ $(function(){
 
 
 $(window).resize(function () {
-
+	// if($('.list-unit-image-wrap').length>0){
+	// 	sliderImageUnitCheck();
+	// }
 });
 
 // $(window).load(function(){
@@ -1712,7 +1714,44 @@ $(document).ready(function () {
 
 		e.preventDefault();
 	});
+
+
+	if($('.list-unit-image-wrap').length>0){
+		$('.list-unit-image-wrap').slick({
+			speed: 250,
+			swipe: true,
+			swipeToSlide: true,
+			touchThreshold: 10,
+			arrows:false,
+			dots: true,
+			useTransform:true,
+			accessibility: false,
+			infinite: false,
+		});
+	}
 })
+
+// function sliderImageUnitCheck(){
+// 	if (window.matchMedia("(max-width: 600px)").matches) {
+// 		/* the viewport is less than 768 pixels wide */
+// 		$('.list-unit-image-wrap').slick({
+// 			speed: 250,
+// 			swipe: true,
+// 			swipeToSlide: true,
+// 			touchThreshold: 10,
+// 			arrows:false,
+// 			dots: true,
+// 			useTransform:true,
+// 			accessibility: false,
+// 			infinite: false,
+// 		});
+// 	} else{
+// 		if($('.list-unit-image-wrap').hasClass('slick-initialized')){
+//             $('.list-unit-image-wrap').slick('unslick');
+//         }
+// 	}
+// }
+
 
 function updateHeaderBasket() {
 	$.ajax({
