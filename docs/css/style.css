@@ -13218,7 +13218,7 @@ html {
     position: absolute;
     left: 0;
     top: 0;
-    background: rgba(0,0,0,0.1);
+    background: rgba(0,0,0,0);
 }
 .slider-nav-thumbnails__item.slick-active{
     border: 2px solid #f8a303;
