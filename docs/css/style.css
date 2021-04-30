@@ -15550,9 +15550,9 @@ ol.magazine-list li:before {
     background: #fff;
     z-index: 15;
     width: 100%;
-	width: -webkit-calc(100% + 89px);
-	width: -moz-calc(100% + 89px);
-	width: calc(100% + 89px);
+	width: -webkit-calc(100% + 370px);
+	width: -moz-calc(100% + 370px);
+	width: calc(100% + 370px);
     margin-left: -14px;
     margin-top: -12px;
     padding: 66px 15px 15px 20px;
@@ -15631,7 +15631,7 @@ ol.magazine-list li:before {
     color:#323232;
 }
 .search-category__item{
-    padding: 0 0 0 56px;
+    padding: 0 0 0 20px;
     margin: 0 -15px 0 -20px;
     -webkit-transition: background 0.3s linear;
     transition: background 0.3s linear;
@@ -15955,6 +15955,11 @@ ol.magazine-list li:before {
     .ral-main {
         width: 150px;
         min-width: 150px;
+    }
+    .title-search-result {
+        width: -webkit-calc(100% + 89px);
+        width: -moz-calc(100% + 89px);
+        width: calc(100% + 370px);
     }
     .ral-view {
         width: 300px;
