@@ -12999,7 +12999,7 @@ ymaps[class*='-copyright'] {
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 414px) {
   .product-item {
     width: 100%;
   }
