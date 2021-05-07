@@ -1486,7 +1486,7 @@ $(document).ready(function() {
 
     $("body").on("click", ".catalog-i", function(e){
 		e.preventDefault();
-		$(this).parents('.catalog__item, .catalog-slider__item, .product-item').find('.catalog-descr').slideToggle()
+		$(this).parents('.catalog__item, .catalog-slider__item, .product-item, .slider__item').find('.catalog-descr').slideToggle()
 	})
 });
 
