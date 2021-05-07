@@ -15877,6 +15877,10 @@ ol.magazine-list li:before {
     display: none;
 }
 
+.index-slider .slick-arrow,
+.index-slider .slick-dots{
+    display:none!important;
+}
 
 
 @media screen and (max-width: 1700px){
@@ -17365,7 +17369,15 @@ ol.magazine-list li:before {
     .catalog__item--lg .style-item{
         width: 25%;
     }
-   
+    .index-slider .slick-arrow{
+        display:block!important;
+    }
+    .index-slider .slick-dots{
+        display: -webkit-box!important;
+        display: -webkit-flex!important;
+        display: -ms-flexbox!important;
+        display: flex!important;
+    }
 }
 
 @media screen and (max-width: 500px){

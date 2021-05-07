@@ -1263,7 +1263,8 @@ $(document).ready(function() {
 
 	    slideWrapper.slick({
 	        touchThreshold: 10,
-	        arrows:false,
+	        dots:true,
+	        arrows:true,
 	        useTransform:true,
 	        accessibility: false,
 	        infinite: true,
@@ -1275,15 +1276,6 @@ $(document).ready(function() {
   			autoplaySpeed: 10000,
   			pauseOnHover: false,
 	        cssEase:"cubic-bezier(0.87, 0.03, 0.41, 0.9)",
-			responsive: [
-				{
-	                breakpoint: 600,
-	                settings: {
-	                    dots:true,
-	                    arrows:true,
-	                }
-	            },
-	        ]
 	    });
 
 
