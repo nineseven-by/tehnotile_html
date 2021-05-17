@@ -13571,6 +13571,25 @@ html {
   transform: none;
   margin-top: 0;
 }
+
+.product-icons-in_availability {
+  position: absolute;
+  right: 15px;
+  bottom : 270px; 
+  transform: none;
+  margin-top: 0;
+}
+.in_availability {
+  display: inline-block;
+  width: 24px;
+  height: 16px;
+  background: url(../img/svg/v_nalichii.svg) center no-repeat;
+  background-size: 24px 16px;
+  position: relative;
+  z-index: 8;
+}
+
+
 .pr-compare {
   display: inline-block;
   width: 24px;
@@ -18855,6 +18874,14 @@ ol.magazine-list li:before {
     transform: none;
     margin-top: 0;
   }
+
+  .product-icons-in_availability {
+    position: absolute;
+    bottom : 270px; 
+    transform: none;
+    margin-top: 0;
+  }
+
   .catalog-favorite-link {
     width: 25px;
     min-width: 25px;
