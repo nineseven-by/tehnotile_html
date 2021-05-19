@@ -8786,6 +8786,10 @@ ul.profile-tabs__list li a:hover {
 .novelty-slider .slider__item {
   height: 246px;
   padding-right: 10px;
+  overflow: inherit;
+}
+.novelty-slider .slider__item .catalog-slider {
+  z-index: 6;
 }
 .novelty-slider .catalog__item {
   height: 246px;
@@ -18754,6 +18758,7 @@ ol.magazine-list li:before {
   }
   .novelty-slider .catalog__item {
     padding-right: 0;
+    z-index: 3;
   }
   .novelty-slider .catalog-descr {
     display: none;
