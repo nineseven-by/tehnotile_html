@@ -19832,3 +19832,7 @@ ol.magazine-list li:before {
     transition: none;
   }
 }
+
+body .novelty-slider .slider__item {
+  padding-right: 2px;
+}
