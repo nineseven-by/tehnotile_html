@@ -13578,10 +13578,10 @@ html {
 
 .product-icons-in_availability {
   position: absolute;
-  right: 15px;
-  bottom : 270px; 
-  transform: none;
-  margin-top: 0;
+   transform: none;
+   margin-top: 0;
+   top: 205px;
+   right: 15px;
 }
 .in_availability {
   display: inline-block;
@@ -13595,8 +13595,7 @@ html {
 
 .product-icons-viewed_product {
   position: absolute;
-  left: 15px;
-  bottom : 270px; 
+  top: 205px;
   transform: none;
   margin-top: 0;
 }
@@ -18189,7 +18188,7 @@ ol.magazine-list li:before {
   margin: 0 !important;
   width: 100%;
   position: absolute;
-  bottom: 0;
+  bottom: 5px;
 }
 .list-unit-image-wrap .slick-dots li {
   padding-left: 0;
@@ -18202,6 +18201,8 @@ ol.magazine-list li:before {
   -webkit-transition: all ease-in-out 0.3s;
   transition: all ease-in-out 0.3s;
   flex-grow: 1;
+  height: 30px;
+  cursor: pointer;
 }
 
 .list-unit-image-wrap .slick-dots li:after {
@@ -18903,10 +18904,16 @@ ol.magazine-list li:before {
 
   .product-icons-in_availability {
     position: absolute;
-    bottom : 270px; 
-    transform: none;
-    margin-top: 0;
+   transform: none;
+   margin-top: 0;
+   top: 205px;
+   right: 15px;
   }
+
+
+.viewed_product:hover {
+  background: url(../img/svg/viewed-product-hover.svg) center no-repeat;
+}
 
   .catalog-favorite-link {
     width: 25px;
